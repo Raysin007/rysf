@@ -29,6 +29,12 @@
   gap: 0.85rem;
 }
 
+.footer__logo {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
 .footer__brand-name {
   font-size: 0.72rem;
   font-weight: 700;
