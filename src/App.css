@@ -1,0 +1,34 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+/* Section transitions */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Smooth scroll offset for fixed nav */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  [id] {
+    scroll-margin-top: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+  [id] {
+    scroll-margin-top: 50px;
+  }
+}
