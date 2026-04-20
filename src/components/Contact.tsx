@@ -1,4 +1,5 @@
 import { useState } from "react";
+// @ts-ignore
 import "./Contact.css";
 
 export default function Contact() {
