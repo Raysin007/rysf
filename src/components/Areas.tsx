@@ -1,3 +1,4 @@
+// @ts-ignore
 import "./Areas.css";
 
 const areas = [
@@ -5,7 +6,7 @@ const areas = [
     name: "Plassey",
     region: "Nadia",
     pin: "741181",
-    gradient: "linear-gradient(135deg, #4a6741 0%, #6a8e3e 60%, #9fc84e 100%)",
+    image: "/plassey.jpeg",
     points: [
       "Deep local understanding — we design with real-world insights, not assumptions",
       "Strong community trust, leading to higher participation and impact",
@@ -15,7 +16,7 @@ const areas = [
     name: "Mirik",
     region: "Darjeeling",
     pin: "734214",
-    gradient: "linear-gradient(135deg, #2a5c3e 0%, #3e8a58 60%, #7acb8a 100%)",
+    image: "/mirik.jpeg",
     points: [
       "High need, low access — where intervention creates real change",
       "Built to scale; models tested here can grow across regions",
@@ -39,7 +40,11 @@ export default function Areas() {
             <div key={area.name} className="areas__card">
               <div
                 className="areas__card-visual"
-                style={{ background: area.gradient }}
+                style={{
+                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url(${area.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
                 <div className="areas__card-pin-badge">
                   <svg width="10" height="14" viewBox="0 0 10 14" fill="none">

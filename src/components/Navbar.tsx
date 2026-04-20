@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./Navbar.css";
+// @ts-ignore
+import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
