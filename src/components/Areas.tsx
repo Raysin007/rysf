@@ -41,7 +41,7 @@ export default function Areas() {
               <div
                 className="areas__card-visual"
                 style={{
-                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%), url(${area.image})`,
+                  backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%), url(${area.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -55,15 +55,18 @@ export default function Areas() {
                   </svg>
                   {area.name}, {area.region} — {area.pin}
                 </div>
-                <div className="areas__card-name">{area.name}</div>
-              </div>
-              <div className="areas__card-body">
-                {area.points.map((p, i) => (
-                  <div key={i} className="areas__card-point">
-                    <span className="areas__card-plus">+</span>
-                    <p>{p}</p>
+
+                <div className="areas__card-content">
+                  <div className="areas__card-name">{area.name}</div>
+                  <div className="areas__card-body">
+                    {area.points.map((p, i) => (
+                      <div key={i} className="areas__card-point">
+                        <span className="areas__card-plus">+</span>
+                        <p>{p}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           ))}
