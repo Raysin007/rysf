@@ -97,30 +97,49 @@ export default function Areas() {
 
         <div className="areas__why">
           <h3 className="areas__why-title">Why these regions?</h3>
-          <div className="areas__why-grid">
-            {[
-              {
-                icon: "🏔️",
-                text: "Geographically underserved with high youth population",
-              },
-              {
-                icon: "🌾",
-                text: "Rich in traditional knowledge ripe for documentation",
-              },
-              {
-                icon: "📡",
-                text: "Emerging digital connectivity enabling remote learning",
-              },
-              {
-                icon: "🤲",
-                text: "Existing community networks to build trust and scale",
-              },
-            ].map((r) => (
-              <div key={r.text} className="areas__why-item">
-                <span className="areas__why-icon">{r.icon}</span>
-                <p>{r.text}</p>
-              </div>
-            ))}
+          <div className="areas__why-marquee">
+            <div className="areas__why-track">
+              {[
+                {
+                  img: "/reg1.jpg",
+                  text: "Geographically underserved with high youth population",
+                },
+                {
+                  img: "/reg2.jpg",
+                  text: "Rich in traditional knowledge ripe for documentation",
+                },
+                {
+                  img: "/reg3.jpg",
+                  text: "Emerging digital connectivity enabling remote learning",
+                },
+                {
+                  img: "/reg4.jpeg",
+                  text: "Existing community networks to build trust and scale",
+                },
+                {
+                  img: "/reg1.jpg",
+                  text: "Geographically underserved with high youth population",
+                },
+                {
+                  img: "/reg2.jpg",
+                  text: "Rich in traditional knowledge ripe for documentation",
+                },
+                {
+                  img: "/reg3.jpg",
+                  text: "Emerging digital connectivity enabling remote learning",
+                },
+                {
+                  img: "/reg4.jpeg",
+                  text: "Existing community networks to build trust and scale",
+                },
+              ].map((r, i) => (
+                <div key={i} className="areas__why-item">
+                  <div className="areas__why-img" style={{ backgroundImage: `url(${r.img})` }}>
+                    <p>{r.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
