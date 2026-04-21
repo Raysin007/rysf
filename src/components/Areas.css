@@ -159,7 +159,7 @@
   font-weight: 400;
 }
 
-/* Why grid */
+/* Why marquee */
 .areas__why {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 3rem;
@@ -173,27 +173,60 @@
   margin-bottom: 2rem;
 }
 
-.areas__why-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.areas__why-marquee {
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.areas__why-track {
+  display: flex;
   gap: 1.5rem;
+  width: max-content;
+  animation: why-scroll 18s linear infinite;
+}
+
+@keyframes why-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .areas__why-item {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.areas__why-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  align-items: flex-end;
+  overflow: hidden;
 }
 
-.areas__why-icon {
-  font-size: 1.8rem;
+.areas__why-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.18) 60%, transparent 100%);
 }
 
-.areas__why-item p {
+.areas__why-img p {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  font-weight: 400;
 }
+
 
 @media (max-width: 1024px) {
   .areas {
@@ -208,13 +241,7 @@
   .areas__card-name {
     font-size: 2.5rem;
   }
-  .areas__why-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-}
 
-@media (max-width: 768px) {
   .areas {
     padding: 3.5rem 2rem;
   }
@@ -262,13 +289,6 @@
   .areas__why-title {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
-  }
-  .areas__why-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .areas__why-icon {
-    font-size: 1.6rem;
   }
   .areas__why-item p {
     font-size: 0.8rem;
@@ -323,13 +343,6 @@
   .areas__why-title {
     font-size: 1.1rem;
     margin-bottom: 1.25rem;
-  }
-  .areas__why-grid {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-  .areas__why-icon {
-    font-size: 1.4rem;
   }
   .areas__why-item p {
     font-size: 0.75rem;
