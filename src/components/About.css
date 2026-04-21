@@ -88,9 +88,18 @@
 }
 
 .about__pillar-icon {
-  font-size: 1.6rem;
   flex-shrink: 0;
-  line-height: 1;
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lime);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
 }
 
 .about__pillar-title {
@@ -123,11 +132,15 @@
 }
 
 .about__photo--1 {
-  background: linear-gradient(135deg, #4a6741 0%, #8aaa1e 60%, #c8e06a 100%);
+  background-image: linear-gradient(to top, rgba(0,0,0,0), transparent), url('/public/photo1.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .about__photo--2 {
-  background: linear-gradient(135deg, #8b5e3c 0%, #c4894a 60%, #e8c17a 100%);
+   background-image: linear-gradient(to top, rgba(0,0,0,0), transparent), url('/public/photo2.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .about__photo-overlay {
@@ -183,7 +196,9 @@
     gap: 1rem;
   }
   .about__pillar-icon {
-    font-size: 1.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 0.9rem;
   }
   .about__pillar-title {
     font-size: 0.95rem;
@@ -221,7 +236,9 @@
     gap: 0.75rem;
   }
   .about__pillar-icon {
-    font-size: 1.3rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 0.85rem;
   }
   .about__pillar-title {
     font-size: 0.9rem;

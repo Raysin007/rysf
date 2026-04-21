@@ -44,23 +44,23 @@ export default function About() {
           <div className="about__pillars">
             {[
               {
-                icon: "🌱",
+                num: "01",
                 title: "Skill Development",
                 desc: "Courses grounded in the realities of rural life, building expertise that translates to income.",
               },
               {
-                icon: "🗂️",
+                num: "02",
                 title: "Rural Skills Archive",
                 desc: "Documenting and preserving indigenous knowledge systems and traditional livelihoods.",
               },
               {
-                icon: "🤝",
+                num: "03",
                 title: "Career Placement",
                 desc: "Connecting trained youth to employment networks, markets, and entrepreneurship pathways.",
               },
             ].map((p) => (
               <div key={p.title} className="about__pillar">
-                <span className="about__pillar-icon">{p.icon}</span>
+                <span className="about__pillar-icon">{p.num}</span>
                 <div>
                   <h3 className="about__pillar-title">{p.title}</h3>
                   <p className="about__pillar-desc">{p.desc}</p>
