@@ -1,4 +1,9 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Impact.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   {
@@ -24,8 +29,25 @@ const stats = [
 ];
 
 export default function Impact() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+        defaults: { ease: "power3.out" },
+      });
+      tl.from(".impact__label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".impact__title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".impact__desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".impact__stat", { y: 30, opacity: 0, duration: 0.5, stagger: 0.15 }, "-=0.2")
+        .from(".impact__quote", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2");
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="impact" id="impact">
+    <section className="impact" id="impact" ref={sectionRef}>
       <div className="impact__inner">
         <div className="impact__label">OUR IMPACT</div>
 

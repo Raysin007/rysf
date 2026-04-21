@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Courses.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Track {
   id: string;
@@ -89,11 +93,27 @@ const tracks: Track[] = [
 
 export default function Courses() {
   const [active, setActive] = useState<string>("data-tech");
+  const sectionRef = useRef<HTMLElement>(null);
 
   const selected = tracks.find((t) => t.id === active)!;
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+        defaults: { ease: "power3.out" },
+      });
+      tl.from(".courses__label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".courses__title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".courses__sub", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".courses__tab", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1 }, "-=0.2")
+        .from(".courses__panel", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2");
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="courses" id="courses">
+    <section className="courses" id="courses" ref={sectionRef}>
       <div className="courses__inner">
         <div className="courses__header">
           <div className="courses__label">CURRICULUM</div>
