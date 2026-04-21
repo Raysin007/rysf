@@ -1,8 +1,30 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./About.css";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+        defaults: { ease: "power3.out" },
+      });
+      tl.from(".about__label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".about__lead", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".about__accent", { y: 20, opacity: 0, duration: 0.6 }, "-=0.3")
+        .from(".about__pillar", { y: 30, opacity: 0, duration: 0.5, stagger: 0.15 }, "-=0.3")
+        .from(".about__photo", { scale: 0.95, opacity: 0, duration: 0.7, stagger: 0.2 }, "-=0.3");
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" ref={sectionRef}>
       <div className="about__inner">
         <div className="about__label">CORE CONCEPT</div>
 

@@ -1,33 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // @ts-ignore
 import "./Contact.css";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    role: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", role: "", message: "" });
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (form.name && form.email) {
-      setSubmitted(true);
-    }
+    if (form.name && form.email) setSubmitted(true);
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+        defaults: { ease: "power3.out" },
+      });
+      tl.from(".contact__label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".contact__title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".contact__desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".contact__info-item", { y: 20, opacity: 0, duration: 0.4, stagger: 0.12 }, "-=0.2")
+        .from(".contact__right", { x: 40, opacity: 0, duration: 0.7 }, "-=0.5");
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="contact" id="contact">
+    <section className="contact" id="contact" ref={sectionRef}>
       <div className="contact__inner">
         <div className="contact__left">
           <div className="contact__label">JOIN THE FORUM</div>

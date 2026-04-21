@@ -1,5 +1,10 @@
 // @ts-ignore
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Areas.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const areas = [
   {
@@ -25,8 +30,26 @@ const areas = [
 ];
 
 export default function Areas() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
+        defaults: { ease: "power3.out" },
+      });
+      tl.from(".areas__label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".areas__title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".areas__subtitle", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".areas__card", { y: 40, opacity: 0, duration: 0.6, stagger: 0.2 }, "-=0.2")
+        .from(".areas__why-title", { y: 20, opacity: 0, duration: 0.5 }, "-=0.2")
+        .from(".areas__why-item", { y: 20, opacity: 0, duration: 0.4, stagger: 0.12 }, "-=0.2");
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="areas" id="areas">
+    <section className="areas" id="areas" ref={sectionRef}>
       <div className="areas__inner">
         <div className="areas__label">AREA OF WORK</div>
 
