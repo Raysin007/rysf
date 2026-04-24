@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 // @ts-ignore
 import './Navbar.css';
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -23,7 +25,18 @@ export default function Navbar() {
     return () => ctx.revert();
   }, []);
 
-  const links = ["About", "Courses", "Areas", "Impact", "Contact"];
+  const links = [
+    { id: "about", label: t("nav.about") },
+    { id: "courses", label: t("nav.courses") },
+    { id: "areas", label: t("nav.areas") },
+    { id: "impact", label: t("nav.impact") },
+    { id: "contact", label: t("nav.contact") }
+  ];
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    setMenuOpen(false);
+  };
 
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
@@ -31,7 +44,7 @@ export default function Navbar() {
         <a href="#hero" className="navbar__brand">
           <img
             src="/logo.png"
-            alt="Rural Youth Skill Forum logo"
+            alt={t("nav.logo_alt")}
             className="navbar__logo"
           />
         </a>
@@ -40,23 +53,25 @@ export default function Navbar() {
           className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}
         >
           {links.map((l) => (
-            <li key={l}>
+            <li key={l.id}>
               <a
-                href={`#${l.toLowerCase()}`}
+                href={`#${l.id}`}
                 onClick={() => setMenuOpen(false)}
               >
-                {l}
+                {l.label}
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href="#contact"
-              className="navbar__cta"
-              onClick={() => setMenuOpen(false)}
+          <li className="navbar__lang">
+            <select
+              className="navbar__lang-selector"
+              onChange={(e) => changeLanguage(e.target.value)}
+              value={i18n.language}
             >
-              Join the Forum
-            </a>
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="bn">বাংলা</option>
+            </select>
           </li>
         </ul>
 

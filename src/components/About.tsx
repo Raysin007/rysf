@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./About.css";
@@ -6,6 +7,7 @@ import "./About.css";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -23,42 +25,41 @@ export default function About() {
     return () => ctx.revert();
   }, []);
 
+  const pillars = [
+    {
+      num: "01",
+      title: t("about.pillar1_title"),
+      desc: t("about.pillar1_desc"),
+    },
+    {
+      num: "02",
+      title: t("about.pillar2_title"),
+      desc: t("about.pillar2_desc"),
+    },
+    {
+      num: "03",
+      title: t("about.pillar3_title"),
+      desc: t("about.pillar3_desc"),
+    },
+  ];
+
   return (
     <section className="about" id="about" ref={sectionRef}>
       <div className="about__inner">
-        <div className="about__label">CORE CONCEPT</div>
+        <div className="about__label">{t("about.label")}</div>
 
         <div className="about__grid">
           <div className="about__text-col">
             <p className="about__lead">
-              An initiative rooted in the belief that real development begins
-              with people, their skills and connection with their own land and
-              knowledge systems.
+              {t("about.lead")}
             </p>
             <p className="about__accent">
-              The Rural Youth Skill Forum is designed as a bridge between
-              traditional wisdom and modern opportunities.
+              {t("about.accent")}
             </p>
           </div>
 
           <div className="about__pillars">
-            {[
-              {
-                num: "01",
-                title: "Skill Development",
-                desc: "Courses grounded in the realities of rural life, building expertise that translates to income.",
-              },
-              {
-                num: "02",
-                title: "Rural Skills Archive",
-                desc: "Documenting and preserving indigenous knowledge systems and traditional livelihoods.",
-              },
-              {
-                num: "03",
-                title: "Career Placement",
-                desc: "Connecting trained youth to employment networks, markets, and entrepreneurship pathways.",
-              },
-            ].map((p) => (
+            {pillars.map((p) => (
               <div key={p.title} className="about__pillar">
                 <span className="about__pillar-icon">{p.num}</span>
                 <div>
@@ -73,12 +74,12 @@ export default function About() {
         <div className="about__photos">
           <div className="about__photo about__photo--1">
             <div className="about__photo-overlay">
-              <span>Youth Learning</span>
+              <span>{t("about.photo_youth")}</span>
             </div>
           </div>
           <div className="about__photo about__photo--2">
             <div className="about__photo-overlay">
-              <span>Traditional Craft</span>
+              <span>{t("about.photo_craft")}</span>
             </div>
           </div>
         </div>

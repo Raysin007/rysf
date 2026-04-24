@@ -1,35 +1,37 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Impact.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  {
-    num: "500+",
-    label: "Youth Targeted in 1st Year",
-    desc: "Across both pilot regions",
-  },
-  {
-    num: "26+",
-    label: "Skill Courses",
-    desc: "Across 4 disciplines — foundation to advanced",
-  },
-  {
-    num: "2",
-    label: "Pilot Regions",
-    desc: "Plassey, Nadia and Mirik, Darjeeling",
-  },
-  {
-    num: "3",
-    label: "Core Pillars",
-    desc: "Skills Development, Career Placement, Skills Archive",
-  },
-];
-
 export default function Impact() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
+
+  const stats = [
+    {
+      num: "500+",
+      label: t("impact.stat1_label"),
+      desc: t("impact.stat1_desc"),
+    },
+    {
+      num: "26+",
+      label: t("impact.stat2_label"),
+      desc: t("impact.stat2_desc"),
+    },
+    {
+      num: "2",
+      label: t("impact.stat3_label"),
+      desc: t("impact.stat3_desc"),
+    },
+    {
+      num: "3",
+      label: t("impact.stat4_label"),
+      desc: t("impact.stat4_desc"),
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -49,18 +51,16 @@ export default function Impact() {
   return (
     <section className="impact" id="impact" ref={sectionRef}>
       <div className="impact__inner">
-        <div className="impact__label">OUR IMPACT</div>
+        <div className="impact__label">{t("impact.label")}</div>
 
         <div className="impact__top">
           <h2 className="impact__title">
-            Building futures,
+            {t("impact.title")}
             <br />
-            <em>one skill at a time.</em>
+            <em dangerouslySetInnerHTML={{ __html: t("impact.title_em") }} />
           </h2>
           <p className="impact__desc">
-            The Rural Youth Skill Forum is built for measurable, lasting change
-            — starting with the communities that need it most, and scaling to
-            reach thousands across the region.
+            {t("impact.desc")}
           </p>
         </div>
 
@@ -77,10 +77,9 @@ export default function Impact() {
         <div className="impact__quote">
           <div className="impact__quote-mark">"</div>
           <blockquote>
-            Real development begins with people — their skills and connection
-            with their own land and knowledge systems.
+            {t("impact.quote")}
           </blockquote>
-          <cite>— Rural Youth Skill Forum, Core Concept</cite>
+          <cite>{t("impact.cite")}</cite>
         </div>
       </div>
     </section>

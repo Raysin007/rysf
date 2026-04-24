@@ -1,36 +1,37 @@
-// @ts-ignore
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Areas.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const areas = [
-  {
-    name: "Plassey",
-    region: "Nadia",
-    pin: "741181",
-    image: "/plassey.jpeg",
-    points: [
-      "Deep local understanding — we design with real-world insights, not assumptions",
-      "Strong community trust, leading to higher participation and impact",
-    ],
-  },
-  {
-    name: "Mirik",
-    region: "Darjeeling",
-    pin: "734214",
-    image: "/mirik.jpeg",
-    points: [
-      "High need, low access — where intervention creates real change",
-      "Built to scale; models tested here can grow across regions",
-    ],
-  },
-];
-
 export default function Areas() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
+
+  const areas = [
+    {
+      name: "Plassey",
+      region: "Nadia",
+      pin: "741181",
+      image: "/plassey.jpeg",
+      points: [
+        t("areas.points.plassey1"),
+        t("areas.points.plassey2"),
+      ],
+    },
+    {
+      name: "Mirik",
+      region: "Darjeeling",
+      pin: "734214",
+      image: "/mirik.jpeg",
+      points: [
+        t("areas.points.mirik1"),
+        t("areas.points.mirik2"),
+      ],
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,15 +49,26 @@ export default function Areas() {
     return () => ctx.revert();
   }, []);
 
+  const whyItems = [
+    { img: "/reg1.jpg", text: t("areas.why1") },
+    { img: "/reg2.jpg", text: t("areas.why2") },
+    { img: "/reg3.jpg", text: t("areas.why3") },
+    { img: "/reg4.jpeg", text: t("areas.why4") },
+    { img: "/reg1.jpg", text: t("areas.why1") },
+    { img: "/reg2.jpg", text: t("areas.why2") },
+    { img: "/reg3.jpg", text: t("areas.why3") },
+    { img: "/reg4.jpeg", text: t("areas.why4") },
+  ];
+
   return (
     <section className="areas" id="areas" ref={sectionRef}>
       <div className="areas__inner">
-        <div className="areas__label">AREA OF WORK</div>
+        <div className="areas__label">{t("areas.label")}</div>
 
         <h2 className="areas__title">
           Plassey <em>&amp;</em> Mirik
         </h2>
-        <p className="areas__subtitle">Two pilot regions. One shared vision.</p>
+        <p className="areas__subtitle">{t("areas.subtitle")}</p>
 
         <div className="areas__cards">
           {areas.map((area) => (
@@ -96,43 +108,10 @@ export default function Areas() {
         </div>
 
         <div className="areas__why">
-          <h3 className="areas__why-title">Why these regions?</h3>
+          <h3 className="areas__why-title">{t("areas.why_title")}</h3>
           <div className="areas__why-marquee">
             <div className="areas__why-track">
-              {[
-                {
-                  img: "/reg1.jpg",
-                  text: "Geographically underserved with high youth population",
-                },
-                {
-                  img: "/reg2.jpg",
-                  text: "Rich in traditional knowledge ripe for documentation",
-                },
-                {
-                  img: "/reg3.jpg",
-                  text: "Emerging digital connectivity enabling remote learning",
-                },
-                {
-                  img: "/reg4.jpeg",
-                  text: "Existing community networks to build trust and scale",
-                },
-                {
-                  img: "/reg1.jpg",
-                  text: "Geographically underserved with high youth population",
-                },
-                {
-                  img: "/reg2.jpg",
-                  text: "Rich in traditional knowledge ripe for documentation",
-                },
-                {
-                  img: "/reg3.jpg",
-                  text: "Emerging digital connectivity enabling remote learning",
-                },
-                {
-                  img: "/reg4.jpeg",
-                  text: "Existing community networks to build trust and scale",
-                },
-              ].map((r, i) => (
+              {whyItems.map((r, i) => (
                 <div key={i} className="areas__why-item">
                   <div className="areas__why-img" style={{ backgroundImage: `url(${r.img})` }}>
                     <p>{r.text}</p>
