@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Courses.css";
@@ -7,91 +8,92 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface Track {
   id: string;
-  title: string;
-  subtitle: string;
+  titleKey: string;
+  subtitleKey: string;
   color: string;
   foundationCount: number;
   advanceCount: number;
-  foundation: string[];
-  advance: string[];
+  foundationKeys: string[];
+  advanceKeys: string[];
 }
 
 const tracks: Track[] = [
   {
     id: "agriculture",
-    title: "Agriculture",
-    subtitle: "Rooted and income-generating skills",
+    titleKey: "courses.tracks.agriculture.title",
+    subtitleKey: "courses.tracks.agriculture.subtitle",
     color: "#5a7a1e",
     foundationCount: 3,
     advanceCount: 0,
-    foundation: [
-      "Organic Farming Basics",
-      "Nursery Basics",
-      "Composting & Soil Health",
+    foundationKeys: [
+      "courses.tracks.agriculture.c1",
+      "courses.tracks.agriculture.c2",
+      "courses.tracks.agriculture.c3",
     ],
-    advance: [],
+    advanceKeys: [],
   },
   {
     id: "wellness",
-    title: "Wellness",
-    subtitle: "Traditional systems-based livelihoods",
+    titleKey: "courses.tracks.wellness.title",
+    subtitleKey: "courses.tracks.wellness.subtitle",
     color: "#7a8a2e",
     foundationCount: 3,
     advanceCount: 0,
-    foundation: [
-      "Health & Wellness Basics",
-      "Ayurveda Basics",
-      "Yoga & Wellness",
+    foundationKeys: [
+      "courses.tracks.wellness.c1",
+      "courses.tracks.wellness.c2",
+      "courses.tracks.wellness.c3",
     ],
-    advance: [],
+    advanceKeys: [],
   },
   {
     id: "data-tech",
-    title: "Data & Technology",
-    subtitle: "Future-ready opportunities",
+    titleKey: "courses.tracks.data_tech.title",
+    subtitleKey: "courses.tracks.data_tech.subtitle",
     color: "#6b7a2a",
     foundationCount: 4,
     advanceCount: 6,
-    foundation: [
-      "Data Literacy",
-      "Tech Literacy",
-      "AI Basics + Office Tools",
-      "Basic Business Management",
+    foundationKeys: [
+      "courses.tracks.data_tech.c1",
+      "courses.tracks.data_tech.c2",
+      "courses.tracks.data_tech.c3",
+      "courses.tracks.data_tech.c4",
     ],
-    advance: [
-      "Python Development",
-      "Web & App Development",
-      "Cloud Systems",
-      "Data Analysis & Visualisation",
-      "Agentic AI",
-      "Business Management",
+    advanceKeys: [
+      "courses.tracks.data_tech.a1",
+      "courses.tracks.data_tech.a2",
+      "courses.tracks.data_tech.a3",
+      "courses.tracks.data_tech.a4",
+      "courses.tracks.data_tech.a5",
+      "courses.tracks.data_tech.a6",
     ],
   },
   {
     id: "design-media",
-    title: "Design & Media",
-    subtitle: "Creative skills + Better market value",
+    titleKey: "courses.tracks.design_media.title",
+    subtitleKey: "courses.tracks.design_media.subtitle",
     color: "#8aaa1e",
     foundationCount: 4,
     advanceCount: 6,
-    foundation: [
-      "Design Literacy",
-      "Basic Photography",
-      "Video Editing",
-      "Storytelling Basics",
+    foundationKeys: [
+      "courses.tracks.design_media.c1",
+      "courses.tracks.design_media.c2",
+      "courses.tracks.design_media.c3",
+      "courses.tracks.design_media.c4",
     ],
-    advance: [
-      "UI/UX Design",
-      "Product Design",
-      "Digital Illustration",
-      "Animation & Sound",
-      "Digital Marketing",
-      "Branding & Advertising",
+    advanceKeys: [
+      "courses.tracks.design_media.a1",
+      "courses.tracks.design_media.a2",
+      "courses.tracks.design_media.a3",
+      "courses.tracks.design_media.a4",
+      "courses.tracks.design_media.a5",
+      "courses.tracks.design_media.a6",
     ],
   },
 ];
 
 export default function Courses() {
+  const { t } = useTranslation();
   const [active, setActive] = useState<string>("data-tech");
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -116,26 +118,25 @@ export default function Courses() {
     <section className="courses" id="courses" ref={sectionRef}>
       <div className="courses__inner">
         <div className="courses__header">
-          <div className="courses__label">CURRICULUM</div>
+          <div className="courses__label">{t("courses.label")}</div>
           <h2 className="courses__title">
-            14+ Foundation Courses
+            {t("courses.title")}
             <br />
-            <em>&amp; 12+ Advance Courses</em>
+            <em dangerouslySetInnerHTML={{ __html: t("courses.title_em") }} />
           </h2>
           <p className="courses__sub">
-            Four tracks designed to connect rural knowledge with future
-            livelihoods.
+            {t("courses.sub")}
           </p>
         </div>
 
         <div className="courses__tabs">
-          {tracks.map((t) => (
+          {tracks.map((t_item) => (
             <button
-              key={t.id}
-              className={`courses__tab ${active === t.id ? "courses__tab--active" : ""}`}
-              onClick={() => setActive(t.id)}
+              key={t_item.id}
+              className={`courses__tab ${active === t_item.id ? "courses__tab--active" : ""}`}
+              onClick={() => setActive(t_item.id)}
             >
-              {t.title}
+              {t(t_item.titleKey)}
             </button>
           ))}
         </div>
@@ -143,16 +144,16 @@ export default function Courses() {
         <div className="courses__panel">
           <div className="courses__panel-header">
             <div>
-              <h3 className="courses__panel-title">{selected.title}</h3>
-              <p className="courses__panel-sub">{selected.subtitle}</p>
+              <h3 className="courses__panel-title">{t(selected.titleKey)}</h3>
+              <p className="courses__panel-sub">{t(selected.subtitleKey)}</p>
             </div>
             <div className="courses__counts">
               <span className="courses__count-badge courses__count-badge--foundation">
-                {selected.foundationCount} Foundation
+                {selected.foundationCount} {t("courses.foundation")}
               </span>
               {selected.advanceCount > 0 && (
                 <span className="courses__count-badge courses__count-badge--advance">
-                  {selected.advanceCount} Advance
+                  {selected.advanceCount} {t("courses.advance")}
                 </span>
               )}
             </div>
@@ -160,25 +161,25 @@ export default function Courses() {
 
           <div className="courses__lists">
             <div className="courses__list-col">
-              <div className="courses__list-label">FOUNDATION COURSES</div>
+              <div className="courses__list-label">{t("courses.foundation_label")}</div>
               <ul className="courses__list">
-                {selected.foundation.map((c) => (
-                  <li key={c} className="courses__item">
+                {selected.foundationKeys.map((k) => (
+                  <li key={k} className="courses__item">
                     <span className="courses__dot" />
-                    {c}
+                    {t(k)}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {selected.advance.length > 0 && (
+            {selected.advanceKeys.length > 0 && (
               <div className="courses__list-col">
-                <div className="courses__list-label">ADVANCE COURSES</div>
+                <div className="courses__list-label">{t("courses.advance_label")}</div>
                 <ul className="courses__list">
-                  {selected.advance.map((c) => (
-                    <li key={c} className="courses__item">
+                  {selected.advanceKeys.map((k) => (
+                    <li key={k} className="courses__item">
                       <span className="courses__dot courses__dot--advance" />
-                      {c}
+                      {t(k)}
                     </li>
                   ))}
                 </ul>

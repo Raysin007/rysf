@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // @ts-ignore
@@ -7,6 +8,7 @@ import "./Contact.css";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", role: "", message: "" });
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,36 +37,36 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
+  const infoItems = [
+    {
+      icon: "📍",
+      label: t("contact.info1_label"),
+      value: t("contact.info1_value"),
+    },
+    { icon: "📅", label: t("contact.info2_label"), value: t("contact.info2_value") },
+    {
+      icon: "✉️",
+      label: t("contact.info3_label"),
+      value: t("contact.info3_value"),
+    },
+  ];
+
   return (
     <section className="contact" id="contact" ref={sectionRef}>
       <div className="contact__inner">
         <div className="contact__left">
-          <div className="contact__label">JOIN THE FORUM</div>
+          <div className="contact__label">{t("contact.label")}</div>
           <h2 className="contact__title">
-            Be part of
+            {t("contact.title")}
             <br />
-            <em>the change.</em>
+            <em dangerouslySetInnerHTML={{ __html: t("contact.title_em") }} />
           </h2>
           <p className="contact__desc">
-            Whether you're a young person in Mirik or Plassey, an educator, an
-            NGO partner, or a funding organization — there's a place for you in
-            this initiative.
+            {t("contact.desc")}
           </p>
 
           <div className="contact__info-list">
-            {[
-              {
-                icon: "📍",
-                label: "Pilot Locations",
-                value: "Mirik, Darjeeling & Plassey, Nadia",
-              },
-              { icon: "📅", label: "Initiated", value: "April 2026" },
-              {
-                icon: "✉️",
-                label: "Prepared by",
-                value: "Rabiul Islam & Subhendu Kundu",
-              },
-            ].map((i) => (
+            {infoItems.map((i) => (
               <div key={i.label} className="contact__info-item">
                 <span className="contact__info-icon">{i.icon}</span>
                 <div>
@@ -80,58 +82,57 @@ export default function Contact() {
           {submitted ? (
             <div className="contact__success">
               <div className="contact__success-icon">🌱</div>
-              <h3>You're in!</h3>
+              <h3>{t("contact.success_title")}</h3>
               <p>
-                Thank you for your interest. We'll reach out soon with next
-                steps for joining the Rural Youth Skill Forum.
+                {t("contact.success_desc")}
               </p>
             </div>
           ) : (
             <div className="contact__form">
               <div className="contact__field">
-                <label>Full Name</label>
+                <label>{t("contact.form.name")}</label>
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Your name"
+                  placeholder={t("contact.form.name_ph")}
                 />
               </div>
               <div className="contact__field">
-                <label>Email Address</label>
+                <label>{t("contact.form.email")}</label>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="you@example.com"
+                  placeholder={t("contact.form.email_ph")}
                 />
               </div>
               <div className="contact__field">
-                <label>I am a…</label>
+                <label>{t("contact.form.role")}</label>
                 <select name="role" value={form.role} onChange={handleChange}>
-                  <option value="">Select your role</option>
-                  <option value="youth">Youth / Student</option>
-                  <option value="educator">Educator / Trainer</option>
-                  <option value="ngo">NGO / Community Org</option>
-                  <option value="funder">Funder / Donor</option>
-                  <option value="govt">Government Body</option>
-                  <option value="other">Other</option>
+                  <option value="">{t("contact.form.role_ph")}</option>
+                  <option value="youth">{t("contact.form.role_youth")}</option>
+                  <option value="educator">{t("contact.form.role_educator")}</option>
+                  <option value="ngo">{t("contact.form.role_ngo")}</option>
+                  <option value="funder">{t("contact.form.role_funder")}</option>
+                  <option value="govt">{t("contact.form.role_govt")}</option>
+                  <option value="other">{t("contact.form.role_other")}</option>
                 </select>
               </div>
               <div className="contact__field">
-                <label>Message (optional)</label>
+                <label>{t("contact.form.message")}</label>
                 <textarea
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Tell us how you'd like to get involved…"
+                  placeholder={t("contact.form.message_ph")}
                   rows={4}
                 />
               </div>
               <button className="contact__submit" onClick={handleSubmit}>
-                Join the Rural Youth Skill Forum →
+                {t("contact.form.submit")}
               </button>
             </div>
           )}
