@@ -280,34 +280,38 @@
 
 @media (max-width: 640px) {
   .courses {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+  .courses__inner {
+    text-align: left;
   }
   .courses__title {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
   }
   .courses__sub {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
   .courses__tabs {
     gap: 0.1rem;
   }
   .courses__tab {
     padding: 0.45rem 0.8rem;
-    font-size: 0.75rem;
+    font-size: 0.73rem;
   }
   .courses__panel {
-    padding: 1.25rem;
+    padding: 1.1rem;
+    border-radius: 0 10px 10px 10px;
   }
   .courses__panel-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
   .courses__panel-sub {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
   .courses__list-label {
-    font-size: 0.65rem;
+    font-size: 0.63rem;
   }
   .courses__item {
-    font-size: 0.85rem;
+    font-size: 0.83rem;
   }
 }
