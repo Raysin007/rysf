@@ -297,16 +297,19 @@
 
 @media (max-width: 640px) {
   .areas {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1.25rem;
+  }
+  .areas__inner {
+    text-align: left;
   }
   .areas__label {
     font-size: 0.65rem;
   }
   .areas__title {
-    font-size: 1.75rem;
+    font-size: 1.7rem;
   }
   .areas__subtitle {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     margin-bottom: 2rem;
   }
   .areas__cards {
@@ -315,7 +318,7 @@
     margin-bottom: 2.5rem;
   }
   .areas__card-visual {
-    height: 320px;
+    height: 300px;
     padding: 1rem;
   }
   .areas__card-pin-badge {

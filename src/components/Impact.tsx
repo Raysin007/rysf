@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const stats = [
   {
     num: "500+",
-    label: "Youth Trained",
-    desc: "Target in first cohort across both pilot regions",
+    label: "Youth Targeted in 1st Year",
+    desc: "Across both pilot regions",
   },
   {
     num: "26+",
