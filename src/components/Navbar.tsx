@@ -29,8 +29,7 @@ export default function Navbar() {
     { id: "about", label: t("nav.about") },
     { id: "courses", label: t("nav.courses") },
     { id: "areas", label: t("nav.areas") },
-    { id: "impact", label: t("nav.impact") },
-    { id: "contact", label: t("nav.contact") }
+    { id: "impact", label: t("nav.impact") }
   ];
 
   const changeLanguage = (lng: string) => {
