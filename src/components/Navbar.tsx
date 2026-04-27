@@ -28,7 +28,7 @@ export default function Navbar() {
   const links = [
     { id: "about", label: t("nav.about") },
     { id: "courses", label: t("nav.courses") },
-    { id: "areas", label: t("nav.areas") },
+    { id: "centers", label: t("nav.centers") },
     { id: "impact", label: t("nav.impact") }
   ];
 
@@ -42,10 +42,14 @@ export default function Navbar() {
       <div className="navbar__inner">
         <a href="#hero" className="navbar__brand">
           <img
-            src="/logo.png"
+            src="/single.png"
             alt={t("nav.logo_alt")}
             className="navbar__logo"
           />
+          <div className="navbar__brand-text">
+            <span className="navbar__brand-title">Rural Youth</span>
+            <span className="navbar__brand-title">Skill Forum</span>
+          </div>
         </a>
 
         <ul
@@ -61,7 +65,26 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li className="navbar__lang">
+          <li className="navbar__actions-mobile">
+            <div className="navbar__lang">
+              <select
+                className="navbar__lang-selector"
+                onChange={(e) => changeLanguage(e.target.value)}
+                value={i18n.language}
+              >
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="bn">বাংলা</option>
+              </select>
+            </div>
+            <a href="#login" className="navbar__cta">
+              Login
+            </a>
+          </li>
+        </ul>
+
+        <div className="navbar__actions-desktop">
+          <div className="navbar__lang">
             <select
               className="navbar__lang-selector"
               onChange={(e) => changeLanguage(e.target.value)}
@@ -71,8 +94,11 @@ export default function Navbar() {
               <option value="hi">हिन्दी</option>
               <option value="bn">বাংলা</option>
             </select>
-          </li>
-        </ul>
+          </div>
+          <a href="#login" className="navbar__cta">
+            Login
+          </a>
+        </div>
 
         <button
           className="navbar__burger"

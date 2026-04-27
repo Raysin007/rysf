@@ -1,11 +1,11 @@
-.areas {
+.centers {
   background: var(--olive);
   padding: 6rem 5vw;
   position: relative;
   overflow: hidden;
 }
 
-.areas::before {
+.centers::before {
   content: "";
   position: absolute;
   top: -80px;
@@ -17,7 +17,7 @@
   pointer-events: none;
 }
 
-.areas::after {
+.centers::after {
   content: "";
   position: absolute;
   bottom: -60px;
@@ -29,14 +29,14 @@
   pointer-events: none;
 }
 
-.areas__inner {
+.centers__inner {
   max-width: 1280px;
   margin: 0 auto;
   position: relative;
   z-index: 10;
 }
 
-.areas__label {
+.centers__label {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -45,7 +45,7 @@
   margin-bottom: 1.5rem;
 }
 
-.areas__title {
+.centers__title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 400;
@@ -54,26 +54,26 @@
   margin-bottom: 0.75rem;
 }
 
-.areas__title em {
+.centers__title em {
   font-style: italic;
   color: var(--lime-light);
 }
 
-.areas__subtitle {
+.centers__subtitle {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
   margin-bottom: 3.5rem;
 }
 
-.areas__cards {
+.centers__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
-.areas__card {
+.centers__card {
   border-radius: 20px;
   overflow: hidden;
   transition:
@@ -81,12 +81,12 @@
     box-shadow 0.3s;
 }
 
-.areas__card:hover {
+.centers__card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-.areas__card-visual {
+.centers__card-visual {
   position: relative;
   height: 400px;
   display: flex;
@@ -95,7 +95,7 @@
   padding: 1.5rem;
 }
 
-.areas__card-pin-badge {
+.centers__card-pin-badge {
   position: absolute;
   top: 1.25rem;
   left: 1.25rem;
@@ -114,14 +114,14 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.areas__card-content {
+.centers__card-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: auto;
 }
 
-.areas__card-name {
+.centers__card-name {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 400;
@@ -130,7 +130,7 @@
   line-height: 1;
 }
 
-.areas__card-body {
+.centers__card-body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -138,13 +138,13 @@
   padding: 0;
 }
 
-.areas__card-point {
+.centers__card-point {
   display: flex;
   gap: 0.85rem;
   align-items: flex-start;
 }
 
-.areas__card-plus {
+.centers__card-plus {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--lime-light);
@@ -152,7 +152,7 @@
   flex-shrink: 0;
 }
 
-.areas__card-point p {
+.centers__card-point p {
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
@@ -160,12 +160,12 @@
 }
 
 /* Why marquee */
-.areas__why {
+.centers__why {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 3rem;
 }
 
-.areas__why-title {
+.centers__why-title {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 400;
@@ -173,14 +173,14 @@
   margin-bottom: 2rem;
 }
 
-.areas__why-marquee {
+.centers__why-marquee {
   overflow: hidden;
   position: relative;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
-.areas__why-track {
+.centers__why-track {
   display: flex;
   gap: 1.5rem;
   width: max-content;
@@ -192,12 +192,12 @@
   to   { transform: translateX(-50%); }
 }
 
-.areas__why-item {
+.centers__why-item {
   flex-shrink: 0;
   width: 300px;
 }
 
-.areas__why-img {
+.centers__why-img {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 12px;
@@ -210,14 +210,14 @@
   overflow: hidden;
 }
 
-.areas__why-img::after {
+.centers__why-img::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.18) 60%, transparent 100%);
 }
 
-.areas__why-img p {
+.centers__why-img p {
   position: relative;
   z-index: 1;
   padding: 1rem;
@@ -229,125 +229,125 @@
 
 
 @media (max-width: 1024px) {
-  .areas {
+  .centers {
     padding: 4rem 2rem;
   }
-  .areas__title {
+  .centers__title {
     font-size: clamp(2rem, 5vw, 4rem);
   }
-  .areas__cards {
+  .centers__cards {
     gap: 1.5rem;
   }
-  .areas__card-name {
+  .centers__card-name {
     font-size: 2.5rem;
   }
 
-  .areas {
+  .centers {
     padding: 3.5rem 2rem;
   }
-  .areas__inner {
+  .centers__inner {
     max-width: 100%;
   }
-  .areas__label {
+  .centers__label {
     font-size: 0.68rem;
     margin-bottom: 1.25rem;
   }
-  .areas__title {
+  .centers__title {
     font-size: clamp(1.5rem, 4vw, 3rem);
   }
-  .areas__subtitle {
+  .centers__subtitle {
     font-size: 0.95rem;
     margin-bottom: 2.5rem;
   }
-  .areas__cards {
+  .centers__cards {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     margin-bottom: 3rem;
   }
-  .areas__card-visual {
+  .centers__card-visual {
     height: 360px;
     padding: 1.25rem;
   }
-  .areas__card-name {
+  .centers__card-name {
     font-size: 2rem;
   }
-  .areas__card-content {
+  .centers__card-content {
     gap: 0.85rem;
   }
-  .areas__card-point {
+  .centers__card-point {
     gap: 0.75rem;
   }
-  .areas__card-plus {
+  .centers__card-plus {
     font-size: 1.1rem;
   }
-  .areas__card-point p {
+  .centers__card-point p {
     font-size: 0.85rem;
   }
-  .areas__why {
+  .centers__why {
     padding-top: 2.5rem;
   }
-  .areas__why-title {
+  .centers__why-title {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
   }
-  .areas__why-item p {
+  .centers__why-item p {
     font-size: 0.8rem;
   }
 }
 
 @media (max-width: 640px) {
-  .areas {
+  .centers {
     padding: 2.5rem 1.25rem;
   }
-  .areas__inner {
+  .centers__inner {
     text-align: left;
   }
-  .areas__label {
+  .centers__label {
     font-size: 0.65rem;
   }
-  .areas__title {
+  .centers__title {
     font-size: 1.7rem;
   }
-  .areas__subtitle {
+  .centers__subtitle {
     font-size: 0.88rem;
     margin-bottom: 2rem;
   }
-  .areas__cards {
+  .centers__cards {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-bottom: 2.5rem;
   }
-  .areas__card-visual {
+  .centers__card-visual {
     height: 300px;
     padding: 1rem;
   }
-  .areas__card-pin-badge {
+  .centers__card-pin-badge {
     font-size: 0.65rem;
     padding: 0.35rem 0.7rem;
   }
-  .areas__card-name {
+  .centers__card-name {
     font-size: 1.6rem;
   }
-  .areas__card-content {
+  .centers__card-content {
     gap: 0.75rem;
   }
-  .areas__card-point {
+  .centers__card-point {
     gap: 0.6rem;
   }
-  .areas__card-plus {
+  .centers__card-plus {
     font-size: 1rem;
   }
-  .areas__card-point p {
+  .centers__card-point p {
     font-size: 0.8rem;
   }
-  .areas__why {
+  .centers__why {
     padding-top: 2rem;
   }
-  .areas__why-title {
+  .centers__why-title {
     font-size: 1.1rem;
     margin-bottom: 1.25rem;
   }
-  .areas__why-item p {
+  .centers__why-item p {
     font-size: 0.75rem;
   }
 }

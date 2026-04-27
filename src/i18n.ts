@@ -17,7 +17,7 @@ i18n
           nav: {
             about: "About",
             courses: "Courses",
-            areas: "Areas",
+            centers: "Centers",
             impact: "Impact",
             contact: "Contact",
             logo_alt: "Rural Youth Skill Forum logo"
@@ -104,7 +104,7 @@ i18n
               }
             }
           },
-          areas: {
+          centers: {
             label: "AREA OF WORK",
             subtitle: "Two pilot regions. One shared vision.",
             why_title: "Why these regions?",
@@ -167,7 +167,7 @@ i18n
             }
           },
           footer: {
-            brand_name: "RURAL YOUTH SKILL FORUM",
+            brand_name: "RURAL YOUTH  SKILL FORUM",
             brand_sub: "Concept Pitch · April 2026 · Mirik, Darjeeling",
             brand_desc: "Bridging traditional wisdom and modern opportunities for rural youth across West Bengal and beyond.",
             nav_title: "Navigate",
@@ -183,7 +183,7 @@ i18n
           nav: {
             about: "हमारे बारे में",
             courses: "पाठ्यक्रम",
-            areas: "क्षेत्र",
+            center: "क्षेत्र",
             impact: "प्रभाव",
             contact: "संपर्क",
             logo_alt: "ग्रामीण युवा कौशल मंच लोगो"
@@ -270,7 +270,7 @@ i18n
               }
             }
           },
-          areas: {
+          centers: {
             label: "कार्य क्षेत्र",
             subtitle: "दो पायलट क्षेत्र। एक साझा दृष्टिकोण।",
             why_title: "ये क्षेत्र क्यों?",
@@ -349,7 +349,7 @@ i18n
           nav: {
             about: "আমাদের সম্পর্কে",
             courses: "কোর্স",
-            areas: "এলাকা",
+            centers: "এলাকা",
             impact: "প্রভাব",
             contact: "যোগাযোগ",
             logo_alt: "গ্রামীণ যুব দক্ষতা মঞ্চ লোগো"
@@ -436,7 +436,7 @@ i18n
               }
             }
           },
-          areas: {
+          centers: {
             label: "কাজের ক্ষেত্র",
             subtitle: "দুটি পাইলট অঞ্চল। একটিShared লক্ষ্য।",
             why_title: "কেন এই অঞ্চলগুলো?",
