@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Courses from "./components/Courses";
-import Areas from "./components/Centers";
+import Centers from "./components/Centers";
 import Impact from "./components/Impact";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -25,7 +25,7 @@ function App() {
         <Hero />
         <About />
         <Courses />
-        <Areas />
+        <Centers />
         <Impact />
         <Contact />
       </main>
