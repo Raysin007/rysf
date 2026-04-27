@@ -35,12 +35,19 @@
   height: 36px;
 }
 
-.footer__brand-name {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #AED225;
+.footer__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+}
 
+.footer__brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--lime);
+  text-transform: uppercase;
 }
 
 .footer__brand-sub {
@@ -143,7 +150,7 @@ a.footer__link:hover {
     gap: 0.75rem;
   }
   .footer__brand-name {
-    font-size: 0.68rem;
+    font-size: 0.9rem;
   }
   .footer__brand-sub {
     font-size: 0.6rem;
@@ -192,7 +199,7 @@ a.footer__link:hover {
     height: 32px;
   }
   .footer__brand-name {
-    font-size: 0.63rem;
+    font-size: 0.85rem;
   }
   .footer__brand-sub {
     font-size: 0.56rem;

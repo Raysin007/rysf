@@ -31,8 +31,9 @@ export default function Footer() {
                 className="footer__logo"
               />
               <div>
-                <div className="footer__brand-name">
-                  {t("footer.brand_name")}
+                <div className="footer__brand-text">
+                  <div className="footer__brand-name">Rural Youth</div>
+                  <div className="footer__brand-name">Skill Forum</div>
                 </div>
                 <div className="footer__brand-sub">
                   {t("footer.brand_sub")}
