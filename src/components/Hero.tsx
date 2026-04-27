@@ -32,7 +32,10 @@ export default function Hero() {
 
       <div className="hero__content">
         <div className="hero__eyebrow">
-          <span className="hero__tag">{t("hero.tag")}</span>
+          <div className="hero__region-tags">
+            <span className="hero__region-btn">Mirik</span>
+            <span className="hero__region-btn">Plassey</span>
+          </div>
         </div>
 
         <h1 className="hero__title">

@@ -112,6 +112,7 @@
   min-width: 7.5rem;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0 1.2rem;
   padding-right: 2.4rem;
   border-radius: 8px;
@@ -131,6 +132,7 @@
   font-family: var(--font-body);
   line-height: 1;
   box-sizing: border-box;
+  margin: 0;
 }
 
 .navbar__lang-selector:hover {
@@ -189,6 +191,18 @@
 .navbar--scrolled .navbar__lang-selector,
 .navbar--scrolled .navbar__cta {
   height: 2.1rem;
+}
+
+@media (max-width: 1024px) {
+  .navbar--scrolled .navbar__lang-selector,
+  .navbar--scrolled .navbar__cta {
+    height: 3.2rem;
+  }
+}
+
+.navbar__links a.navbar__cta:hover {
+  color: var(--white);
+  background: var(--olive);
 }
 
 .navbar__burger {
