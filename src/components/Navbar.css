@@ -222,7 +222,7 @@
 }
 
 @media (max-width: 1024px) {
-  .navbar {
+  .navbar, .navbar--scrolled {
     padding: 1.2rem 1.5rem;
   }
 
@@ -231,17 +231,17 @@
     gap: 1rem;
   }
 
-  .navbar__brand {
+  .navbar__brand, .navbar--scrolled .navbar__brand {
     position: static;
     transform: none;
     gap: 0.6rem;
   }
 
-  .navbar__brand-title {
+  .navbar__brand-title, .navbar--scrolled .navbar__brand-title {
     font-size: 1.35rem;
   }
 
-  .navbar__logo {
+  .navbar__logo, .navbar--scrolled .navbar__logo {
     max-height: 40px;
   }
 
@@ -318,8 +318,12 @@
     border-radius: 10px;
     padding: 0 1.25rem;
     text-align: center;
-    color: var(--white);
+    color: white;
     box-sizing: border-box;
+  }
+  .navbar__cta{
+    background-color: var(--white);
+    
   }
 
   .navbar__lang-selector {
@@ -330,33 +334,29 @@
 }
 
 @media (max-width: 768px) {
-  .navbar {
+  .navbar, .navbar--scrolled {
     padding: 1.2rem 1.25rem;
   }
 
-  .navbar__brand-title {
+  .navbar__brand-title, .navbar--scrolled .navbar__brand-title {
     font-size: 1.2rem;
   }
 
-  .navbar__logo {
+  .navbar__logo, .navbar--scrolled .navbar__logo {
     max-height: 36px;
   }
 }
 
 @media (max-width: 640px) {
-  .navbar {
+  .navbar, .navbar--scrolled {
     padding: 1rem 1rem;
   }
 
-  .navbar--scrolled {
-    padding: 0.8rem 1rem;
-  }
-
-  .navbar__brand-title {
+  .navbar__brand-title, .navbar--scrolled .navbar__brand-title {
     font-size: 1.1rem;
   }
 
-  .navbar__logo {
+  .navbar__logo, .navbar--scrolled .navbar__logo {
     max-height: 32px;
   }
 }
