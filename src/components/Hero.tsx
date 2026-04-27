@@ -73,16 +73,19 @@ export default function Hero() {
       </div>
 
       <div className="hero__visual">
-        <div className="hero__logo-mark">
-          <img
-            src="/single.png"
-            alt={t("nav.logo_alt")}
-            className="hero__logo-image"
-          />
-          <div className="hero__logo-labels">
-            <span className="hero__logo-label hero__logo-label--top" dangerouslySetInnerHTML={{ __html: t("hero.label_top").split(" ").join("<br />") }} />
-            <span className="hero__logo-label hero__logo-label--left" dangerouslySetInnerHTML={{ __html: t("hero.label_left").split(" ").join("<br />") }} />
-            <span className="hero__logo-label hero__logo-label--right" dangerouslySetInnerHTML={{ __html: t("hero.label_right").split(" ").join("<br />") }} />
+        <div className="hero__img-grid">
+          <div className="hero__img-col hero__img-col--left">
+            <div className="hero__img-wrap hero__img-wrap--tall">
+              <img src="/hero2.jpeg" alt="Rural youth learning" className="hero__img" />
+            </div>
+            <div className="hero__img-wrap hero__img-wrap--sm">
+              <img src="/hero1.jpg" alt="Youth community" className="hero__img" />
+            </div>
+          </div>
+          <div className="hero__img-col hero__img-col--right">
+            <div className="hero__img-wrap hero__img-wrap--full">
+              <img src="/hero3.jpg" alt="Aspiring student" className="hero__img" />
+            </div>
           </div>
         </div>
       </div>
