@@ -2,11 +2,11 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./centers.css";
+import "./Centers.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function centers() {
+export default function Centers() {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
 
