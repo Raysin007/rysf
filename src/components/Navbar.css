@@ -311,8 +311,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
     border-radius: 10px;
+    padding: 0 1.25rem;
+  }
+
+  .navbar__lang-selector {
+    padding-right: 2.4rem;
+    text-align: center;
+    background-position: right 1.25rem center;
   }
 }
 
