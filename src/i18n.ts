@@ -20,7 +20,9 @@ i18n
             centers: "Centers",
             impact: "Impact",
             contact: "Contact",
-            logo_alt: "Rural Youth Skill Forum logo"
+            logo_alt: "Rural Youth Skill Forum logo",
+            name_part1: "Rural Youth",
+            name_part2: "Skill Forum"
           },
           hero: {
             tag: "Mirik, Darjeeling · April 2026",
@@ -43,10 +45,10 @@ i18n
             accent: "The Rural Youth Skill Forum is designed as a bridge between traditional wisdom and modern opportunities.",
             pillar1_title: "Skill Development",
             pillar1_desc: "Courses grounded in the realities of rural life, building expertise that translates to income.",
-            pillar2_title: "Rural Skills Archive",
-            pillar2_desc: "Documenting and preserving indigenous knowledge systems and traditional livelihoods.",
-            pillar3_title: "Career Placement",
-            pillar3_desc: "Connecting trained youth to employment networks, markets, and entrepreneurship pathways.",
+            pillar2_title: "Career Placement",
+            pillar2_desc: "Connecting trained youth to employment networks, markets, and entrepreneurship pathways.",
+            pillar3_title: "Rural Skills Archive",
+            pillar3_desc: "Documenting and preserving indigenous knowledge systems and traditional livelihoods.",
             photo_youth: "Youth Learning",
             photo_craft: "Traditional Craft"
           },
@@ -186,7 +188,9 @@ i18n
             center: "क्षेत्र",
             impact: "प्रभाव",
             contact: "संपर्क",
-            logo_alt: "ग्रामीण युवा कौशल मंच लोगो"
+            logo_alt: "ग्रामीण युवा कौशल मंच लोगो",
+            name_part1: "ग्रामीण युवा",
+            name_part2: "कौशल मंच"
           },
           hero: {
             tag: "मिरिक, दार्जिलिंग · अप्रैल 2026",
@@ -209,10 +213,10 @@ i18n
             accent: "ग्रामीण युवा कौशल मंच पारंपरिक ज्ञान और आधुनिक अवसरों के बीच एक सेतु के रूप में डिज़ाइन किया गया है।",
             pillar1_title: "कौशल विकास",
             pillar1_desc: "ग्रामीण जीवन की वास्तविकताओं पर आधारित पाठ्यक्रम, जो आय में बदलने वाली विशेषज्ञता का निर्माण करते हैं।",
-            pillar2_title: "ग्रामीण कौशल पुरालेख",
-            pillar2_desc: "स्वदेशी ज्ञान प्रणालियों और पारंपरिक आजीविका का दस्तावेजीकरण और संरक्षण।",
-            pillar3_title: "कैरियर प्लेसमेंट",
-            pillar3_desc: "प्रशिक्षित युवाओं को रोजगार नेटवर्क, बाजार और उद्यमिता के रास्तों से जोड़ना।",
+            pillar2_title: "कैरियर प्लेसमेंट",
+            pillar2_desc: "प्रशिक्षित युवाओं को रोजगार नेटवर्क, बाजार और उद्यमिता के रास्तों से जोड़ना।",
+            pillar3_title: "ग्रामीण कौशल पुरालेख",
+            pillar3_desc: "स्वदेशी ज्ञान प्रणालियों और पारंपरिक आजीविका का दस्तावेजीकरण और संरक्षण।",
             photo_youth: "युवा शिक्षा",
             photo_craft: "पारंपरिक शिल्प"
           },
@@ -352,7 +356,9 @@ i18n
             centers: "এলাকা",
             impact: "প্রভাব",
             contact: "যোগাযোগ",
-            logo_alt: "গ্রামীণ যুব দক্ষতা মঞ্চ লোগো"
+            logo_alt: "গ্রামীণ যুব দক্ষতা মঞ্চ লোগো",
+            name_part1: "গ্রামীণ যুব",
+            name_part2: "দক্ষতা মঞ্চ"
           },
           hero: {
             tag: "মিরিক, দার্জিলিং · এপ্রিল ২০২৬",
@@ -375,10 +381,10 @@ i18n
             accent: "গ্রামীণ যুব দক্ষতা মঞ্চ ঐতিহ্যগত জ্ঞান এবং আধুনিক সুযোগের মধ্যে একটি সেতু হিসেবে ডিজাইন করা হয়েছে।",
             pillar1_title: "দক্ষতা উন্নয়ন",
             pillar1_desc: "গ্রামীণ জীবনের বাস্তবতার ওপর ভিত্তি করে কোর্স, যা আয়ের সুযোগ তৈরি করে এমন দক্ষতা তৈরি করে।",
-            pillar2_title: "গ্রামীণ দক্ষতা আর্কাইভ",
-            pillar2_desc: "দেশীয় জ্ঞান ব্যবস্থা এবং ঐতিহ্যগত জীবিকার নথিভুক্তকরণ এবং সংরক্ষণ।",
-            pillar3_title: "ক্যারিয়ার প্লেসমেন্ট",
-            pillar3_desc: "প্রশিক্ষিত যুবকদের কর্মসংস্থান নেটওয়ার্ক, বাজার এবং উদ্যোক্তা পথের সাথে সংযুক্ত করা।",
+            pillar2_title: "ক্যারিয়ার প্লেসমেন্ট",
+            pillar2_desc: "প্রশিক্ষিত যুবকদের কর্মসংস্থান নেটওয়ার্ক, বাজার এবং উদ্যোক্তা পথের সাথে সংযুক্ত করা।",
+            pillar3_title: "গ্রামীণ দক্ষতা আর্কাইভ",
+            pillar3_desc: "দেশীয় জ্ঞান ব্যবস্থা এবং ঐতিহ্যগত জীবিকার নথিভুক্তকরণ এবং সংরক্ষণ।",
             photo_youth: "যুব শিক্ষা",
             photo_craft: "ঐতিহ্যবাহী কারুশিল্প"
           },

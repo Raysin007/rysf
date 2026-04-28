@@ -47,8 +47,8 @@ export default function Navbar() {
             className="navbar__logo"
           />
           <div className="navbar__brand-text">
-            <span className="navbar__brand-title">Rural Youth</span>
-            <span className="navbar__brand-title">Skill Forum</span>
+            <span className="navbar__brand-title">{t("nav.name_part1")}</span>
+            <span className="navbar__brand-title">{t("nav.name_part2")}</span>
           </div>
         </a>
 
