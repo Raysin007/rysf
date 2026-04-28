@@ -17,6 +17,24 @@ export default function Hero() {
         .from(".hero__btn", { y: 20, opacity: 0, duration: 0.5, stagger: 0.15 }, "-=0.3")
         .from(".hero__badge", { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, "-=0.3")
         .from(".hero__visual", { x: 40, opacity: 0, duration: 0.8 }, "-=0.8");
+
+      // Opposite-direction float loop — left col floats up, right col floats down
+      gsap.to(".hero__img-col--left", {
+        y: -12,
+        duration: 3.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(".hero__img-col--right", {
+        y: 12,
+        duration: 3.5,
+        delay: 0.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
     }, sectionRef);
 
     return () => ctx.revert();
