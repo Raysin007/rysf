@@ -31,14 +31,14 @@
 
 .impact__title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 600;
   color: var(--olive);
-  line-height: 1.15;
+  line-height: 1.25;
 }
 
 .impact__title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--lime);
 }
 
@@ -97,8 +97,8 @@
 
 .impact__stat-num {
   font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: var(--lime);
   line-height: 1;
 }
