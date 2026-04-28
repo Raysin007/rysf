@@ -52,7 +52,7 @@
 }
 
 .navbar__brand-title {
-  font-family: var(--font-display);
+  font-family: 'Roboto Slab', serif;
   font-weight: 700;
   font-size: 1.65rem;
   letter-spacing: 0.02em;
