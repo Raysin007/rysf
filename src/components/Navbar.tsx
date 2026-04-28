@@ -32,6 +32,10 @@ export default function Navbar() {
     { id: "impact", label: t("nav.impact") }
   ];
 
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setMenuOpen(false);

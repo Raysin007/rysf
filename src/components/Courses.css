@@ -23,15 +23,15 @@
 
 .courses__title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   color: var(--olive);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .courses__title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--lime);
 }
 
@@ -110,8 +110,8 @@
 
 .courses__panel-title {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1.65rem;
+  font-weight: 600;
   color: var(--lime);
   margin-bottom: 0.35rem;
 }
