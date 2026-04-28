@@ -31,20 +31,21 @@
 
 .footer__logo {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: auto;
+  height: 48px;
+  object-fit: contain;
 }
 
 .footer__brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 0.9;
+  line-height: 1.1;
 }
 
 .footer__brand-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
   letter-spacing: 0.02em;
   color: var(--lime);
   text-transform: uppercase;
@@ -194,9 +195,10 @@ a.footer__link:hover {
   .footer__brand-logo {
     gap: 0.65rem;
   }
-  .footer__brand-logo svg {
-    width: 32px;
-    height: 32px;
+  .footer__brand-logo svg,
+  .footer__brand-logo img {
+    height: 36px;
+    width: auto;
   }
   .footer__brand-name {
     font-size: 0.85rem;
