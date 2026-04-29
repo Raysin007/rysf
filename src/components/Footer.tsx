@@ -69,10 +69,10 @@ export default function Footer() {
             <div className="footer__links-col">
               <div className="footer__links-title">{t("footer.regions_title")}</div>
               <span className="footer__link footer__link--passive">
-                Plassey, Nadia — 741181
+                {t("footer.address_plassey")}
               </span>
               <span className="footer__link footer__link--passive">
-                Mirik, Darjeeling — 734214
+                {t("footer.address_mirik")}
               </span>
             </div>
           </div>

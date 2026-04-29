@@ -12,7 +12,8 @@ export default function Centers() {
 
   const centers = [
     {
-      name: "Plassey",
+      id: "plassey",
+      name: t("centers.plassey"),
       region: "Nadia",
       pin: "741181",
       image: "/plassey.jpeg",
@@ -22,7 +23,8 @@ export default function Centers() {
       ],
     },
     {
-      name: "Mirik",
+      id: "mirik",
+      name: t("centers.mirik"),
       region: "Darjeeling",
       pin: "734214",
       image: "/mirik.jpeg",
@@ -66,13 +68,13 @@ export default function Centers() {
         <div className="centers__label">{t("centers.label")}</div>
 
         <h2 className="centers__title">
-          Plassey <em>&amp;</em> Mirik
+          {t("centers.plassey")} <em>&amp;</em> {t("centers.mirik")}
         </h2>
         <p className="centers__subtitle">{t("centers.subtitle")}</p>
 
         <div className="centers__cards">
           {centers.map((area) => (
-            <div key={area.name} className="centers__card">
+            <div key={area.id} className="centers__card">
               <div
                 className="centers__card-visual"
                 style={{

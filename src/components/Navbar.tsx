@@ -79,10 +79,11 @@ export default function Navbar() {
                 <option value="en">English</option>
                 <option value="hi">हिन्दी</option>
                 <option value="bn">বাংলা</option>
+                <option value="ne">नेपाली</option>
               </select>
             </div>
             <a href="#login" className="navbar__cta">
-              Login
+              {t("nav.login")}
             </a>
           </li>
         </ul>
@@ -97,10 +98,11 @@ export default function Navbar() {
               <option value="en">English</option>
               <option value="hi">हिन्दी</option>
               <option value="bn">বাংলা</option>
+              <option value="ne">नेपाली</option>
             </select>
           </div>
           <a href="#login" className="navbar__cta">
-            Login
+            {t("nav.login")}
           </a>
         </div>
 
