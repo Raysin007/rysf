@@ -51,8 +51,8 @@ export default function Hero() {
       <div className="hero__content">
         <div className="hero__eyebrow">
           <div className="hero__region-tags">
-            <span className="hero__region-btn">Mirik</span>
-            <span className="hero__region-btn">Plassey</span>
+            <span className="hero__region-btn">{t("hero.mirik")}</span>
+            <span className="hero__region-btn">{t("hero.plassey")}</span>
           </div>
         </div>
 
