@@ -113,10 +113,9 @@ export default function Courses() {
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-14">
           <div className="courses-label text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-4">{t("courses.label")}</div>
-          <h2 className="courses-title font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-olive dark:text-lime-light font-semibold leading-tight mb-4">
+          <h2 className="courses-title font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-olive dark:text-lime-light font-semibold leading-[1.1] mb-4">
             {t("courses.title")}
-            <br />
-            <em className="not-italic text-lime" dangerouslySetInnerHTML={{ __html: t("courses.title_em") }} />
+            <span className="block text-lime" dangerouslySetInnerHTML={{ __html: t("courses.title_em") }} />
           </h2>
           <p className="courses-sub text-base sm:text-lg font-light text-text-muted dark:text-white/70">
             {t("courses.sub")}
