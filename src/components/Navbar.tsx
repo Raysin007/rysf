@@ -74,7 +74,9 @@ export default function Navbar() {
               <a
                 href={`#${l.id}`}
                 onClick={() => setMenuOpen(false)}
-                className="relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider text-text-dark dark:text-white hover:text-lime dark:hover:text-lime transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
+                className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                  scrolled ? "text-text-dark dark:text-white" : "text-text-dark lg:text-white dark:text-white"
+                } hover:text-lime dark:hover:text-lime`}
               >
                 {l.label}
               </a>
