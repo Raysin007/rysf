@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
-import "./ThemeToggle.css";
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(() => {
@@ -48,19 +47,19 @@ export default function ThemeToggle() {
   return (
     <button
       ref={toggleRef}
-      className="theme-toggle"
+      className="relative flex items-center justify-center w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-lime/10 dark:bg-lime/5 border-[1.5px] border-lime text-lime cursor-pointer overflow-hidden transition-all hover:bg-lime hover:text-white hover:shadow-lime hover:-translate-y-0.5"
       onClick={() => setIsDark(!isDark)}
       aria-label="Toggle Dark Mode"
     >
-      <div className="theme-toggle__icon-wrapper">
+      <div className="relative w-5 h-5 lg:w-[22px] lg:h-[22px] flex items-center justify-center">
         <svg
           ref={sunRef}
-          className="theme-toggle__icon theme-toggle__icon--sun"
+          className="absolute inset-0 w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -76,12 +75,12 @@ export default function ThemeToggle() {
         </svg>
         <svg
           ref={moonRef}
-          className="theme-toggle__icon theme-toggle__icon--moon"
+          className="absolute inset-0 w-full h-full opacity-0 scale-0"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >

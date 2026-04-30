@@ -1,7 +1,5 @@
-// @ts-ignore
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -19,9 +17,9 @@ function App() {
   }, [i18n.language, t]);
 
   return (
-    <div className="app">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="flex-1">
         <Hero />
         <About />
         <Courses />
