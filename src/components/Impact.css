@@ -57,8 +57,8 @@
 }
 
 .impact__stat {
-  background: var(--white);
-  border: 1px solid var(--cream-dark);
+  background: var(--section-bg-white);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   padding: 2rem 1.75rem;
   display: flex;
@@ -88,7 +88,7 @@
 .impact__stat:hover {
   border-color: var(--lime);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(138, 170, 30, 0.12);
+  box-shadow: var(--shadow-md);
 }
 
 .impact__stat:hover::before {
@@ -119,7 +119,7 @@
 }
 
 .impact__quote {
-  background: var(--olive);
+  background: var(--section-bg-olive);
   border-radius: 20px;
   padding: 3rem 3.5rem;
   position: relative;

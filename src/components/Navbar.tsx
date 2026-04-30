@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
+import ThemeToggle from "./ThemeToggle";
 // @ts-ignore
 import './Navbar.css';
 
@@ -104,17 +105,21 @@ export default function Navbar() {
           <a href="#login" className="navbar__cta">
             {t("nav.login")}
           </a>
+          <ThemeToggle />
         </div>
 
-        <button
-          className="navbar__burger"
-          onClick={() => setMenuOpen((m) => !m)}
-          aria-label="Menu"
-        >
-          <span className={menuOpen ? "open" : ""}></span>
-          <span className={menuOpen ? "open" : ""}></span>
-          <span className={menuOpen ? "open" : ""}></span>
-        </button>
+        <div className="navbar__mobile-controls">
+          <ThemeToggle />
+          <button
+            className="navbar__burger"
+            onClick={() => setMenuOpen((m) => !m)}
+            aria-label="Menu"
+          >
+            <span className={menuOpen ? "open" : ""}></span>
+            <span className={menuOpen ? "open" : ""}></span>
+            <span className={menuOpen ? "open" : ""}></span>
+          </button>
+        </div>
       </div>
     </nav>
   );
