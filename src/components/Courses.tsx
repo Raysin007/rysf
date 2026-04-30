@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./Courses.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,35 +104,39 @@ export default function Courses() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
         defaults: { ease: "power3.out" },
       });
-      tl.from(".courses__label", { y: 20, opacity: 0, duration: 0.5 })
-        .from(".courses__title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
-        .from(".courses__sub", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-        .from(".courses__tab", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1 }, "-=0.2")
-        .from(".courses__panel", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2");
+      tl.from(".courses-label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".courses-title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".courses-sub", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".courses-tab", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1 }, "-=0.2")
+        .from(".courses-panel", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2");
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="courses" id="courses" ref={sectionRef}>
-      <div className="courses__inner">
-        <div className="courses__header">
-          <div className="courses__label">{t("courses.label")}</div>
-          <h2 className="courses__title">
+    <section ref={sectionRef} id="courses" className="bg-cream dark:bg-black py-16 lg:py-24 px-[5vw]">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="mb-14">
+          <div className="courses-label text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-4">{t("courses.label")}</div>
+          <h2 className="courses-title font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-olive font-semibold leading-tight mb-4">
             {t("courses.title")}
             <br />
-            <em dangerouslySetInnerHTML={{ __html: t("courses.title_em") }} />
+            <em className="not-italic text-lime" dangerouslySetInnerHTML={{ __html: t("courses.title_em") }} />
           </h2>
-          <p className="courses__sub">
+          <p className="courses-sub text-base sm:text-lg font-light text-text-muted dark:text-white/70">
             {t("courses.sub")}
           </p>
         </div>
 
-        <div className="courses__tabs">
+        <div className="courses-tabs flex gap-2 lg:gap-4 flex-wrap mb-8 border-b-[1.5px] border-border-subtle overflow-x-auto pb-0.5 lg:pb-0 scrollbar-hide">
           {tracks.map((t_item) => (
             <button
               key={t_item.id}
-              className={`courses__tab ${active === t_item.id ? "courses__tab--active" : ""}`}
+              className={`courses-tab relative px-6 py-3 font-body font-semibold text-sm tracking-wide transition-all whitespace-nowrap rounded-t-lg -bottom-[1.5px] ${
+                active === t_item.id
+                ? "text-lime bg-white dark:bg-zinc-900 shadow-[0_-1px_0_var(--border-subtle)] after:scale-x-100"
+                : "text-text-muted hover:text-olive hover:bg-cream-dark dark:hover:bg-zinc-800 after:scale-x-0"
+              } after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2.5px] after:bg-lime after:transition-transform after:duration-300`}
               onClick={() => setActive(t_item.id)}
             >
               {t(t_item.titleKey)}
@@ -141,31 +144,31 @@ export default function Courses() {
           ))}
         </div>
 
-        <div className="courses__panel">
-          <div className="courses__panel-header">
+        <div className="courses-panel animate-fade-up bg-white dark:bg-zinc-900/50 rounded-tr-2xl rounded-br-2xl rounded-bl-2xl p-6 lg:p-12 border border-border-subtle shadow-sm-custom">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-4 mb-10">
             <div>
-              <h3 className="courses__panel-title">{t(selected.titleKey)}</h3>
-              <p className="courses__panel-sub">{t(selected.subtitleKey)}</p>
+              <h3 className="font-display text-2xl lg:text-[1.65rem] font-semibold text-lime dark:text-lime-light mb-1.5">{t(selected.titleKey)}</h3>
+              <p className="text-sm lg:text-[0.88rem] text-text-muted dark:text-white/60">{t(selected.subtitleKey)}</p>
             </div>
-            <div className="courses__counts">
-              <span className="courses__count-badge courses__count-badge--foundation">
+            <div className="flex gap-3 flex-wrap">
+              <span className="text-[0.72rem] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full bg-lime/10 dark:bg-lime/5 text-olive border border-lime/30">
                 {selected.foundationCount} {t("courses.foundation")}
               </span>
               {selected.advanceCount > 0 && (
-                <span className="courses__count-badge courses__count-badge--advance">
+                <span className="text-[0.72rem] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full bg-lime text-white">
                   {selected.advanceCount} {t("courses.advance")}
                 </span>
               )}
             </div>
           </div>
 
-          <div className="courses__lists">
-            <div className="courses__list-col">
-              <div className="courses__list-label">{t("courses.foundation_label")}</div>
-              <ul className="courses__list">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="flex flex-col gap-5">
+              <div className="text-[0.68rem] font-bold tracking-widest text-lime uppercase pb-3 mb-5 border-b-2 border-border-subtle">{t("courses.foundation_label")}</div>
+              <ul className="list-none flex flex-col gap-3.5">
                 {selected.foundationKeys.map((k) => (
-                  <li key={k} className="courses__item">
-                    <span className="courses__dot" />
+                  <li key={k} className="flex items-center gap-3.5 text-sm lg:text-[0.95rem] text-text-mid dark:text-white/80 font-normal group transition-colors hover:text-olive">
+                    <span className="w-[9px] h-[9px] rounded-full bg-lime flex-shrink-0" />
                     {t(k)}
                   </li>
                 ))}
@@ -173,12 +176,12 @@ export default function Courses() {
             </div>
 
             {selected.advanceKeys.length > 0 && (
-              <div className="courses__list-col">
-                <div className="courses__list-label">{t("courses.advance_label")}</div>
-                <ul className="courses__list">
+              <div className="flex flex-col gap-5">
+                <div className="text-[0.68rem] font-bold tracking-widest text-lime uppercase pb-3 mb-5 border-b-2 border-border-subtle">{t("courses.advance_label")}</div>
+                <ul className="list-none flex flex-col gap-3.5">
                   {selected.advanceKeys.map((k) => (
-                    <li key={k} className="courses__item">
-                      <span className="courses__dot courses__dot--advance" />
+                    <li key={k} className="flex items-center gap-3.5 text-sm lg:text-[0.95rem] text-text-mid dark:text-white/80 font-normal group transition-colors hover:text-olive">
+                      <span className="w-[9px] h-[9px] rounded-full bg-lime-bright flex-shrink-0" />
                       {t(k)}
                     </li>
                   ))}

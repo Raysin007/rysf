@@ -2,8 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// @ts-ignore
-import "./Contact.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,11 +26,11 @@ export default function Contact() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
         defaults: { ease: "power3.out" },
       });
-      tl.from(".contact__label", { y: 20, opacity: 0, duration: 0.5 })
-        .from(".contact__title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
-        .from(".contact__desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-        .from(".contact__info-item", { y: 20, opacity: 0, duration: 0.4, stagger: 0.12 }, "-=0.2")
-        .from(".contact__right", { x: 40, opacity: 0, duration: 0.7 }, "-=0.5");
+      tl.from(".contact-label", { y: 20, opacity: 0, duration: 0.5 })
+        .from(".contact-title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
+        .from(".contact-desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".contact-info-item", { y: 20, opacity: 0, duration: 0.4, stagger: 0.12 }, "-=0.2")
+        .from(".contact-right", { x: 40, opacity: 0, duration: 0.7 }, "-=0.5");
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -52,66 +50,73 @@ export default function Contact() {
   ];
 
   return (
-    <section className="contact" id="contact" ref={sectionRef}>
-      <div className="contact__inner">
-        <div className="contact__left">
-          <div className="contact__label">{t("contact.label")}</div>
-          <h2 className="contact__title">
+    <section ref={sectionRef} id="contact" className="bg-white dark:bg-black py-16 lg:py-24 px-[5vw]">
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative z-10">
+        <div className="contact-left">
+          <div className="contact-label text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-6">{t("contact.label")}</div>
+          <h2 className="contact-title font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-olive leading-tight mb-6">
             {t("contact.title")}
             <br />
-            <em dangerouslySetInnerHTML={{ __html: t("contact.title_em") }} />
+            <em className="not-italic text-lime" dangerouslySetInnerHTML={{ __html: t("contact.title_em") }} />
           </h2>
-          <p className="contact__desc">
+          <p className="contact-desc text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed mb-10">
             {t("contact.desc")}
           </p>
 
-          <div className="contact__info-list">
+          <div className="flex flex-col gap-5">
             {infoItems.map((i) => (
-              <div key={i.label} className="contact__info-item">
-                <span className="contact__info-icon">{i.icon}</span>
-                <div>
-                  <span className="contact__info-label">{i.label}</span>
-                  <span className="contact__info-value">{i.value}</span>
+              <div key={i.label} className="contact-info-item flex items-start gap-4">
+                <span className="text-xl leading-none flex-shrink-0 mt-0.5">{i.icon}</span>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-[0.7rem] font-bold tracking-wider text-text-muted uppercase">{i.label}</span>
+                  <span className="text-[0.92rem] text-text-mid font-medium">{i.value}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="contact__right">
+        <div className="contact-right">
           {submitted ? (
-            <div className="contact__success">
-              <div className="contact__success-icon">🌱</div>
-              <h3>{t("contact.success_title")}</h3>
-              <p>
+            <div className="bg-gradient-to-br from-cream to-lime/10 dark:from-zinc-900 dark:to-lime/5 border-2 border-lime rounded-[20px] p-8 lg:p-12 text-center flex flex-col items-center gap-4 animate-scale-in">
+              <div className="text-5xl animate-float">🌱</div>
+              <h3 className="font-display text-2xl lg:text-3xl text-olive">{t("contact.success_title")}</h3>
+              <p className="text-sm lg:text-base text-text-muted leading-relaxed max-w-[360px]">
                 {t("contact.success_desc")}
               </p>
             </div>
           ) : (
-            <div className="contact__form">
-              <div className="contact__field">
-                <label>{t("contact.form.name")}</label>
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <label className="text-[0.78rem] font-semibold tracking-wide text-olive uppercase">{t("contact.form.name")}</label>
                 <input
                   type="text"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                   placeholder={t("contact.form.name_ph")}
+                  className="w-full bg-cream dark:bg-zinc-900 border-[1.5px] border-border-subtle rounded-xl px-4 py-3.5 text-[0.95rem] text-text-dark outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all placeholder:text-text-muted"
                 />
               </div>
-              <div className="contact__field">
-                <label>{t("contact.form.email")}</label>
+              <div className="flex flex-col gap-2">
+                <label className="text-[0.78rem] font-semibold tracking-wide text-olive uppercase">{t("contact.form.email")}</label>
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                   placeholder={t("contact.form.email_ph")}
+                  className="w-full bg-cream dark:bg-zinc-900 border-[1.5px] border-border-subtle rounded-xl px-4 py-3.5 text-[0.95rem] text-text-dark outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all placeholder:text-text-muted"
                 />
               </div>
-              <div className="contact__field">
-                <label>{t("contact.form.role")}</label>
-                <select name="role" value={form.role} onChange={handleChange}>
+              <div className="flex flex-col gap-2">
+                <label className="text-[0.78rem] font-semibold tracking-wide text-olive uppercase">{t("contact.form.role")}</label>
+                <select
+                  name="role"
+                  value={form.role}
+                  onChange={handleChange}
+                  className="w-full bg-cream dark:bg-zinc-900 border-[1.5px] border-border-subtle rounded-xl px-4 py-3.5 text-[0.95rem] text-text-dark outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all cursor-pointer"
+                >
                   <option value="">{t("contact.form.role_ph")}</option>
                   <option value="youth">{t("contact.form.role_youth")}</option>
                   <option value="educator">{t("contact.form.role_educator")}</option>
@@ -121,17 +126,21 @@ export default function Contact() {
                   <option value="other">{t("contact.form.role_other")}</option>
                 </select>
               </div>
-              <div className="contact__field">
-                <label>{t("contact.form.message")}</label>
+              <div className="flex flex-col gap-2">
+                <label className="text-[0.78rem] font-semibold tracking-wide text-olive uppercase">{t("contact.form.message")}</label>
                 <textarea
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                   placeholder={t("contact.form.message_ph")}
                   rows={4}
+                  className="w-full bg-cream dark:bg-zinc-900 border-[1.5px] border-border-subtle rounded-xl px-4 py-3.5 text-[0.95rem] text-text-dark outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all resize-none placeholder:text-text-muted"
                 />
               </div>
-              <button className="contact__submit" onClick={handleSubmit}>
+              <button
+                className="w-full bg-lime text-white font-body font-semibold text-[0.95rem] tracking-wide px-8 py-4 rounded-xl mt-2 transition-all hover:bg-olive hover:-translate-y-0.5 hover:shadow-md-custom"
+                onClick={handleSubmit}
+              >
                 {t("contact.form.submit")}
               </button>
             </div>
