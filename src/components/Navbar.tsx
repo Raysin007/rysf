@@ -65,8 +65,8 @@ export default function Navbar() {
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`fixed lg:static top-full left-0 right-0 lg:flex items-center gap-8 list-none bg-cream dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
-            menuOpen ? "max-h-[600px] py-5 px-6 gap-2" : "max-h-0 py-0 lg:max-h-none lg:p-0"
+          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center gap-8 list-none bg-cream dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
+            menuOpen ? "max-h-[600px] py-6 px-6 gap-2" : "max-h-0 py-0 lg:max-h-none lg:p-0"
           }`}
         >
           {links.map((l) => (
