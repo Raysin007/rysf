@@ -15,11 +15,11 @@ export default function About() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
         defaults: { ease: "power3.out" },
       });
-      tl.from(".about-label", { y: 20, opacity: 0, duration: 0.5 })
-        .from(".about-lead", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
-        .from(".about-accent", { y: 20, opacity: 0, duration: 0.6 }, "-=0.3")
-        .from(".about-pillar", { y: 30, opacity: 0, duration: 0.5, stagger: 0.15 }, "-=0.3")
-        .from(".about-photo", { scale: 0.95, opacity: 0, duration: 0.7, stagger: 0.2 }, "-=0.3");
+      tl.from(".about-label", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" })
+        .from(".about-lead", { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.2")
+        .from(".about-accent", { y: 20, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.3")
+        .from(".about-pillar", { y: 30, opacity: 0, duration: 0.5, stagger: 0.15, clearProps: "all" }, "-=0.3")
+        .from(".about-photo", { scale: 0.95, opacity: 0, duration: 0.7, stagger: 0.2, clearProps: "all" }, "-=0.3");
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -45,13 +45,13 @@ export default function About() {
   return (
     <section ref={sectionRef} id="about" className="bg-white dark:bg-black py-16 lg:py-24 px-[5vw]">
       <div className="max-w-[1280px] mx-auto relative z-10">
-        <div className="about-label flex items-center gap-4 mb-12 text-[0.72rem] font-bold tracking-widest text-olive uppercase after:content-[''] after:flex-1 after:h-px after:bg-sand/40">
+        <div className="about-label flex items-center gap-4 mb-12 text-[0.72rem] font-bold tracking-widest text-olive dark:text-lime-light uppercase after:content-[''] after:flex-1 after:h-px after:bg-sand/40">
           {t("about.label")}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-16">
           <div className="flex flex-col justify-center gap-6">
-            <p className="about-lead text-lg sm:text-xl lg:text-2xl font-light text-text-mid leading-relaxed">
+            <p className="about-lead text-lg sm:text-xl lg:text-2xl font-light dark:text-white text-text-mid leading-relaxed">
               {t("about.lead")}
             </p>
             <p className="about-accent font-display text-xl lg:text-2xl font-normal italic text-lime leading-relaxed pl-6 border-l-[3px] border-lime">
@@ -74,8 +74,8 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-auto sm:h-64">
-          <div className="about-photo relative overflow-hidden rounded-2xl h-48 sm:h-full group">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="about-photo relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-auto sm:h-72 lg:h-80 group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
               style={{ backgroundImage: "url('/photo1.jpg')" }}
@@ -84,7 +84,7 @@ export default function About() {
               <span className="text-white font-semibold text-sm tracking-wide">{t("about.photo_youth")}</span>
             </div>
           </div>
-          <div className="about-photo relative overflow-hidden rounded-2xl h-48 sm:h-full group">
+          <div className="about-photo relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-auto sm:h-72 lg:h-80 group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
               style={{ backgroundImage: "url('/photo2.jpg')" }}

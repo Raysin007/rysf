@@ -17,9 +17,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(navRef.current, { y: -60, opacity: 0, duration: 0.7, ease: "power3.out" });
-      gsap.from(".navbar-brand", { opacity: 0, x: -20, duration: 0.6, delay: 0.3, ease: "power3.out" });
-      gsap.from(".navbar-link-item", { opacity: 0, y: -10, duration: 0.4, stagger: 0.08, delay: 0.4, ease: "power3.out" });
+      gsap.from(navRef.current, { y: -60, opacity: 0, duration: 0.7, ease: "power3.out", clearProps: "all" });
+      gsap.from(".navbar-brand", { opacity: 0, x: -20, duration: 0.6, delay: 0.3, ease: "power3.out", clearProps: "all" });
+      gsap.from(".navbar-link-item", { opacity: 0, y: -10, duration: 0.4, stagger: 0.08, delay: 0.4, ease: "power3.out", clearProps: "all" });
     }, navRef);
     return () => ctx.revert();
   }, []);

@@ -101,7 +101,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-display italic text-sm lg:text-[0.9rem] text-lime opacity-70">
+          <p className="font-display italic text-sm lg:text-[0.9rem] text-lime dark:text-lime-light opacity-70">
             {t("footer.tagline")}
           </p>
         </div>

@@ -10,12 +10,12 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".hero-eyebrow", { y: 20, opacity: 0, duration: 0.6 })
-        .from(".hero-title", { y: 40, opacity: 0, duration: 0.7 }, "-=0.3")
-        .from(".hero-tagline", { y: 30, opacity: 0, duration: 0.6 }, "-=0.4")
-        .from(".hero-btn", { y: 20, opacity: 0, duration: 0.5, stagger: 0.15 }, "-=0.3")
-        .from(".hero-badge", { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, "-=0.3")
-        .from(".hero-visual", { x: 40, opacity: 0, duration: 0.8 }, "-=0.8");
+      tl.from(".hero-eyebrow", { y: 20, opacity: 0, duration: 0.6, clearProps: "all" })
+        .from(".hero-title", { y: 40, opacity: 0, duration: 0.7, clearProps: "all" }, "-=0.3")
+        .from(".hero-tagline", { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.4")
+        .from(".hero-btn", { y: 20, opacity: 0, duration: 0.5, stagger: 0.15, clearProps: "all" }, "-=0.3")
+        .from(".hero-badge", { y: 20, opacity: 0, duration: 0.5, stagger: 0.12, clearProps: "all" }, "-=0.3")
+        .from(".hero-visual", { x: 40, opacity: 0, duration: 0.8, clearProps: "all" }, "-=0.8");
 
       gsap.to(".hero-col-left", {
         y: -12,
@@ -56,7 +56,7 @@ export default function Hero() {
           "w-[110px] h-[110px] bottom-[30%] left-[15%] opacity-[0.04] animate-[leafSway_9s_ease-in-out_infinite]",
           "w-[50px] h-[50px] top-[70%] right-[45%] animate-[leafSway_5s_ease-in-out_infinite_reverse]"
         ].map((style, i) => (
-          <div key={i} className={`absolute rounded-[50%_0_50%_0] bg-lime opacity-[0.02] ${style}`} />
+          <div key={i} className={`absolute rounded-[50%_0_50%_0] bg-lime opacity-[0.02] dark:opacity-[0.05] ${style}`} />
         ))}
       </div>
 
@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className="hero-title font-display font-bold text-4xl sm:text-5xl lg:text-[70px] text-olive leading-[1.2] lg:leading-[1.3] mb-6">
+        <h1 className="hero-title font-display font-bold text-4xl sm:text-5xl lg:text-[70px] text-olive dark:text-lime-light leading-[1.2] lg:leading-[1.3] mb-6">
           {t("hero.title")}
           <br />
           <em className="font-display not-italic text-lime">{t("hero.skill_forum")}</em>
@@ -87,7 +87,7 @@ export default function Hero() {
             {t("hero.explore")}
             <span className="absolute right-5 opacity-0 -translate-x-2.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 font-serif text-lg">→</span>
           </a>
-          <a href="#courses" className="hero-btn group relative inline-flex items-center justify-center px-9 py-3.5 rounded-full border-2 border-olive text-olive font-semibold text-sm tracking-wide transition-all hover:bg-olive hover:text-white hover:-translate-y-0.5 hover:pr-12">
+          <a href="#courses" className="hero-btn group relative inline-flex items-center justify-center px-9 py-3.5 rounded-full border-2 border-olive dark:border-lime-light text-olive dark:text-lime-light font-semibold text-sm tracking-wide transition-all hover:bg-olive dark:hover:bg-lime-light hover:text-white hover:-translate-y-0.5 hover:pr-12">
             {t("hero.view_courses")}
             <span className="absolute right-5 opacity-0 -translate-x-2.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 font-serif text-lg">→</span>
           </a>
@@ -95,17 +95,17 @@ export default function Hero() {
 
         <div className="flex items-center gap-6 sm:gap-8 flex-wrap">
           <div className="hero-badge flex flex-col gap-0.5">
-            <span className="font-display text-3xl text-olive leading-none">26+</span>
+            <span className="font-display text-3xl text-olive dark:text-lime-light leading-none">26+</span>
             <span className="text-[0.72rem] font-medium tracking-widest uppercase text-text-muted">{t("hero.courses")}</span>
           </div>
           <div className="w-px h-10 bg-sand/40" />
           <div className="hero-badge flex flex-col gap-0.5">
-            <span className="font-display text-3xl text-olive leading-none">4</span>
+            <span className="font-display text-3xl text-olive dark:text-lime-light leading-none">4</span>
             <span className="text-[0.72rem] font-medium tracking-widest uppercase text-text-muted">{t("hero.disciplines")}</span>
           </div>
           <div className="w-px h-10 bg-sand/40" />
           <div className="hero-badge flex flex-col gap-0.5">
-            <span className="font-display text-3xl text-olive leading-none">2</span>
+            <span className="font-display text-3xl text-olive dark:text-lime-light leading-none">2</span>
             <span className="text-[0.72rem] font-medium tracking-widest uppercase text-text-muted">{t("hero.pilot_regions")}</span>
           </div>
         </div>
