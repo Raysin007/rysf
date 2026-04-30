@@ -11,7 +11,7 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".hero__tag", { y: 20, opacity: 0, duration: 0.6 })
+      tl.from(".hero__eyebrow", { y: 20, opacity: 0, duration: 0.6 })
         .from(".hero__title", { y: 40, opacity: 0, duration: 0.7 }, "-=0.3")
         .from(".hero__tagline", { y: 30, opacity: 0, duration: 0.6 }, "-=0.4")
         .from(".hero__btn", { y: 20, opacity: 0, duration: 0.5, stagger: 0.15 }, "-=0.3")

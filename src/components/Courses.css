@@ -46,7 +46,7 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
-  border-bottom: 1.5px solid var(--cream-dark);
+  border-bottom: 1.5px solid var(--border-subtle);
   padding-bottom: 0;
 }
 
@@ -84,7 +84,7 @@
 
 .courses__tab--active {
   color: var(--lime);
-  background: var(--white);
+  background: var(--section-bg-white);
 }
 
 .courses__tab--active::after {
@@ -92,10 +92,10 @@
 }
 
 .courses__panel {
-  background: var(--white);
+  background: var(--section-bg-white);
   border-radius: 0 16px 16px 16px;
   padding: 3rem;
-  border: 1px solid var(--cream-dark);
+  border: 1px solid var(--border-subtle);
   animation: fadeUp 0.35s ease both;
 }
 
@@ -161,7 +161,7 @@
   text-transform: uppercase;
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--cream-dark);
+  border-bottom: 2px solid var(--border-subtle);
 }
 
 .courses__list {

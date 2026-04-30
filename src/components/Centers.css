@@ -1,5 +1,5 @@
 .centers {
-  background: var(--olive);
+  background: var(--section-bg-olive);
   padding: 6rem 5vw;
   position: relative;
   overflow: hidden;
@@ -83,7 +83,7 @@
 
 .centers__card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-lg);
 }
 
 .centers__card-visual {
@@ -111,7 +111,7 @@
   padding: 0.45rem 1rem 0.45rem 0.75rem;
   border-radius: 100px;
   letter-spacing: 0.02em;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border-subtle);
 }
 
 .centers__card-content {
@@ -161,7 +161,7 @@
 
 /* Why marquee */
 .centers__why {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--border-subtle);
   padding-top: 3rem;
 }
 

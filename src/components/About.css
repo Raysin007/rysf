@@ -1,5 +1,5 @@
 .about {
-  background: var(--white);
+  background: var(--section-bg-white);
   padding: 6rem 5vw;
 }
 
@@ -73,7 +73,7 @@
   align-items: flex-start;
   padding: 1.5rem;
   border-radius: 12px;
-  border: 1px solid var(--cream-dark);
+  border: 1px solid var(--border-subtle);
   background: var(--cream);
   transition:
     border-color 0.25s,
@@ -84,7 +84,7 @@
 .about__pillar:hover {
   border-color: var(--lime);
   transform: translateX(4px);
-  box-shadow: 0 4px 20px rgba(138, 170, 30, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .about__pillar-icon {

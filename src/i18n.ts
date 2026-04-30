@@ -175,14 +175,14 @@ i18n
           },
           footer: {
             brand_name: "RURAL YOUTH  SKILL FORUM",
-            brand_sub: "Concept Pitch · April 2026 · Mirik, Darjeeling",
+            brand_sub: " Mirik Plassey",
             brand_desc: "Bridging traditional wisdom and modern opportunities for rural youth across West Bengal and beyond.",
             nav_title: "Navigate",
             disc_title: "Disciplines",
             regions_title: "Regions",
             address_plassey: "Plassey, Nadia — 741181",
             address_mirik: "Mirik, Darjeeling — 734214",
-            copy: "Concept Pitch of Rural Youth Skill Forum · Prepared by Rabiul Islam & Subhendu Kundu",
+           /*  copy: "Concept Pitch of Rural Youth Skill Forum · Prepared by Rabiul Islam & Subhendu Kundu", */
             tagline: "Real development begins with people."
           }
         }
@@ -350,14 +350,14 @@ i18n
           },
           footer: {
             brand_name: "ग्रामीण युवा कौशल मंच",
-            brand_sub: "कॉन्सेप्ट पिच · अप्रैल 2026 · मिरिक, दार्जिलिंग",
+            brand_sub: " मिरिक पलाशी",
             brand_desc: "पश्चिम बंगाल और उससे आगे के ग्रामीण युवाओं के लिए पारंपरिक ज्ञान और आधुनिक अवसरों को जोड़ना।",
             nav_title: "नेविगेट",
             disc_title: "विषय",
             regions_title: "क्षेत्र",
             address_plassey: "पलाशी, नदिया — 741181",
             address_mirik: "मिरिक, दार्जिलिंग — 734214",
-            copy: "ग्रामीण युवा कौशल मंच का कॉन्सेप्ट पिच · रबीउल इस्लाम और सुभेंदु कुंडू द्वारा तैयार",
+            /* copy: "ग्रामीण युवा कौशल मंच का कॉन्सेप्ट पिच · रबीउल इस्लाम और सुभेंदु कुंडू द्वारा तैयार", */
             tagline: "वास्तविक विकास लोगों से शुरू होता है।"
           }
         }
@@ -525,14 +525,14 @@ i18n
           },
           footer: {
             brand_name: "গ্রামীণ যুব দক্ষতা মঞ্চ",
-            brand_sub: "কনসেপ্ট পিচ · এপ্রিল ২০২৬ · মিরিক, দার্জিলিং",
+            brand_sub: "মিরিক পলাশী",
             brand_desc: "পশ্চিমবঙ্গ এবং তার বাইরে গ্রামীণ যুবকদের জন্য ঐতিহ্যগত জ্ঞান এবং আধুনিক সুযোগের সেতুবন্ধন।",
             nav_title: "নেভিগেট",
             disc_title: "বিষয়",
             regions_title: "অঞ্চল",
             address_plassey: "পলাশী, নদীয়া — 741181",
             address_mirik: "মিরিক, দার্জিলিং — 734214",
-            copy: "গ্রামীণ যুব দক্ষতা মঞ্চের কনসেপ্ট পিচ · রবিউল ইসলাম ও শুভেন্দু কুণ্ডু দ্বারা প্রস্তুত",
+           /*  copy: "গ্রামীণ যুব দক্ষতা মঞ্চের কনসেপ্ট পিচ · রবিউল ইসলাম ও শুভেন্দু কুণ্ডু দ্বারা প্রস্তুত", */
             tagline: "প্রকৃত উন্নয়ন মানুষের সাথে শুরু হয়।"
           }
         }
@@ -700,14 +700,14 @@ i18n
           },
           footer: {
             brand_name: "ग्रामीण युवा कौशल मञ्च",
-            brand_sub: "अवधारणा पिच · अप्रिल २०२६ · मिरिक, दार्जीलिङ",
+            brand_sub: " मिरिक पलाशी",
             brand_desc: "पश्चिम बंगाल र बाहिरका ग्रामीण युवाहरूका लागि परम्परागत ज्ञान र आधुनिक अवसरहरू जोड्दै।",
             nav_title: "नेभिगेट",
             disc_title: "विषयहरू",
             regions_title: "क्षेत्रहरू",
             address_plassey: "पलाशी, नदिया — ७४११८१",
             address_mirik: "मिरिक, दार्जीलिङ — ७३४२१४",
-            copy: "ग्रामीण युवा कौशल मञ्चको अवधारणा पिच · रबिउल इस्लाम र शुभेन्दु कुण्डुद्वारा तयार",
+            /* copy: "ग्रामीण युवा कौशल मञ्चको अवधारणा पिच · रबिउल इस्लाम र शुभेन्दु कुण्डुद्वारा तयार", */
             tagline: "वास्तविक विकास मानिसहरूबाट सुरु हुन्छ।"
           }
         }

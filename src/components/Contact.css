@@ -1,5 +1,5 @@
 .contact {
-  background: var(--white);
+  background: var(--section-bg-white);
   padding: 6rem 5vw;
 }
 
@@ -112,7 +112,7 @@
   font-size: 0.95rem;
   color: var(--text-dark);
   background: var(--cream);
-  border: 1.5px solid var(--cream-dark);
+  border: 1.5px solid var(--border-subtle);
   border-radius: 10px;
   padding: 0.85rem 1.1rem;
   outline: none;
@@ -156,7 +156,7 @@
 .contact__submit:hover {
   background: var(--olive);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(107, 122, 42, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 /* Success state */

@@ -156,7 +156,7 @@
   background: var(--lime);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(138, 170, 30, 0.2);
+  box-shadow: var(--shadow-lime);
 }
 
 .hero__title {
@@ -179,7 +179,7 @@
 .hero__tagline {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   font-weight: 300;
-  color: var(--text-muted);
+  color: var(--text-mid);
   line-height: 1.7;
   margin-bottom: 2.5rem;
 }
@@ -229,12 +229,12 @@
 .hero__btn--primary {
   background: var(--lime);
   color: var(--white);
-  box-shadow: 0 4px 20px rgba(138, 170, 30, 0.35);
+  box-shadow: var(--shadow-lime);
 }
 
 .hero__btn--primary:hover {
   background: var(--olive);
-  box-shadow: 0 8px 28px rgba(107, 122, 42, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .hero__btn--outline {
