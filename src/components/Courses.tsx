@@ -9,7 +9,6 @@ interface Track {
   id: string;
   titleKey: string;
   subtitleKey: string;
-  color: string;
   foundationCount: number;
   advanceCount: number;
   foundationKeys: string[];
@@ -21,7 +20,6 @@ const tracks: Track[] = [
     id: "agriculture",
     titleKey: "courses.tracks.agriculture.title",
     subtitleKey: "courses.tracks.agriculture.subtitle",
-    color: "#5a7a1e",
     foundationCount: 3,
     advanceCount: 0,
     foundationKeys: [
@@ -35,7 +33,6 @@ const tracks: Track[] = [
     id: "wellness",
     titleKey: "courses.tracks.wellness.title",
     subtitleKey: "courses.tracks.wellness.subtitle",
-    color: "#7a8a2e",
     foundationCount: 3,
     advanceCount: 0,
     foundationKeys: [
@@ -49,7 +46,6 @@ const tracks: Track[] = [
     id: "data-tech",
     titleKey: "courses.tracks.data_tech.title",
     subtitleKey: "courses.tracks.data_tech.subtitle",
-    color: "#6b7a2a",
     foundationCount: 4,
     advanceCount: 6,
     foundationKeys: [
@@ -71,7 +67,6 @@ const tracks: Track[] = [
     id: "design-media",
     titleKey: "courses.tracks.design_media.title",
     subtitleKey: "courses.tracks.design_media.subtitle",
-    color: "#8aaa1e",
     foundationCount: 4,
     advanceCount: 6,
     foundationKeys: [
@@ -104,11 +99,11 @@ export default function Courses() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
         defaults: { ease: "power3.out" },
       });
-      tl.from(".courses-label", { y: 20, opacity: 0, duration: 0.5 })
-        .from(".courses-title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
-        .from(".courses-sub", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-        .from(".courses-tab", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1 }, "-=0.2")
-        .from(".courses-panel", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2");
+      tl.from(".courses-label", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" })
+        .from(".courses-title", { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.2")
+        .from(".courses-sub", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" }, "-=0.3")
+        .from(".courses-tab", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1, clearProps: "all" }, "-=0.2")
+        .from(".courses-panel", { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.2");
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -118,7 +113,7 @@ export default function Courses() {
       <div className="max-w-[1280px] mx-auto">
         <div className="mb-14">
           <div className="courses-label text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-4">{t("courses.label")}</div>
-          <h2 className="courses-title font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-olive font-semibold leading-tight mb-4">
+          <h2 className="courses-title font-display text-3xl sm:text-4xl lg:text-[2.75rem] text-olive dark:text-lime-light font-semibold leading-tight mb-4">
             {t("courses.title")}
             <br />
             <em className="not-italic text-lime" dangerouslySetInnerHTML={{ __html: t("courses.title_em") }} />
@@ -135,7 +130,7 @@ export default function Courses() {
               className={`courses-tab relative px-6 py-3 font-body font-semibold text-sm tracking-wide transition-all whitespace-nowrap rounded-t-lg -bottom-[1.5px] ${
                 active === t_item.id
                 ? "text-lime bg-white dark:bg-zinc-900 shadow-[0_-1px_0_var(--border-subtle)] after:scale-x-100"
-                : "text-text-muted hover:text-olive hover:bg-cream-dark dark:hover:bg-zinc-800 after:scale-x-0"
+                : "text-text-muted hover:text-olive dark:hover:text-lime-light hover:bg-cream-dark dark:hover:bg-zinc-800 after:scale-x-0"
               } after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2.5px] after:bg-lime after:transition-transform after:duration-300`}
               onClick={() => setActive(t_item.id)}
             >
@@ -151,7 +146,7 @@ export default function Courses() {
               <p className="text-sm lg:text-[0.88rem] text-text-muted dark:text-white/60">{t(selected.subtitleKey)}</p>
             </div>
             <div className="flex gap-3 flex-wrap">
-              <span className="text-[0.72rem] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full bg-lime/10 dark:bg-lime/5 text-olive border border-lime/30">
+              <span className="text-[0.72rem] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full bg-lime/10 dark:bg-lime/5 text-olive dark:text-lime-light border border-lime/30">
                 {selected.foundationCount} {t("courses.foundation")}
               </span>
               {selected.advanceCount > 0 && (
@@ -167,7 +162,7 @@ export default function Courses() {
               <div className="text-[0.68rem] font-bold tracking-widest text-lime uppercase pb-3 mb-5 border-b-2 border-border-subtle">{t("courses.foundation_label")}</div>
               <ul className="list-none flex flex-col gap-3.5">
                 {selected.foundationKeys.map((k) => (
-                  <li key={k} className="flex items-center gap-3.5 text-sm lg:text-[0.95rem] text-text-mid dark:text-white/80 font-normal group transition-colors hover:text-olive">
+                  <li key={k} className="flex items-center gap-3.5 text-sm lg:text-[0.95rem] text-text-mid dark:text-white/80 font-normal group transition-colors hover:text-olive dark:hover:text-lime-light">
                     <span className="w-[9px] h-[9px] rounded-full bg-lime flex-shrink-0" />
                     {t(k)}
                   </li>
@@ -180,7 +175,7 @@ export default function Courses() {
                 <div className="text-[0.68rem] font-bold tracking-widest text-lime uppercase pb-3 mb-5 border-b-2 border-border-subtle">{t("courses.advance_label")}</div>
                 <ul className="list-none flex flex-col gap-3.5">
                   {selected.advanceKeys.map((k) => (
-                    <li key={k} className="flex items-center gap-3.5 text-sm lg:text-[0.95rem] text-text-mid dark:text-white/80 font-normal group transition-colors hover:text-olive">
+                    <li key={k} className="flex items-center gap-3.5 text-sm lg:text-[0.95rem] text-text-mid dark:text-white/80 font-normal group transition-colors hover:text-olive dark:hover:text-lime-light">
                       <span className="w-[9px] h-[9px] rounded-full bg-lime-bright flex-shrink-0" />
                       {t(k)}
                     </li>

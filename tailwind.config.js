@@ -8,27 +8,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        olive: '#6b7a2a',
+        olive: 'var(--olive)',
         lime: {
-          DEFAULT: '#8aaa1e',
-          light: '#a8c832',
-          bright: '#b5d42a',
+          DEFAULT: 'var(--lime)',
+          light: 'var(--lime-light)',
+          bright: 'var(--lime-bright)',
         },
         cream: {
-          DEFAULT: '#f5f2ea',
-          dark: '#ede8d8',
+          DEFAULT: 'var(--cream)',
+          dark: 'var(--cream-dark)',
         },
-        sand: '#d4c9a8',
-        bark: '#7a6e52',
+        sand: 'var(--sand)',
+        bark: 'var(--bark)',
         text: {
-          dark: '#1a1a0e',
-          mid: '#3d3d1f',
-          muted: '#7a7a52',
+          dark: 'var(--text-dark)',
+          mid: 'var(--text-mid)',
+          muted: 'var(--text-muted)',
         }
       },
       fontFamily: {
-        display: ['Unbounded', 'Noto Sans Devanagari', 'Noto Sans Bengali', 'serif'],
-        body: ['SF Pro Text', 'SF Pro Display', 'system-ui', 'sans-serif'],
+        display: 'var(--font-display)',
+        body: 'var(--font-body)',
       },
       boxShadow: {
         'sm-custom': '0 2px 8px rgba(107, 122, 42, 0.1)',
@@ -40,6 +40,7 @@ export default {
         'fade-up': 'fadeUp 0.35s ease both',
         'fade-in': 'fadeIn 0.5s ease both',
         'float': 'float 3s ease-in-out infinite',
+        'why-scroll': 'whyScroll 18s linear infinite',
       },
       keyframes: {
         fadeUp: {
@@ -53,6 +54,10 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        whyScroll: {
+          'from': { transform: 'translateX(0)' },
+          'to': { transform: 'translateX(-50%)' },
         }
       }
     },

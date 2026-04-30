@@ -40,12 +40,12 @@ export default function Centers() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
         defaults: { ease: "power3.out" },
       });
-      tl.from(".centers-label", { y: 20, opacity: 0, duration: 0.5 })
-        .from(".centers-title", { y: 30, opacity: 0, duration: 0.6 }, "-=0.2")
-        .from(".centers-subtitle", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-        .from(".centers-card", { y: 40, opacity: 0, duration: 0.6, stagger: 0.2 }, "-=0.2")
-        .from(".centers-why-title", { y: 20, opacity: 0, duration: 0.5 }, "-=0.2")
-        .from(".centers-why-item", { y: 20, opacity: 0, duration: 0.4, stagger: 0.12 }, "-=0.2");
+      tl.from(".centers-label", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" })
+        .from(".centers-title", { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.2")
+        .from(".centers-subtitle", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" }, "-=0.3")
+        .from(".centers-card", { y: 40, opacity: 0, duration: 0.6, stagger: 0.2, clearProps: "all" }, "-=0.2")
+        .from(".centers-why-title", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" }, "-=0.2")
+        .from(".centers-why-item", { y: 20, opacity: 0, duration: 0.4, stagger: 0.12, clearProps: "all" }, "-=0.2");
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -64,8 +64,8 @@ export default function Centers() {
   return (
     <section ref={sectionRef} id="centers" className="bg-olive dark:bg-zinc-950 py-16 lg:py-24 px-[5vw] relative overflow-hidden">
       {/* Decorative circles */}
-      <div className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-[50%_0_50%_0] bg-white/[0.01] pointer-events-none" />
-      <div className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] rounded-[0_50%_0_50%] bg-white/[0.01] pointer-events-none" />
+      <div className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-[50%_0_50%_0] bg-white/[0.01] dark:bg-white/[0.03] pointer-events-none" />
+      <div className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] rounded-[0_50%_0_50%] bg-white/[0.01] dark:bg-white/[0.03] pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto relative z-10">
         <div className="centers-label text-[0.72rem] font-bold tracking-widest text-lime-light uppercase mb-6">{t("centers.label")}</div>
@@ -75,11 +75,11 @@ export default function Centers() {
         </h2>
         <p className="centers-subtitle text-base lg:text-lg text-white/60 font-light mb-14">{t("centers.subtitle")}</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-16">
           {centers.map((area) => (
-            <div key={area.id} className="centers-card group rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg-custom">
+            <div key={area.id} className="centers-card group relative rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg-custom">
               <div
-                className="relative h-[360px] lg:h-[400px] flex flex-col justify-between p-6 lg:p-8"
+                className="relative h-[320px] sm:h-[400px] flex flex-col justify-between p-6 lg:p-8"
                 style={{
                   backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%), url(${area.image})`,
                   backgroundSize: "cover",
@@ -115,7 +115,7 @@ export default function Centers() {
         <div className="border-t border-white/10 pt-12">
           <h3 className="centers-why-title font-display text-xl lg:text-2xl font-normal text-white mb-8">{t("centers.why_title")}</h3>
           <div className="overflow-hidden relative [mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)]">
-            <div className="flex gap-6 w-max animate-[why-scroll_18s_linear_infinite]">
+            <div className="flex gap-6 w-max animate-why-scroll">
               {whyItems.map((r, i) => (
                 <div key={i} className="centers-why-item flex-shrink-0 w-[300px]">
                   <div className="w-full aspect-[4/3] rounded-xl bg-cover bg-center flex-shrink-0 relative flex items-end overflow-hidden group" style={{ backgroundImage: `url(${r.img})` }}>
@@ -128,12 +128,6 @@ export default function Centers() {
           </div>
         </div>
       </div>
-      <style>{`
-        @keyframes why-scroll {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
   );
 }
