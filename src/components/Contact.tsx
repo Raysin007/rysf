@@ -54,10 +54,9 @@ export default function Contact() {
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative z-10">
         <div className="contact-left">
           <div className="contact-label text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-6">{t("contact.label")}</div>
-          <h2 className="contact-title font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-olive dark:text-lime-light leading-tight mb-6">
+          <h2 className="contact-title font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-olive dark:text-lime-light leading-[1.1] mb-6">
             {t("contact.title")}
-            <br />
-            <em className="not-italic text-lime" dangerouslySetInnerHTML={{ __html: t("contact.title_em") }} />
+            <span className="block text-lime" dangerouslySetInnerHTML={{ __html: t("contact.title_em") }} />
           </h2>
           <p className="contact-desc text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed mb-10">
             {t("contact.desc")}
