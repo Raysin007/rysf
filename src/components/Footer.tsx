@@ -9,7 +9,8 @@ export default function Footer() {
     { id: "courses", label: t("nav.courses"), path: "/courses" },
     { id: "centers", label: t("nav.centers"), path: "/#centers" },
     { id: "impact", label: t("nav.impact"), path: "/#impact" },
-    { id: "contact", label: t("nav.contact"), path: "/#contact" }
+    { id: "contact", label: t("nav.contact"), path: "/#contact" },
+    { id: "donate", label: t("nav.donate"), path: "/#contact" }
   ];
 
   const disciplines = [
