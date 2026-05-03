@@ -170,14 +170,7 @@ i18n
             step3: "Complete the registration form and start your journey.",
             search_placeholder: "Search courses...",
             no_results: "No courses found matching your search.",
-            clear_search: "Clear Search",
-            general_info_title: "General Information",
-            eligibility_title: "Eligibility",
-            eligibility_desc: "The forum is open to rural youth (aged 18-35) from the Darjeeling and Nadia districts. Prior basic education is preferred but not mandatory for foundation courses.",
-            fees_title: "Fees & Support",
-            fees_desc: "All foundation courses are fully subsidized. Advance courses have a nominal registration fee which can be waived for eligible candidates through our scholarship program.",
-            cert_title: "Certification",
-            cert_desc: "Upon successful completion of any course, students receive a 'Rural Youth Skill Forum' certificate, recognized by our local industry partners and community networks."
+            clear_search: "Clear Search"
           },
           centers: {
             mirik: "Mirik",
@@ -414,14 +407,7 @@ i18n
             step3: "पंजीकरण फॉर्म पूरा करें और अपनी यात्रा शुरू करें।",
             search_placeholder: "पाठ्यक्रम खोजें...",
             no_results: "आपकी खोज से मेल खाने वाला कोई पाठ्यक्रम नहीं मिला।",
-            clear_search: "खोज साफ करें",
-            general_info_title: "सामान्य जानकारी",
-            eligibility_title: "पात्रता",
-            eligibility_desc: "यह मंच दार्जिलिंग और नदिया जिलों के ग्रामीण युवाओं (18-35 वर्ष) के लिए खुला है। बुनियादी पाठ्यक्रमों के लिए पूर्व बुनियादी शिक्षा बेहतर है लेकिन अनिवार्य नहीं है।",
-            fees_title: "शुल्क और सहायता",
-            fees_desc: "सभी बुनियादी पाठ्यक्रम पूरी तरह से सब्सिडी वाले हैं। उन्नत पाठ्यक्रमों के लिए मामूली पंजीकरण शुल्क है जिसे हमारे छात्रवृत्ति कार्यक्रम के माध्यम से पात्र उम्मीदवारों के लिए माफ किया जा सकता है।",
-            cert_title: "प्रमाणन",
-            cert_desc: "किसी भी पाठ्यक्रम के सफल समापन पर, छात्रों को 'ग्रामीण युवा कौशल मंच' प्रमाण पत्र प्राप्त होता है, जो हमारे स्थानीय उद्योग भागीदारों और सामुदायिक नेटवर्क द्वारा मान्यता प्राप्त है।"
+            clear_search: "खोज साफ करें"
           },
           centers: {
             mirik: "मिरिक",
@@ -658,14 +644,7 @@ i18n
             step3: "রেজিস্ট্রেশন ফর্মটি পূরণ করুন এবং আপনার যাত্রা শুরু করুন।",
             search_placeholder: "কোর্স খুঁজুন...",
             no_results: "আপনার অনুসন্ধানের সাথে মেলে এমন কোন কোর্স পাওয়া যায়নি।",
-            clear_search: "অনুসন্ধান মুছুন",
-            general_info_title: "সাধারণ তথ্য",
-            eligibility_title: "যোগ্যতা",
-            eligibility_desc: "এই ফোরামটি দার্জিলিং এবং নদীয়া জেলার গ্রামীণ যুবকদের (১৮-৩৫ বছর বয়সী) জন্য উন্মুক্ত। ফাউন্ডেশন কোর্সের জন্য প্রাথমিক শিক্ষা পছন্দনীয় কিন্তু বাধ্যতামূলক নয়।",
-            fees_title: "ফি এবং সহায়তা",
-            fees_desc: "সমস্ত ফাউন্ডেশন কোর্স সম্পূর্ণ ভর্তুকিযুক্ত। অ্যাডভান্স কোর্সের জন্য একটি সামান্য রেজিস্ট্রেশন ফি রয়েছে যা আমাদের স্কলারশিপ প্রোগ্রামের মাধ্যমে যোগ্য প্রার্থীদের জন্য মকুব করা যেতে পারে।",
-            cert_title: "সার্টিফিকেশন",
-            cert_desc: "যেকোন কোর্স সফলভাবে সম্পন্ন করার পর, শিক্ষার্থীরা 'গ্রামীণ যুব দক্ষতা মঞ্চ' সার্টিফিকেট পায়, যা আমাদের স্থানীয় শিল্প অংশীদার এবং সম্প্রদায় নেটওয়ার্ক দ্বারা স্বীকৃত।"
+            clear_search: "অনুসন্ধান মুছুন"
           },
           centers: {
             mirik: "মিরিক",
@@ -902,14 +881,7 @@ i18n
             step3: "दर्ता फारम पूरा गर्नुहोस् र आफ्नो यात्रा सुरु गर्नुहोस्।",
             search_placeholder: "पाठ्यक्रम खोज्नुहोस्...",
             no_results: "तपाईंको खोजीसँग मिल्दो कुनै पाठ्यक्रम फेला परेन।",
-            clear_search: "खोज हटाउनुहोस्",
-            general_info_title: "सामान्य जानकारी",
-            eligibility_title: "योग्यता",
-            eligibility_desc: "यो मञ्च दार्जीलिङ र नदिया जिल्लाका ग्रामीण युवाहरू (१८-३५ वर्ष) का लागि खुला छ। आधारभूत पाठ्यक्रमहरूका लागि पूर्व आधारभूत शिक्षालाई प्राथमिकता दिइन्छ तर अनिवार्य छैन।",
-            fees_title: "शुल्क र सहयोग",
-            fees_desc: "सबै आधारभूत पाठ्यक्रमहरू पूर्ण रूपमा अनुदानित छन्। उन्नत पाठ्यक्रमहरूको लागि सामान्य दर्ता शुल्क छ जुन हाम्रो छात्रवृत्ति कार्यक्रम मार्फत योग्य उम्मेद्वारहरूका लागि मिनाहा गर्न सकिन्छ।",
-            cert_title: "प्रमाणीकरण",
-            cert_desc: "कुनै पनि पाठ्यक्रम सफलतापूर्वक पूरा गरेपछि, विद्यार्थीहरूले 'ग्रामीण युवा कौशल मञ्च' प्रमाणपत्र प्राप्त गर्छन्, जुन हाम्रा स्थानीय उद्योग साझेदारहरू र सामुदायिक नेटवर्कहरूद्वारा मान्यता प्राप्त छ।"
+            clear_search: "खोज हटाउनुहोस्"
           },
           centers: {
             mirik: "मिरिक",
