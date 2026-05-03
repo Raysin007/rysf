@@ -53,9 +53,9 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between lg:justify-center gap-8 relative">
+      <div className="max-w-[1280px] mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between lg:gap-12 relative">
         {/* Brand */}
-        <Link to="/" className="navbar-brand flex items-center gap-3 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2">
+        <Link to="/" className="navbar-brand flex items-center gap-3 relative z-10 justify-self-start">
           <img
             src="/single.png"
             alt={t("nav.logo_alt")}
@@ -69,8 +69,8 @@ export default function Navbar() {
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center gap-8 list-none bg-olive dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
-            menuOpen ? "max-h-[600px] py-6 px-6 gap-2" : "max-h-0 py-0 lg:max-h-none lg:p-0"
+          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center lg:gap-[30px] gap-8 list-none bg-olive dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
+            menuOpen ? "max-h-[600px] py-8 px-6 gap-6" : "max-h-0 py-0 lg:max-h-none lg:p-0"
           }`}
         >
           {links.map((l) => (
@@ -80,7 +80,7 @@ export default function Navbar() {
                   href={l.path}
                   onClick={() => setMenuOpen(false)}
                   className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
+                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
                   {l.label}
@@ -90,7 +90,7 @@ export default function Navbar() {
                   to={l.path}
                   onClick={() => setMenuOpen(false)}
                   className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
+                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
                   {l.label}
@@ -100,41 +100,66 @@ export default function Navbar() {
           ))}
 
           {/* Mobile Actions */}
-          <li className="flex lg:hidden flex-col gap-4 w-full mt-4 pt-6 border-t border-border-subtle">
+          <li className="flex lg:hidden flex-col gap-6 w-full pt-6 border-t border-white/10">
             <div className="w-full relative">
               <select
-                className="w-full h-12 flex items-center justify-center px-5 pr-10 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.25rem_center] transition-all hover:bg-olive hover:border-olive"
+                className="w-full h-12 flex items-center justify-center px-5 pr-10 rounded-xl font-bold text-sm tracking-wide bg-transparent border-[1.5px] border-white/20 text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.25rem_center] transition-all hover:border-lime"
                 onChange={(e) => changeLanguage(e.target.value)}
                 value={i18n.language}
               >
-                <option value="en">English</option>
-                <option value="hi">हिन्दी</option>
-                <option value="bn">বাংলা</option>
-                <option value="ne">नेपाली</option>
+                <option value="en" className="text-black bg-white">English</option>
+                <option value="hi" className="text-black bg-white">हिन्दी</option>
+                <option value="bn" className="text-black bg-white">বাংলা</option>
+                <option value="ne" className="text-black bg-white">नेपाली</option>
               </select>
             </div>
-            <a href="#login" className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive">
+            <a href="/#contact" className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive">
               {t("nav.login")}
+            </a>
+            <a href="/#contact" className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive">
+              {t("nav.donate")}
             </a>
           </li>
         </ul>
 
         {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-5 absolute right-0 top-1/2 -translate-y-1/2">
-          <div className="relative">
+        <div className="hidden lg:flex items-center gap-1.5 relative z-10 justify-self-end">
+          <div className="relative group flex items-center">
             <select
-              className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 pr-9 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_0.8rem_center] transition-all hover:bg-olive hover:border-olive hover:-translate-y-px"
+              className={`h-9 min-w-[3.2rem] inline-flex items-center justify-center pr-4 bg-transparent border-none font-bold text-[0.75rem] tracking-[0.15em] uppercase cursor-pointer outline-none appearance-none transition-all hover:text-lime ${
+                scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
+              }`}
               onChange={(e) => changeLanguage(e.target.value)}
               value={i18n.language}
             >
-              <option value="en">English</option>
-              <option value="hi">हिन्दी</option>
-              <option value="bn">বাংলা</option>
-              <option value="ne">नेपाली</option>
+              <option value="en" className="text-black bg-white">EN</option>
+              <option value="hi" className="text-black bg-white">HI</option>
+              <option value="bn" className="text-black bg-white">BN</option>
+              <option value="ne" className="text-black bg-white">NE</option>
             </select>
+            <svg
+              className={`absolute right-0 w-2.5 h-2.5 pointer-events-none transition-colors group-hover:text-lime ${
+                scrolled || !isHome ? "text-text-muted dark:text-white/60" : "text-white/60"
+              }`}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </div>
-          <a href="#login" className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive hover:-translate-y-px whitespace-nowrap">
+
+          <div className="h-5 w-px bg-text-dark/20 dark:bg-white/20 mx-1" />
+
+          <a href="/#contact" className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-transparent border-[1.5px] border-lime text-lime transition-all hover:bg-lime hover:text-white hover:-translate-y-px whitespace-nowrap">
             {t("nav.login")}
+          </a>
+          <a href="/#contact" className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive hover:-translate-y-px whitespace-nowrap">
+            {t("nav.donate")}
           </a>
           <ThemeToggle />
         </div>

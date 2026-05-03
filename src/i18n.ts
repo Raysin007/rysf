@@ -24,7 +24,8 @@ i18n
             logo_alt: "Rural Youth Skill Forum logo",
             name_part1: "Rural Youth",
             name_part2: "Skill Forum",
-            login: "Login"
+            login: "Login",
+            donate: "Donate"
           },
           hero: {
             mirik: "Mirik",
@@ -161,6 +162,8 @@ i18n
             seats_left: "Seats Left",
             apply_now: "Apply Now",
             course_details: "Course Details",
+            mirik_seats: "12",
+            plassey_seats: "8",
             duration: "Duration",
             level: "Level",
             outcomes_title: "Career Outcomes",
@@ -261,7 +264,8 @@ i18n
             logo_alt: "ग्रामीण युवा कौशल मंच लोगो",
             name_part1: "ग्रामीण युवा",
             name_part2: "कौशल मंच",
-            login: "लॉगिन"
+            login: "लॉगिन",
+            donate: "दान दें"
           },
           hero: {
             mirik: "मिरिक",
@@ -398,6 +402,8 @@ i18n
             seats_left: "सीटें शेष",
             apply_now: "अभी आवेदन करें",
             course_details: "पाठ्यक्रम विवरण",
+            mirik_seats: "12",
+            plassey_seats: "8",
             duration: "अवधि",
             level: "स्तर",
             outcomes_title: "कैरियर परिणाम",
@@ -498,7 +504,8 @@ i18n
             logo_alt: "গ্রামীণ যুব দক্ষতা মঞ্চ লোগো",
             name_part1: "গ্রামীণ যুব",
             name_part2: "দক্ষতা মঞ্চ",
-            login: "লগইন"
+            login: "লগইন",
+            donate: "দান করুন"
           },
           hero: {
             mirik: "মিরিক",
@@ -635,6 +642,8 @@ i18n
             seats_left: "আসন বাকি",
             apply_now: "এখনই আবেদন করুন",
             course_details: "কোর্সের বিস্তারিত",
+            mirik_seats: "12",
+            plassey_seats: "8",
             duration: "সময়কাল",
             level: "স্তর",
             outcomes_title: "ক্যারিয়ার ফলাফল",
@@ -735,7 +744,8 @@ i18n
             logo_alt: "ग्रामीण युवा कौशल मञ्च लोगो",
             name_part1: "ग्रामीण युवा",
             name_part2: "कौशल मञ्च",
-            login: "लगइन"
+            login: "लगइन",
+            donate: "दान गर्नुहोस्"
           },
           hero: {
             mirik: "मिरिक",
@@ -872,6 +882,8 @@ i18n
             seats_left: "सिटहरू बाँकी",
             apply_now: "अहिले आवेदन दिनुहोस्",
             course_details: "पाठ्यक्रम विवरण",
+            mirik_seats: "12",
+            plassey_seats: "8",
             duration: "अवधि",
             level: "स्तर",
             outcomes_title: "करियर नतिजाहरू",

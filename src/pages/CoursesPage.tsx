@@ -217,8 +217,8 @@ export default function CoursesPage() {
         {/* Seat Availability CTAs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
           {[
-            { campus: t("courses_page.mirik_campus"), seats: "12", color: "from-lime/10 to-transparent" },
-            { campus: t("courses_page.plassey_campus"), seats: "8", color: "from-olive/10 to-transparent" }
+            { campus: t("courses_page.mirik_campus"), seats: t("courses_page.mirik_seats"), color: "from-lime/10 to-transparent" },
+            { campus: t("courses_page.plassey_campus"), seats: t("courses_page.plassey_seats"), color: "from-olive/10 to-transparent" }
           ].map((c) => (
             <div key={c.campus} className="campus-cta bg-white dark:bg-zinc-900 p-8 rounded-[24px] border border-border-subtle shadow-sm-custom flex flex-col justify-between group hover:border-lime transition-all relative overflow-hidden">
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${c.color} rounded-bl-full opacity-50 group-hover:scale-110 transition-transform`} />

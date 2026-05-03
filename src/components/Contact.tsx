@@ -116,13 +116,13 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full bg-cream dark:bg-zinc-900 border-[1.5px] border-border-subtle rounded-xl px-4 py-3.5 text-[0.95rem] text-text-dark dark:text-white outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all cursor-pointer"
                 >
-                  <option value="">{t("contact.form.role_ph")}</option>
-                  <option value="youth">{t("contact.form.role_youth")}</option>
-                  <option value="educator">{t("contact.form.role_educator")}</option>
-                  <option value="ngo">{t("contact.form.role_ngo")}</option>
-                  <option value="funder">{t("contact.form.role_funder")}</option>
-                  <option value="govt">{t("contact.form.role_govt")}</option>
-                  <option value="other">{t("contact.form.role_other")}</option>
+                  <option value="" className="text-black bg-white">{t("contact.form.role_ph")}</option>
+                  <option value="youth" className="text-black bg-white">{t("contact.form.role_youth")}</option>
+                  <option value="educator" className="text-black bg-white">{t("contact.form.role_educator")}</option>
+                  <option value="ngo" className="text-black bg-white">{t("contact.form.role_ngo")}</option>
+                  <option value="funder" className="text-black bg-white">{t("contact.form.role_funder")}</option>
+                  <option value="govt" className="text-black bg-white">{t("contact.form.role_govt")}</option>
+                  <option value="other" className="text-black bg-white">{t("contact.form.role_other")}</option>
                 </select>
               </div>
               <div className="flex flex-col gap-2">

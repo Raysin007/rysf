@@ -73,3 +73,16 @@
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
+
+@keyframes whyScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 12px)); }
+}
+
+.animate-why-scroll {
+  animation: whyScroll 40s linear infinite;
+}
+
+.animate-why-scroll:hover {
+  animation-play-state: paused;
+}
