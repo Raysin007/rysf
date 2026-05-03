@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import ThemeToggle from "./ThemeToggle";
 
@@ -8,6 +9,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -25,10 +27,10 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { id: "about", label: t("nav.about") },
-    { id: "courses", label: t("nav.courses") },
-    { id: "centers", label: t("nav.centers") },
-    { id: "impact", label: t("nav.impact") }
+    { id: "about", label: t("nav.about"), path: "/#about" },
+    { id: "courses", label: t("nav.courses"), path: "/courses" },
+    { id: "centers", label: t("nav.centers"), path: "/#centers" },
+    { id: "impact", label: t("nav.impact"), path: "/#impact" }
   ];
 
   useEffect(() => {
@@ -40,18 +42,20 @@ export default function Navbar() {
     setMenuOpen(false);
   };
 
+  const isHome = location.pathname === "/";
+
   return (
     <nav
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-6 lg:px-10 ${
-        scrolled
-          ? "bg-cream/95 dark:bg-zinc-950/95 backdrop-blur-md shadow-md-custom py-3 lg:py-4"
-          : "bg-transparent py-6 lg:py-7"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-6 lg:px-10 py-6 lg:py-7 ${
+        scrolled || !isHome
+          ? "bg-cream/95 dark:bg-zinc-950/95 backdrop-blur-md shadow-md-custom"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-[1280px] mx-auto flex items-center justify-between lg:justify-center gap-8 relative">
         {/* Brand */}
-        <a href="#hero" className="navbar-brand flex items-center gap-3 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2">
+        <Link to="/" className="navbar-brand flex items-center gap-3 lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2">
           <img
             src="/single.png"
             alt={t("nav.logo_alt")}
@@ -61,25 +65,37 @@ export default function Navbar() {
             <span className="font-['Roboto_Slab'] font-bold text-lg lg:text-2xl tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part1")}</span>
             <span className="font-['Roboto_Slab'] font-bold text-lg lg:text-2xl tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part2")}</span>
           </div>
-        </a>
+        </Link>
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center gap-8 list-none bg-cream dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
+          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center gap-8 list-none bg-olive dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
             menuOpen ? "max-h-[600px] py-6 px-6 gap-2" : "max-h-0 py-0 lg:max-h-none lg:p-0"
           }`}
         >
           {links.map((l) => (
             <li key={l.id} className="navbar-link-item w-full lg:w-auto">
-              <a
-                href={`#${l.id}`}
-                onClick={() => setMenuOpen(false)}
-                className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                  scrolled ? "text-text-dark dark:text-white" : "text-text-dark lg:text-white dark:text-white"
-                } hover:text-lime dark:hover:text-lime`}
-              >
-                {l.label}
-              </a>
+              {l.path.startsWith("/#") ? (
+                <a
+                  href={l.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                    scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
+                  } hover:text-lime dark:hover:text-lime`}
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  to={l.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                    scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
+                  } hover:text-lime dark:hover:text-lime`}
+                >
+                  {l.label}
+                </Link>
+              )}
             </li>
           ))}
 
@@ -131,9 +147,9 @@ export default function Navbar() {
             onClick={() => setMenuOpen((m) => !m)}
             aria-label="Menu"
           >
-            <span className={`block w-6 h-0.5 bg-olive dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}></span>
-            <span className={`block w-6 h-0.5 bg-olive dark:bg-white rounded-sm transition-opacity duration-250 ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 bg-olive dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-white"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-white"} dark:bg-white rounded-sm transition-opacity duration-250 ${menuOpen ? "opacity-0" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-white"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
           </button>
         </div>
       </div>
