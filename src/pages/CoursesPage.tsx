@@ -16,6 +16,254 @@ interface CourseDetail {
   tags?: string[];
 }
 
+function FoundationTimeline() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  const steps = [
+    {
+      week: "Week 0–4",
+      label: "Basic IT Awareness",
+      desc: "Foundational digital skills",
+      type: "phase"
+    },
+    {
+      week: "Week 4",
+      label: "Mock Test",
+      desc: "Progress checkpoint",
+      type: "test"
+    },
+    {
+      week: "Week 4–10",
+      label: "Subject Expertise",
+      desc: "Core course curriculum",
+      type: "phase"
+    },
+    {
+      week: "Week 10",
+      label: "Final Test",
+      desc: "Assessment & evaluation",
+      type: "test"
+    },
+    {
+      week: "Week 12+",
+      label: "Certificate Distribution",
+      desc: "Credential awarded",
+      type: "phase"
+    }
+  ];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: timelineRef.current,
+          start: "top 85%",
+        }
+      });
+
+      tl.from(".connector-line-foundation", {
+        scaleX: 0,
+        scaleY: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        transformOrigin: "left top"
+      })
+      .from(".step-item", {
+        y: 24,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out"
+      }, "-=0.6");
+    }, timelineRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={timelineRef} className="relative">
+      {/* Connector Line */}
+      <div className="connector-line-foundation absolute
+        left-[11px] lg:left-0
+        top-2 lg:top-[11px]
+        bottom-2 lg:bottom-auto
+        w-[2px] lg:w-full
+        lg:h-[2px]
+        bg-gray-200 dark:bg-zinc-800"
+      />
+
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-4">
+        {steps.map((step, idx) => {
+          const isPhase = step.type === "phase";
+          return (
+            <div key={idx} className="step-item relative pl-12 lg:pl-0 lg:pt-12 flex flex-col items-start lg:items-center lg:flex-1 group">
+              {/* Marker */}
+              <div className="absolute
+                left-0 lg:left-1/2
+                top-[0.6rem] lg:top-0
+                -translate-x-1/2
+                flex items-center justify-center w-6 h-6 z-10 bg-white dark:bg-zinc-900"
+              >
+                {isPhase ? (
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#a3c837] shadow-[0_0_0_6px_rgba(163,200,55,0.08)]" />
+                ) : (
+                  <div className="w-3 h-3 rotate-45 bg-gray-400" />
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col gap-1 lg:text-center items-start lg:items-center">
+                <span
+                  className={`text-[11px] font-medium uppercase tracking-[0.1em] ${isPhase ? 'text-[#a3c837]' : 'text-gray-400'}`}
+                >
+                  {step.week}
+                </span>
+                <h4 className="text-[13px] font-semibold text-text-dark dark:text-white tracking-tight">
+                  {step.label}
+                </h4>
+                <p className="text-[12px] text-text-muted dark:text-white/40 font-light leading-snug max-w-[200px]">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function AdvancedTimeline() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  const groupedSteps = [
+    {
+      week: "Week 0–6",
+      items: [{ label: "Basic IT + AI + Office Tools", desc: "Foundational skills", type: "phase" }]
+    },
+    {
+      week: "Week 4",
+      items: [{ label: "Mock Test", desc: "Progress checkpoint", type: "test" }]
+    },
+    {
+      week: "Week 6–18",
+      items: [
+        { label: "Subject Expertise - Theory", desc: "Core theory", type: "phase" },
+        { label: "Practise with Realtime Projects", desc: "Hands-on experience", type: "phase" }
+      ]
+    },
+    {
+      week: "Week 10",
+      items: [{ label: "Theory Test MCQ", desc: "MCQ assessment", type: "test" }]
+    },
+    {
+      week: "Week 14–18",
+      items: [{ label: "Portfolio Building", desc: "Project showcase", type: "phase" }]
+    },
+    {
+      week: "Week 16–18",
+      items: [{ label: "Portfolio Review", desc: "Expert feedback", type: "phase" }]
+    },
+    {
+      week: "Week 20",
+      items: [
+        { label: "Final Test", desc: "Final assessment", type: "test" },
+        { label: "Mock Interviews", desc: "Career prep", type: "test" },
+        { label: "Portfolio Presentation", desc: "Final showcase", type: "test" }
+      ]
+    },
+    {
+      week: "Week 24+",
+      items: [{ label: "Certificate Distribution", desc: "Credential awarded", type: "phase" }]
+    }
+  ];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: timelineRef.current,
+          start: "top 85%",
+        }
+      });
+
+      tl.from(".connector-line-advanced", {
+        scaleX: 0,
+        scaleY: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        transformOrigin: "left top"
+      })
+      .from(".adv-step-item", {
+        y: 24,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out"
+      }, "-=0.6");
+    }, timelineRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div ref={timelineRef} className="relative">
+      {/* Connector Line */}
+      <div className="connector-line-advanced absolute
+        left-[11px] lg:left-0
+        top-2 lg:top-[11px]
+        bottom-2 lg:bottom-auto
+        w-[2px] lg:w-full
+        lg:h-[2px]
+        bg-gray-200 dark:bg-zinc-800"
+      />
+
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-4">
+        {groupedSteps.map((step, idx) => {
+          const isPhase = step.items[0].type === "phase";
+          return (
+            <div key={idx} className="adv-step-item relative pl-12 lg:pl-0 lg:pt-12 flex flex-col items-start lg:items-center lg:flex-1 group">
+              {/* Marker */}
+              <div className="absolute
+                left-0 lg:left-1/2
+                top-[0.6rem] lg:top-0
+                -translate-x-1/2
+                flex items-center justify-center w-6 h-6 z-10 bg-white dark:bg-zinc-900"
+              >
+                {isPhase ? (
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#a3c837] shadow-[0_0_0_6px_rgba(163,200,55,0.08)]" />
+                ) : (
+                  <div className="w-3 h-3 rotate-45 bg-gray-400" />
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col gap-1 lg:text-center items-start lg:items-center w-full">
+                <span
+                  className={`text-[11px] font-medium uppercase tracking-[0.1em] ${isPhase ? 'text-[#a3c837]' : 'text-gray-400'}`}
+                >
+                  {step.week}
+                </span>
+
+                <div className="flex flex-col gap-6 lg:items-center w-full">
+                  {step.items.map((item, i) => (
+                    <div key={i} className="flex flex-col gap-1 lg:items-center">
+                      <h4 className="text-[13px] font-semibold text-text-dark dark:text-white tracking-tight">
+                        {item.label}
+                      </h4>
+                      <p className="text-[12px] text-text-muted dark:text-white/40 font-light leading-snug max-w-[200px]">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 const courseDetails: Record<string, CourseDetail[]> = {
   agriculture: [
     { id: "ag-1", titleKey: "courses.tracks.agriculture.c1", descKey: "courses.tracks.agriculture.desc1", image: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&q=80&w=800", duration: "8 Weeks", level: "Foundation", tags: ["Sustainability", "Ecology"] },
@@ -138,6 +386,12 @@ export default function CoursesPage() {
         stagger: 0.15,
         clearProps: "all"
       }, "-=0.4")
+      .from(".timeline-section", {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        clearProps: "all"
+      }, "-=0.5")
       .from(".track-tabs-container", {
         y: 20,
         opacity: 0,
@@ -242,6 +496,42 @@ export default function CoursesPage() {
           ))}
         </div>
 
+        {/* Foundation Course Timeline */}
+        <section className="mb-24 timeline-section">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-lime-light font-bold leading-tight">
+                Foundation Course <span className="text-lime">Timeline</span>
+              </h2>
+            </div>
+            <p className="text-sm text-text-muted dark:text-white/60 max-w-sm leading-relaxed">
+              {t("courses_page.journey_sub")}
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-zinc-900/50 rounded-[32px] p-8 lg:p-12 border border-border-subtle shadow-sm-custom">
+            <FoundationTimeline />
+          </div>
+        </section>
+
+        {/* Advanced Course Timeline */}
+        <section className="mb-24 timeline-section">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-lime-light font-bold leading-tight">
+                Advanced Course <span className="text-lime">Timeline</span>
+              </h2>
+            </div>
+            <p className="text-sm text-text-muted dark:text-white/60 max-w-sm leading-relaxed">
+              Advanced curriculum focusing on industry-ready expertise and professional portfolio building.
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-zinc-900/50 rounded-[32px] p-8 lg:p-12 border border-border-subtle shadow-sm-custom overflow-x-auto lg:overflow-visible">
+            <AdvancedTimeline />
+          </div>
+        </section>
+
         {/* Track Selection & Search */}
         <div className="mb-12">
           <div className="track-tabs-container flex flex-wrap items-center justify-between gap-6 border-b border-border-subtle">
@@ -340,7 +630,7 @@ export default function CoursesPage() {
 
             <div className="sidebar-item bg-olive text-white p-8 rounded-[24px] shadow-lg-custom">
               <h4 className="font-display text-lg font-bold mb-6 flex items-center gap-3">
-                <span className="text-2xl">🎯</span> {t("courses_page.outcomes_title")}
+                {t("courses_page.outcomes_title")}
               </h4>
               <ul className="flex flex-col gap-4">
                 {(t(`courses.tracks.${activeTrack.replace('-', '_')}.outcomes`, { returnObjects: true }) as string[])?.map((outcome, i) => (
@@ -357,11 +647,11 @@ export default function CoursesPage() {
               </h4>
               <div className="flex flex-col gap-6">
                 {[1, 2, 3].map((step) => (
-                  <div key={step} className="flex gap-4">
+                  <div key={step} className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 rounded-full bg-lime/10 text-lime flex items-center justify-center font-bold text-sm">
                       {step}
                     </span>
-                    <p className="text-xs text-text-muted dark:text-white/60 leading-relaxed">
+                    <p className="text-xs text-text-muted dark:text-white/60 leading-relaxed pt-1.5">
                       {t(`courses_page.step${step}`)}
                     </p>
                   </div>
