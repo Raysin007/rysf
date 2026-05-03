@@ -1,34 +1,44 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Courses from "./components/Courses";
-import Centers from "./components/Centers";
-import Impact from "./components/Impact";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import CoursesPage from "./pages/CoursesPage";
+import ScrollToTop from "./components/ScrollToTop";
 
-function App() {
-  const { t, i18n } = useTranslation();
+function TitleHandler() {
+  const { t } = useTranslation();
+  const location = useLocation();
 
   useEffect(() => {
-    document.title = t("footer.brand_name");
-  }, [i18n.language, t]);
+    const brand = t("footer.brand_name");
+    if (location.pathname === "/courses") {
+      document.title = `${t("nav.courses")} | ${brand}`;
+    } else {
+      document.title = brand;
+    }
+  }, [location, t]);
 
+  return null;
+}
+
+function App() {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
-      <Navbar />
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Courses />
-        <Centers />
-        <Impact />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <TitleHandler />
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
+        <Navbar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/courses" element={<CoursesPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

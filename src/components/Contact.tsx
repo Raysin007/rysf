@@ -67,7 +67,7 @@ export default function Contact() {
               <div key={i.label} className="contact-info-item flex items-start gap-4">
                 <span className="text-xl leading-none flex-shrink-0 mt-0.5">{i.icon}</span>
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-[0.7rem] font-bold tracking-wider text-text-muted dark:text-white/80 uppercase">{i.label}</span>
+                  <span className="text-[0.7rem] font-bold tracking-wider text-text-muted dark:text-white uppercase">{i.label}</span>
                   <span className="text-[0.92rem] text-text-mid dark:text-white font-medium">{i.value}</span>
                 </div>
               </div>

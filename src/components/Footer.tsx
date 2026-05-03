@@ -1,21 +1,22 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { t } = useTranslation();
 
   const navLinks = [
-    { id: "about", label: t("nav.about") },
-    { id: "courses", label: t("nav.courses") },
-    { id: "areas", label: t("nav.centers") },
-    { id: "impact", label: t("nav.impact") },
-    { id: "contact", label: t("nav.contact") }
+    { id: "about", label: t("nav.about"), path: "/#about" },
+    { id: "courses", label: t("nav.courses"), path: "/courses" },
+    { id: "centers", label: t("nav.centers"), path: "/#centers" },
+    { id: "impact", label: t("nav.impact"), path: "/#impact" },
+    { id: "contact", label: t("nav.contact"), path: "/#contact" }
   ];
 
   const disciplines = [
-    t("courses.tracks.agriculture.title"),
-    t("courses.tracks.wellness.title"),
-    t("courses.tracks.data_tech.title"),
-    t("courses.tracks.design_media.title"),
+    { label: t("courses.tracks.agriculture.title"), id: "agriculture" },
+    { label: t("courses.tracks.wellness.title"), id: "wellness" },
+    { id: "data-tech", label: t("courses.tracks.data_tech.title") },
+    { id: "design-media", label: t("courses.tracks.design_media.title") },
   ];
 
   return (
@@ -24,20 +25,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_2fr] gap-12 lg:gap-20 pb-12 border-b border-white/10 mb-8">
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3.5">
-              <img
-                src="/single.png"
-                alt={t("nav.logo_alt")}
-                className="block h-12 w-auto object-contain"
-              />
-              <div>
-                <div className="flex flex-col leading-[1.1]">
-                  <div className="font-['Roboto_Slab'] font-bold text-lg tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part1")}</div>
-                  <div className="font-['Roboto_Slab'] font-bold text-lg tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part2")}</div>
+              <Link to="/" className="flex items-center gap-3.5">
+                <img
+                  src="/single.png"
+                  alt={t("nav.logo_alt")}
+                  className="block h-12 w-auto object-contain"
+                />
+                <div>
+                  <div className="flex flex-col leading-[1.1]">
+                    <div className="font-['Roboto_Slab'] font-bold text-lg tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part1")}</div>
+                    <div className="font-['Roboto_Slab'] font-bold text-lg tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part2")}</div>
+                  </div>
+                  <div className="text-[0.62rem] text-white/40 tracking-widest mt-1 uppercase">
+                    {t("footer.brand_sub")}
+                  </div>
                 </div>
-                <div className="text-[0.62rem] text-white/40 tracking-widest mt-1 uppercase">
-                  {t("footer.brand_sub")}
-                </div>
-              </div>
+              </Link>
             </div>
             <p className="text-[0.85rem] text-white/50 leading-relaxed font-light">
               {t("footer.brand_desc")}
@@ -71,21 +74,35 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <div className="text-[0.68rem] font-bold tracking-[0.15em] text-lime uppercase mb-1">{t("footer.nav_title")}</div>
               {navLinks.map((l) => (
-                <a
-                  key={l.id}
-                  href={`#${l.id}`}
-                  className="text-[0.85rem] text-white/60 transition-colors hover:text-lime"
-                >
-                  {l.label}
-                </a>
+                l.path.startsWith("/#") ? (
+                  <a
+                    key={l.id}
+                    href={l.path}
+                    className="text-[0.85rem] text-white/60 transition-colors hover:text-lime"
+                  >
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={l.id}
+                    to={l.path}
+                    className="text-[0.85rem] text-white/60 transition-colors hover:text-lime"
+                  >
+                    {l.label}
+                  </Link>
+                )
               ))}
             </div>
             <div className="flex flex-col gap-3">
               <div className="text-[0.68rem] font-bold tracking-[0.15em] text-lime uppercase mb-1">{t("footer.disc_title")}</div>
               {disciplines.map((l) => (
-                <span key={l} className="text-[0.85rem] text-white/60 cursor-default">
-                  {l}
-                </span>
+                <Link
+                  key={l.id}
+                  to={`/courses?track=${l.id}`}
+                  className="text-[0.85rem] text-white/60 transition-colors hover:text-lime"
+                >
+                  {l.label}
+                </Link>
               ))}
             </div>
             <div className="flex flex-col gap-3 col-span-2 sm:col-span-1">

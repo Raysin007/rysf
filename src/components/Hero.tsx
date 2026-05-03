@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 export default function Hero() {
@@ -59,7 +60,7 @@ export default function Hero() {
         {/* Dark gradient overlay — left side stronger so text stays readable */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
         {/* Bottom fade for smooth section transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream/40 dark:from-black to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream/20 dark:from-black to-transparent" />
       </div>
 
       {/* ─── DECORATIVE LEAVES (mobile/tablet — no video bg) ─── */}
@@ -123,22 +124,22 @@ export default function Hero() {
                 →
               </span>
             </a>
-            <a
-              href="#courses"
+            <Link
+              to="/courses"
               className="hero-btn group relative inline-flex items-center justify-center px-9 py-3.5 rounded-full border-2 border-olive dark:border-lime-light lg:border-white text-olive dark:text-lime-light lg:text-white font-semibold text-sm tracking-wide transition-all hover:bg-lime hover:border-lime hover:text-white hover:-translate-y-0.5 hover:pr-12"
             >
               {t("hero.view_courses")}
               <span className="absolute right-5 opacity-0 -translate-x-2.5 transition-all group-hover:opacity-100 group-hover:translate-x-0 font-serif text-lg">
                 →
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Stats */}
           <div className="flex items-center gap-6 sm:gap-8 flex-wrap">
             <div className="hero-badge flex flex-col gap-0.5">
               <span className="font-display text-3xl text-olive dark:text-lime-light lg:text-white leading-none">
-                26+
+                30+
               </span>
               <span className="text-[0.72rem] font-medium tracking-widest uppercase text-text-muted lg:text-white/60">
                 {t("hero.courses")}
