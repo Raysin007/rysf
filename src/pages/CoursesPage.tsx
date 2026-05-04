@@ -83,7 +83,7 @@ function FoundationTimeline() {
     <div ref={timelineRef} className="relative">
       {/* Connector Line */}
       <div className="connector-line-foundation absolute
-        left-3 lg:left-0
+        left-6 lg:left-0
         -translate-x-1/2 lg:translate-x-0
         top-2 lg:top-[11px]
         bottom-2 lg:bottom-auto
@@ -99,7 +99,7 @@ function FoundationTimeline() {
             <div key={idx} className="step-item relative pl-12 lg:pl-0 lg:pt-12 flex flex-col items-start lg:items-center lg:flex-1 group">
               {/* Marker */}
               <div className="absolute
-                left-3 lg:left-1/2
+                left-6 lg:left-1/2
                 top-[0.6rem] lg:top-0
                 -translate-x-1/2
                 flex items-center justify-center w-6 h-6 z-10 bg-white dark:bg-zinc-900"
@@ -209,7 +209,7 @@ function AdvancedTimeline() {
     <div ref={timelineRef} className="relative">
       {/* Connector Line */}
       <div className="connector-line-advanced absolute
-        left-3 lg:left-0
+        left-6 lg:left-0
         -translate-x-1/2 lg:translate-x-0
         top-2 lg:top-[11px]
         bottom-2 lg:bottom-auto
@@ -225,7 +225,7 @@ function AdvancedTimeline() {
             <div key={idx} className="adv-step-item relative pl-12 lg:pl-0 lg:pt-12 flex flex-col items-start lg:items-center lg:flex-1 group">
               {/* Marker */}
               <div className="absolute
-                left-3 lg:left-1/2
+                left-6 lg:left-1/2
                 top-[0.6rem] lg:top-0
                 -translate-x-1/2
                 flex items-center justify-center w-6 h-6 z-10 bg-white dark:bg-zinc-900"
@@ -261,6 +261,58 @@ function AdvancedTimeline() {
             </div>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+function InstructorCTA({ className = "", activeTrack = "data-tech" }: { className?: string; activeTrack?: string }) {
+  const { t } = useTranslation();
+
+  return (
+    <div className={`bg-[#1a1a1a] border border-[#2a2a2a] rounded-[12px] p-6 flex flex-col gap-6 ${className}`}>
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#a3e635]">
+          <img src="/punpun.png" alt={t("courses_page.instructor_name")} className="w-full h-full object-cover" />
+        </div>
+        <div className="flex flex-col">
+          <h4 className="text-white font-extrabold text-sm uppercase tracking-wider">{t("courses_page.instructor_name")}</h4>
+          <p className="text-[#9ca3af] text-xs font-normal">{t("courses_page.instructor_title")}</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <h3 className="text-[#a3e635] font-extrabold text-xl leading-tight">
+          {t(`courses_page.instructor_headline_${activeTrack.replace('-', '_')}`)}
+        </h3>
+        <p className="text-[#9ca3af] text-sm font-normal leading-relaxed">
+          {t("courses_page.instructor_desc")}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        {[
+          { label: t("courses_page.instructor_stats_students"), val: "500+" },
+          { label: t("courses_page.instructor_stats_rating"), val: "4.9/5" },
+          { label: t("courses_page.instructor_stats_courses"), val: "12" },
+          { label: t("courses_page.instructor_stats_online"), val: "24/7" }
+        ].map((s) => (
+          <div key={s.label} className="bg-[#111] p-3 rounded-lg flex flex-col items-center justify-center">
+            <span className="text-white font-extrabold text-lg">{s.val}</span>
+            <span className="text-[#9ca3af] text-[10px] uppercase font-bold tracking-tighter">{s.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <Link to="/#contact" className="w-full bg-[#a3e635] text-[#0d0d0d] py-3.5 rounded-lg font-extrabold text-center hover:opacity-90 transition-all">
+        {t("courses_page.instructor_enroll")}
+      </Link>
+
+      <div className="flex flex-col gap-4">
+        <div className="h-px bg-[#2a2a2a] w-full" />
+        <div className="flex items-center justify-center gap-2 text-[#9ca3af] text-[11px] font-normal italic">
+          <span>✓</span> {t("courses_page.instructor_cert")}
+        </div>
       </div>
     </div>
   );
@@ -318,7 +370,7 @@ function CourseCard({ course, t }: { course: CourseDetail; t: any }) {
         <div className={`absolute top-4 left-4 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold tracking-widest uppercase text-white border border-white/20 ${
           course.level === "Foundation" ? "bg-lime/70" : "bg-olive/80"
         }`}>
-          {course.level}
+          {t("courses." + course.level.toLowerCase())}
         </div>
       </div>
       <div className="p-7 flex-1 flex flex-col">
@@ -600,6 +652,9 @@ export default function CoursesPage() {
                         <CourseCard key={course.id} course={course} t={t} />
                       ))}
                     </div>
+
+                    {/* Instructor CTA Card - Mobile Only */}
+                    <InstructorCTA className="lg:hidden mt-12 course-card" activeTrack={activeTrack} />
                   </div>
                 )}
               </>
@@ -628,6 +683,8 @@ export default function CoursesPage() {
                 {t(`courses.tracks.${activeTrack.replace('-', '_')}.subtitle`)}
               </p>
             </div>
+
+            <InstructorCTA className="hidden lg:flex sidebar-item" activeTrack={activeTrack} />
 
             <div className="sidebar-item bg-olive text-white p-8 rounded-[24px] shadow-lg-custom">
               <h4 className="font-display text-lg font-bold mb-6 flex items-center gap-3">
