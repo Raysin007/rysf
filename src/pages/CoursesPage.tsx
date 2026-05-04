@@ -522,7 +522,7 @@ export default function CoursesPage() {
           </p>
         </header>
 
-        {/* Seat Availability CTAs */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
           {[
             { campus: t("courses_page.mirik_campus"), seats: t("courses_page.mirik_seats"), color: "from-lime/10 to-transparent" },
