@@ -49,8 +49,8 @@ export default function Navbar() {
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-6 lg:px-10 py-6 lg:py-7 ${
         scrolled || !isHome
-          ? "bg-cream/95 dark:bg-zinc-950/95 backdrop-blur-md shadow-md-custom"
-          : "bg-transparent"
+          ? "bg-cream dark:bg-zinc-950/95 dark:backdrop-blur-md shadow-md-custom"
+          : "bg-transparent dark:bg-transparent"
       }`}
     >
       <div className="max-w-[1280px] mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between lg:gap-12 relative">
@@ -80,7 +80,7 @@ export default function Navbar() {
                   href={l.path}
                   onClick={() => setMenuOpen(false)}
                   className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white dark:text-white"
+                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-text-dark lg:text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
                   {l.label}
@@ -90,7 +90,7 @@ export default function Navbar() {
                   to={l.path}
                   onClick={() => setMenuOpen(false)}
                   className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white dark:text-white"
+                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-text-dark lg:text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
                   {l.label}
@@ -116,9 +116,13 @@ export default function Navbar() {
             <a href="/#contact" className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive">
               {t("nav.login")}
             </a>
-            <a href="/#contact" className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive">
+            <Link
+              to="/donate"
+              onClick={() => setMenuOpen(false)}
+              className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive"
+            >
               {t("nav.donate")}
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -158,9 +162,12 @@ export default function Navbar() {
           <a href="/#contact" className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-transparent border-[1.5px] border-lime text-lime transition-all hover:bg-lime hover:text-white hover:-translate-y-px whitespace-nowrap">
             {t("nav.login")}
           </a>
-          <a href="/#contact" className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive hover:-translate-y-px whitespace-nowrap">
+          <Link
+            to="/donate"
+            className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive hover:-translate-y-px whitespace-nowrap"
+          >
             {t("nav.donate")}
-          </a>
+          </Link>
           <ThemeToggle />
         </div>
 
@@ -172,9 +179,9 @@ export default function Navbar() {
             onClick={() => setMenuOpen((m) => !m)}
             aria-label="Menu"
           >
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-white"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}></span>
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-white"} dark:bg-white rounded-sm transition-opacity duration-250 ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-white"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-olive"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-olive"} dark:bg-white rounded-sm transition-opacity duration-250 ${menuOpen ? "opacity-0" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-olive"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
           </button>
         </div>
       </div>
