@@ -192,7 +192,20 @@ i18n
             mock_interview: "Mock Interviews",
             portfolio_pres: "Portfolio Presentation",
             foundation_track: "For any Foundation Course",
-            advanced_track: "For any Advanced Course"
+            advanced_track: "For any Advanced Course",
+            instructor_name: "Dr. Subhendu Kundu",
+            instructor_title: "Lead Instructor & Founder",
+            instructor_headline_agriculture: "Ready to scale your agri-business?",
+            instructor_headline_wellness: "Ready to master traditional wellness?",
+            instructor_headline_data_tech: "Ready to lead the tech revolution?",
+            instructor_headline_design_media: "Ready to craft your creative vision?",
+            instructor_desc: "Join our advanced curriculum to master industry-ready expertise and build a professional portfolio that stands out.",
+            instructor_stats_students: "Students",
+            instructor_stats_rating: "Rating",
+            instructor_stats_courses: "Courses",
+            instructor_stats_online: "Online",
+            instructor_enroll: "Enroll Now",
+            instructor_cert: "Certificate of completion included"
           },
           centers: {
             mirik: "Mirik",
@@ -237,7 +250,7 @@ i18n
             info2_label: "Initiated",
             info2_value: "April 2026",
             info3_label: "Prepared by",
-            info3_value: "Rabiul Islam & Subhendu Kundu",
+            info3_value: "Rabiul Islam & Dr. Subhendu Kundu",
             success_title: "You're in!",
             success_desc: "Thank you for your interest. We'll reach out soon with next steps for joining the Rural Youth Skill Forum.",
             form: {
@@ -451,7 +464,20 @@ i18n
             mock_interview: "मॉक इंटरव्यू",
             portfolio_pres: "पोर्टफोलियो प्रस्तुति",
             foundation_track: "किसी भी बुनियादी पाठ्यक्रम के लिए",
-            advanced_track: "किसी भी उन्नत पाठ्यक्रम के लिए"
+            advanced_track: "किसी भी उन्नत पाठ्यक्रम के लिए",
+            instructor_name: "डॉ. सुभेंदु कुंडू",
+            instructor_title: "मुख्य प्रशिक्षक और संस्थापक",
+            instructor_headline_agriculture: "क्या आप अपने कृषि व्यवसाय को बढ़ाने के लिए तैयार हैं?",
+            instructor_headline_wellness: "क्या आप पारंपरिक कल्याण में महारत हासिल करने के लिए तैयार हैं?",
+            instructor_headline_data_tech: "क्या आप तकनीकी क्रांति का नेतृत्व करने के लिए तैयार हैं?",
+            instructor_headline_design_media: "क्या आप अपनी रचनात्मक दृष्टि को गढ़ने के लिए तैयार हैं?",
+            instructor_desc: "उद्योग-तैयार विशेषज्ञता में महारत हासिल करने और एक पेशेवर पोर्टफोलियो बनाने के लिए हमारे उन्नत पाठ्यक्रम में शामिल हों।",
+            instructor_stats_students: "छात्र",
+            instructor_stats_rating: "रेटिंग",
+            instructor_stats_courses: "पाठ्यक्रम",
+            instructor_stats_online: "ऑनलाइन",
+            instructor_enroll: "अभी नामांकन करें",
+            instructor_cert: "पूर्णता का प्रमाण पत्र शामिल है"
           },
           centers: {
             mirik: "मिरिक",
@@ -496,7 +522,7 @@ i18n
             info2_label: "शुरुआत",
             info2_value: "अप्रैल 2026",
             info3_label: "द्वारा तैयार",
-            info3_value: "रबीउल इस्लाम और सुभेंदु कुंडू",
+            info3_value: "रबीउल इस्लाम और डॉ. सुभेंदु कुंडू",
             success_title: "आप शामिल हैं!",
             success_desc: "आपकी रुचि के लिए धन्यवाद। हम ग्रामीण युवा कौशल मंच में शामिल होने के अगले चरणों के साथ जल्द ही आपसे संपर्क करेंगे।",
             form: {
@@ -710,7 +736,20 @@ i18n
             mock_interview: "মক ইন্টারভিউ",
             portfolio_pres: "পোর্টফোলিও প্রেজেন্টেশন",
             foundation_track: "যে কোনও ফাউন্ডেশন কোর্সের জন্য",
-            advanced_track: "যে কোনও অ্যাডভান্স কোর্সের জন্য"
+            advanced_track: "যে কোনও অ্যাডভান্স কোর্সের জন্য",
+            instructor_name: "ডঃ শুভেন্দু কুণ্ডু",
+            instructor_title: "প্রধান প্রশিক্ষক ও প্রতিষ্ঠাতা",
+            instructor_headline_agriculture: "আপনি কি আপনার কৃষি ব্যবসা বাড়াতে প্রস্তুত?",
+            instructor_headline_wellness: "আপনি কি ঐতিহ্যগত সুস্থতায় দক্ষতা অর্জন করতে প্রস্তুত?",
+            instructor_headline_data_tech: "আপনি কি প্রযুক্তি বিপ্লবের নেতৃত্ব দিতে প্রস্তুত?",
+            instructor_headline_design_media: "আপনি কি আপনার সৃজনশীল দৃষ্টিভঙ্গি গড়তে প্রস্তুত?",
+            instructor_desc: "শিল্প-প্রস্তুত দক্ষতা অর্জন করতে এবং একটি পেশাদার পোর্টফোলিও তৈরি করতে আমাদের উন্নত পাঠ্যক্রমে যোগ দিন।",
+            instructor_stats_students: "শিক্ষার্থী",
+            instructor_stats_rating: "রেটিং",
+            instructor_stats_courses: "কোর্স",
+            instructor_stats_online: "অনলাইন",
+            instructor_enroll: "এখনই নথিভুক্ত করুন",
+            instructor_cert: "সমাপ্তির শংসাপত্র অন্তর্ভুক্ত"
           },
           centers: {
             mirik: "মিরিক",
@@ -755,7 +794,7 @@ i18n
             info2_label: "শুরু",
             info2_value: "এপ্রিল ২০২৬",
             info3_label: "প্রস্তুতকারক",
-            info3_value: "রবিউল ইসলাম ও শুভেন্দু কুণ্ডু",
+            info3_value: "রবিউল ইসলাম ও ডঃ শুভেন্দু কুণ্ডু",
             success_title: "আপনি যুক্ত হয়েছেন!",
             success_desc: "আপনার আগ্রহের জন্য ধন্যবাদ। গ্রামীণ যুব দক্ষতা মঞ্চে যোগদানের পরবর্তী পদক্ষেপগুলি নিয়ে আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।",
             form: {
@@ -969,7 +1008,20 @@ i18n
             mock_interview: "मक अन्तर्वार्ता",
             portfolio_pres: "पोर्टफोलियो प्रस्तुति",
             foundation_track: "कुनै पनि आधारभूत पाठ्यक्रमको लागि",
-            advanced_track: "कुनै पनि उन्नत पाठ्यक्रमको लागि"
+            advanced_track: "कुनै पनि उन्नत पाठ्यक्रमको लागि",
+            instructor_name: "डा. शुभेन्दु कुण्डु",
+            instructor_title: "मुख्य प्रशिक्षक र संस्थापक",
+            instructor_headline_agriculture: "के तपाईं आफ्नो कृषि व्यवसायलाई बढाउन तयार हुनुहुन्छ?",
+            instructor_headline_wellness: "के तपाईं परम्परागत कल्याणमा महारत हासिल गर्न तयार हुनुहुन्छ?",
+            instructor_headline_data_tech: "के तपाईं प्राविधिक क्रान्तिको नेतृत्व गर्न तयार हुनुहुन्छ?",
+            instructor_headline_design_media: "के तपाईं आफ्नो रचनात्मक दृष्टिकोणलाई आकार दिन तयार हुनुहुन्छ?",
+            instructor_desc: "उद्योग-तयार विशेषज्ञतामा महारत हासिल गर्न र एक पेशेवर पोर्टफोलियो निर्माण गर्न हाम्रो उन्नत पाठ्यक्रममा सामेल हुनुहोस्।",
+            instructor_stats_students: "विद्यार्थी",
+            instructor_stats_rating: "रेटिङ",
+            instructor_stats_courses: "पाठ्यक्रम",
+            instructor_stats_online: "अनलाइन",
+            instructor_enroll: "अहिले भर्ना हुनुहोस्",
+            instructor_cert: "समाप्तिको प्रमाणपत्र समावेश छ"
           },
           centers: {
             mirik: "मिरिक",
@@ -1014,7 +1066,7 @@ i18n
             info2_label: "सुरुवात",
             info2_value: "अप्रिल २०२६",
             info3_label: "तयार गर्ने",
-            info3_value: "रबिउल इस्लाम र शुभेन्दु कुण्डु",
+            info3_value: "रबिउल इस्लाम र डा. शुभेन्दु कुण्डु",
             success_title: "तपाईं सामेल हुनुभयो!",
             success_desc: "तपाईंको रुचिको लागि धन्यवाद। हामी ग्रामीण युवा कौशल मञ्चमा सामेल हुने अर्को चरणहरूको साथ चाँडै सम्पर्क गर्नेछौं।",
             form: {
