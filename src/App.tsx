@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import CoursesPage from "./pages/CoursesPage";
+import DonationDashboard from "./pages/DonationDashboard";
 import ScrollToTop from "./components/ScrollToTop";
 
 function TitleHandler() {
@@ -15,6 +16,8 @@ function TitleHandler() {
     const brand = t("footer.brand_name");
     if (location.pathname === "/courses") {
       document.title = `${t("nav.courses")} | ${brand}`;
+    } else if (location.pathname === "/donate") {
+      document.title = `${t("nav.donate")} | ${brand}`;
     } else {
       document.title = brand;
     }
@@ -34,6 +37,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/donate" element={<DonationDashboard />} />
           </Routes>
         </main>
         <Footer />
