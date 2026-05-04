@@ -83,7 +83,8 @@ function FoundationTimeline() {
     <div ref={timelineRef} className="relative">
       {/* Connector Line */}
       <div className="connector-line-foundation absolute
-        left-[11px] lg:left-0
+        left-3 lg:left-0
+        -translate-x-1/2 lg:translate-x-0
         top-2 lg:top-[11px]
         bottom-2 lg:bottom-auto
         w-[2px] lg:w-full
@@ -98,7 +99,7 @@ function FoundationTimeline() {
             <div key={idx} className="step-item relative pl-12 lg:pl-0 lg:pt-12 flex flex-col items-start lg:items-center lg:flex-1 group">
               {/* Marker */}
               <div className="absolute
-                left-0 lg:left-1/2
+                left-3 lg:left-1/2
                 top-[0.6rem] lg:top-0
                 -translate-x-1/2
                 flex items-center justify-center w-6 h-6 z-10 bg-white dark:bg-zinc-900"
@@ -208,7 +209,8 @@ function AdvancedTimeline() {
     <div ref={timelineRef} className="relative">
       {/* Connector Line */}
       <div className="connector-line-advanced absolute
-        left-[11px] lg:left-0
+        left-3 lg:left-0
+        -translate-x-1/2 lg:translate-x-0
         top-2 lg:top-[11px]
         bottom-2 lg:bottom-auto
         w-[2px] lg:w-full
@@ -223,7 +225,7 @@ function AdvancedTimeline() {
             <div key={idx} className="adv-step-item relative pl-12 lg:pl-0 lg:pt-12 flex flex-col items-start lg:items-center lg:flex-1 group">
               {/* Marker */}
               <div className="absolute
-                left-0 lg:left-1/2
+                left-3 lg:left-1/2
                 top-[0.6rem] lg:top-0
                 -translate-x-1/2
                 flex items-center justify-center w-6 h-6 z-10 bg-white dark:bg-zinc-900"
@@ -500,8 +502,8 @@ export default function CoursesPage() {
         <section className="mb-24 timeline-section">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-lime-light font-bold leading-tight">
-                Foundation Course <span className="text-lime">Timeline</span>
+              <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-white font-bold leading-tight">
+                Foundation Course <span className="text-lime dark:text-white">Timeline</span>
               </h2>
             </div>
             <p className="text-sm text-text-muted dark:text-white/60 max-w-sm leading-relaxed">
@@ -518,8 +520,8 @@ export default function CoursesPage() {
         <section className="mb-24 timeline-section">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-lime-light font-bold leading-tight">
-                Advanced Course <span className="text-lime">Timeline</span>
+              <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-white font-bold leading-tight">
+                Advanced Course <span className="text-lime dark:text-white">Timeline</span>
               </h2>
             </div>
             <p className="text-sm text-text-muted dark:text-white/60 max-w-sm leading-relaxed">
@@ -562,7 +564,6 @@ export default function CoursesPage() {
                 placeholder={t("courses_page.search_placeholder")}
                 className="w-full bg-white dark:bg-zinc-900 border border-border-subtle rounded-xl px-4 py-2 text-sm outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all text-text-dark dark:text-white placeholder:text-text-muted/60"
               />
-              <span className="absolute right-4 top-2.5 text-text-muted/50">🔍</span>
             </div>
           </div>
         </div>
