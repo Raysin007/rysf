@@ -55,7 +55,7 @@ export default function Impact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-end mb-16">
           <h2 className="impact-title font-display text-3xl sm:text-4xl lg:text-[3rem] font-semibold text-olive dark:text-lime-light leading-[1.1] lg:leading-[1.1]">
             {t("impact.title")}
-            <span className="block text-lime" dangerouslySetInnerHTML={{ __html: t("impact.title_em") }} />
+            <span className="block text-lime">{t("impact.title_em")}</span>
           </h2>
           <p className="impact-desc text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed">
             {t("impact.desc")}

@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 
 export default function ThemeToggle() {
+  const { t } = useTranslation();
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") === "dark" ||
@@ -49,7 +51,7 @@ export default function ThemeToggle() {
       ref={toggleRef}
       className="relative flex items-center justify-center w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-lime/10 dark:bg-lime/5 border-[1.5px] border-lime text-lime cursor-pointer overflow-hidden transition-all hover:bg-lime hover:text-white hover:shadow-lime hover:-translate-y-0.5"
       onClick={() => setIsDark(!isDark)}
-      aria-label="Toggle Dark Mode"
+      aria-label={t("nav.toggle_theme")}
     >
       <div className="relative w-5 h-5 lg:w-[22px] lg:h-[22px] flex items-center justify-center">
         <svg

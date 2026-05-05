@@ -12,7 +12,7 @@ export default function DonationDashboard() {
   const breakdownChartInstance = useRef<Chart | null>(null);
 
   const formatINR = (num: number) => {
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat(i18n.language === 'en' ? 'en-IN' : i18n.language, {
       style: "currency",
       currency: "INR",
       maximumFractionDigits: 0,
@@ -120,7 +120,7 @@ export default function DonationDashboard() {
                 ticks: {
                   color: getTextColor(),
                   font: { size: 10, weight: 'bold' },
-                  callback: (value) => `₹${Number(value) / 1000}k`,
+                  callback: (value) => `${t("dashboard.currency_symbol")}${Number(value) / 1000}${t("dashboard.k_suffix")}`,
                 },
               },
             },
@@ -162,7 +162,7 @@ export default function DonationDashboard() {
                 borderWidth: 1,
                 padding: 10,
                 callbacks: {
-                  label: (context) => ` ${context.label}: ${context.raw}%`,
+                  label: (context) => ` ${context.label}: ${context.raw}${t("dashboard.percent_suffix")}`,
                 },
               },
             },
@@ -216,10 +216,10 @@ export default function DonationDashboard() {
         {/* Metric Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { label: t("dashboard.metrics.raised"), value: t("dashboard.vals.raised"), sub: t("dashboard.metrics.vs_last_month", { val: "+12.4%" }), subColor: "text-emerald-600 dark:text-emerald-400" },
-            { label: t("dashboard.metrics.donors"), value: t("dashboard.vals.donors"), sub: t("dashboard.metrics.new_this_month", { val: "+87" }), subColor: "text-emerald-600 dark:text-emerald-400" },
-            { label: t("dashboard.metrics.avg_gift"), value: t("dashboard.vals.avg_gift"), sub: t("dashboard.metrics.vs_last_month", { val: "-3.1%" }), subColor: "text-rose-600 dark:text-rose-400" },
-            { label: t("dashboard.metrics.retention"), value: t("dashboard.vals.retention"), sub: t("dashboard.metrics.pts_vs_last_month", { val: "+2" }), subColor: "text-emerald-600 dark:text-emerald-400" },
+            { label: t("dashboard.metrics.raised"), value: t("dashboard.vals.raised"), sub: t("dashboard.metrics.vs_last_month", { val: t("dashboard.vals.delta_raised") }), subColor: "text-emerald-600 dark:text-emerald-400" },
+            { label: t("dashboard.metrics.donors"), value: t("dashboard.vals.donors"), sub: t("dashboard.metrics.new_this_month", { val: t("dashboard.vals.delta_donors") }), subColor: "text-emerald-600 dark:text-emerald-400" },
+            { label: t("dashboard.metrics.avg_gift"), value: t("dashboard.vals.avg_gift"), sub: t("dashboard.metrics.vs_last_month", { val: t("dashboard.vals.delta_avg_gift") }), subColor: "text-rose-600 dark:text-rose-400" },
+            { label: t("dashboard.metrics.retention"), value: t("dashboard.vals.retention"), sub: t("dashboard.metrics.pts_vs_last_month", { val: t("dashboard.vals.delta_retention") }), subColor: "text-emerald-600 dark:text-emerald-400" },
           ].map((m, i) => (
             <div key={i} className="dash-metric-card bg-[#f5f5f3] dark:bg-zinc-900/50 p-4 md:p-5 rounded-lg border border-zinc-200/50 dark:border-zinc-800 transition-all">
               <p className="text-zinc-500 dark:text-zinc-400 text-[11px] md:text-xs font-bold uppercase tracking-wider mb-2">{m.label}</p>
@@ -340,7 +340,7 @@ export default function DonationDashboard() {
               <canvas ref={breakdownChartRef} />
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none pb-2">
                 <span className="text-zinc-400 dark:text-zinc-500 text-[10px] font-bold uppercase tracking-widest">{t("dashboard.breakdown.total")}</span>
-                <span className="text-2xl font-bold">100%</span>
+                <span className="text-2xl font-bold">{t("dashboard.total_percent")}</span>
               </div>
             </div>
           </div>

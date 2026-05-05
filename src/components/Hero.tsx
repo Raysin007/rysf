@@ -128,7 +128,7 @@ export default function Hero() {
           <div className="flex items-center gap-6 sm:gap-8 flex-wrap">
             <div className="hero-badge flex flex-col gap-0.5">
               <span className="font-display text-3xl text-white leading-none">
-                30+
+                {t("hero.stats_courses")}
               </span>
               <span className="text-[0.72rem] font-medium tracking-widest uppercase text-white/60">
                 {t("hero.courses")}
@@ -137,7 +137,7 @@ export default function Hero() {
             <div className="w-px h-10 bg-white/20" />
             <div className="hero-badge flex flex-col gap-0.5">
               <span className="font-display text-3xl text-white leading-none">
-                4
+                {t("hero.stats_disciplines")}
               </span>
               <span className="text-[0.72rem] font-medium tracking-widest uppercase text-white/60">
                 {t("hero.disciplines")}
@@ -146,7 +146,7 @@ export default function Hero() {
             <div className="w-px h-10 bg-white/20" />
             <div className="hero-badge flex flex-col gap-0.5">
               <span className="font-display text-3xl text-white leading-none">
-                2
+                {t("hero.stats_regions")}
               </span>
               <span className="text-[0.72rem] font-medium tracking-widest uppercase text-white/60">
                 {t("hero.pilot_regions")}
@@ -162,14 +162,14 @@ export default function Hero() {
               <div className="flex-1 overflow-hidden rounded-2xl relative group">
                 <img
                   src="/hero2.jpeg"
-                  alt="Rural youth learning"
+                  alt={t("hero.img_alt1")}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="flex-1 overflow-hidden rounded-2xl relative group">
                 <img
                   src="/hero1.jpg"
-                  alt="Youth community"
+                  alt={t("hero.img_alt2")}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function Hero() {
               <div className="flex-1 h-full overflow-hidden rounded-2xl relative group">
                 <img
                   src="/hero3.jpg"
-                  alt="Aspiring student"
+                  alt={t("hero.img_alt3")}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

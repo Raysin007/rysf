@@ -183,7 +183,7 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
     >
       <div
         ref={cardRef}
-        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden border border-border-subtle shadow-lg-custom w-full max-w-3xl max-h-[90vh] overflow-y-auto"
+        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden shadow-lg-custom w-full max-w-3xl max-h-[90vh] overflow-y-auto"
       >
         {/* Close */}
         <button

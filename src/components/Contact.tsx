@@ -56,7 +56,7 @@ export default function Contact() {
           <div className="contact-label text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-6">{t("contact.label")}</div>
           <h2 className="contact-title font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-olive dark:text-lime-light leading-[1.1] mb-6">
             {t("contact.title")}
-            <span className="block text-lime" dangerouslySetInnerHTML={{ __html: t("contact.title_em") }} />
+            <span className="block text-lime">{t("contact.title_em")}</span>
           </h2>
           <p className="contact-desc text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed mb-10">
             {t("contact.desc")}
