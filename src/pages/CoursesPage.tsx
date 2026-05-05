@@ -22,31 +22,31 @@ function FoundationTimeline() {
 
   const steps = [
     {
-      week: t("courses_page.week_range", { range: "0–4" }),
+      week: t("courses_page.w_0_4"),
       label: t("courses_page.basic_it"),
       desc: t("courses_page.basic_it_desc"),
       type: "phase"
     },
     {
-      week: t("courses_page.week_range", { range: "4" }),
+      week: t("courses_page.w_4"),
       label: t("courses_page.mock_test"),
       desc: t("courses_page.mock_test_desc"),
       type: "test"
     },
     {
-      week: t("courses_page.week_range", { range: "4–10" }),
+      week: t("courses_page.w_4_10"),
       label: t("courses_page.subject_expertise"),
       desc: t("courses_page.subject_expertise_desc"),
       type: "phase"
     },
     {
-      week: t("courses_page.week_range", { range: "10" }),
+      week: t("courses_page.w_10"),
       label: t("courses_page.final_test"),
       desc: t("courses_page.final_test_desc"),
       type: "test"
     },
     {
-      week: t("courses_page.week_range", { range: "12+" }),
+      week: t("courses_page.w_12plus"),
       label: t("courses_page.cert_dist"),
       desc: t("courses_page.cert_dist_desc"),
       type: "phase"
@@ -140,34 +140,34 @@ function AdvancedTimeline() {
 
   const groupedSteps = [
     {
-      week: t("courses_page.week_range", { range: "0–6" }),
+      week: t("courses_page.w_0_6"),
       items: [{ label: t("courses_page.adv_it"), desc: t("courses_page.adv_it_desc"), type: "phase" }]
     },
     {
-      week: t("courses_page.week_range", { range: "4" }),
+      week: t("courses_page.w_4"),
       items: [{ label: t("courses_page.mock_test"), desc: t("courses_page.mock_test_desc"), type: "test" }]
     },
     {
-      week: t("courses_page.week_range", { range: "6–18" }),
+      week: t("courses_page.w_6_18"),
       items: [
         { label: t("courses_page.adv_theory"), desc: t("courses_page.adv_theory_desc"), type: "phase" },
         { label: t("courses_page.adv_projects"), desc: t("courses_page.adv_projects_desc"), type: "phase" }
       ]
     },
     {
-      week: t("courses_page.week_range", { range: "10" }),
+      week: t("courses_page.w_10"),
       items: [{ label: t("courses_page.theory_mcq"), desc: t("courses_page.theory_mcq_desc"), type: "test" }]
     },
     {
-      week: t("courses_page.week_range", { range: "14–18" }),
+      week: t("courses_page.w_14_18"),
       items: [{ label: t("courses_page.portfolio_build"), desc: t("courses_page.portfolio_build_desc"), type: "phase" }]
     },
     {
-      week: t("courses_page.week_range", { range: "16–18" }),
+      week: t("courses_page.w_16_18"),
       items: [{ label: t("courses_page.portfolio_review"), desc: t("courses_page.portfolio_review_desc"), type: "phase" }]
     },
     {
-      week: t("courses_page.week_range", { range: "20" }),
+      week: t("courses_page.w_20"),
       items: [
         { label: t("courses_page.final_test"), desc: t("courses_page.final_test_desc"), type: "test" },
         { label: t("courses_page.mock_interview"), desc: t("courses_page.mock_interview_desc"), type: "test" },
@@ -175,7 +175,7 @@ function AdvancedTimeline() {
       ]
     },
     {
-      week: t("courses_page.week_range", { range: "24+" }),
+      week: t("courses_page.w_24plus"),
       items: [{ label: t("courses_page.cert_dist"), desc: t("courses_page.cert_dist_desc"), type: "phase" }]
     }
   ];
