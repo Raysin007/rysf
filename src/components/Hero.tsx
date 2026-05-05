@@ -198,7 +198,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ─── SCROLL INDICATOR ─── */}
+     
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-[0.7rem] tracking-widest uppercase text-white/50 z-10">
         <span>{t("hero.scroll")}</span>
         <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent animate-float" />
