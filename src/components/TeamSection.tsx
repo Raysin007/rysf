@@ -27,7 +27,7 @@ const members: TeamMember[] = [
     roleKey: "team.members.rabiul.role",
     descKey: "team.members.rabiul.desc",
     bioKey: "team.members.rabiul.bio",
-    image: "/rabi.jpg",
+    image: "/rabi.webp",
     initials: "RI",
     location: "Plassey, Nadia",
     joinYear: "2024",
