@@ -282,6 +282,49 @@ i18n
             address_mirik: "Mirik, Darjeeling — 734214",
            /*  copy: "Concept Pitch of Rural Youth Skill Forum · Prepared by Rabiul Islam & Subhendu Kundu", */
             tagline: "Real development begins with people."
+          },
+          dashboard: {
+            title: "Donation dashboard",
+            meta: "May 2026 · All campaigns",
+            record: "Record donation",
+            metrics: {
+              raised: "Total raised",
+              donors: "Total donors",
+              avg_gift: "Avg. gift size",
+              retention: "Retention rate",
+              vs_last_month: "{{val}} vs last month",
+              new_this_month: "{{val}} new this month",
+              pts_vs_last_month: "{{val}}pts vs last month"
+            },
+            trend: {
+              title: "Monthly giving trend",
+              one_time: "One-time",
+              recurring: "Recurring"
+            },
+            goal: {
+              title: "Campaign goal",
+              status: "{{percent}}% of goal · Goal: {{goal}}",
+              days_left: "{{days}} days left",
+              to_go: "{{amount}} to go",
+              education: "Education fund",
+              health: "Health & wellness",
+              community: "Community outreach"
+            },
+            donors: {
+              title: "Recent donors",
+              time_ago: "{{val}} ago"
+            },
+            breakdown: {
+              title: "Donation breakdown",
+              total: "Total"
+            },
+            months: {
+              jan: "Jan",
+              feb: "Feb",
+              mar: "Mar",
+              apr: "Apr",
+              may: "May"
+            }
           }
         }
       },
@@ -554,6 +597,49 @@ i18n
             address_mirik: "मिरिक, दार्जिलिंग — 734214",
             /* copy: "ग्रामीण युवा कौशल मंच का कॉन्सेप्ट पिच · रबीउल इस्लाम और सुभेंदु कुंडू द्वारा तैयार", */
             tagline: "वास्तविक विकास लोगों से शुरू होता है।"
+          },
+          dashboard: {
+            title: "दान डैशबोर्ड",
+            meta: "मई 2026 · सभी अभियान",
+            record: "दान रिकॉर्ड करें",
+            metrics: {
+              raised: "कुल राशि",
+              donors: "कुल दाता",
+              avg_gift: "औसत दान",
+              retention: "रिटेंशन दर",
+              vs_last_month: "पिछले महीने की तुलना में {{val}}",
+              new_this_month: "इस महीने {{val}} नए",
+              pts_vs_last_month: "पिछले महीने की तुलना में {{val}}pts"
+            },
+            trend: {
+              title: "मासिक दान रुझान",
+              one_time: "एक बार",
+              recurring: "आवर्ती"
+            },
+            goal: {
+              title: "अभियान लक्ष्य",
+              status: "लक्ष्य का {{percent}}% · लक्ष्य: {{goal}}",
+              days_left: "{{days}} दिन शेष",
+              to_go: "{{amount}} शेष है",
+              education: "शिक्षा कोष",
+              health: "स्वास्थ्य और कल्याण",
+              community: "सामुदायिक पहुंच"
+            },
+            donors: {
+              title: "हाल के दाता",
+              time_ago: "{{val}} पहले"
+            },
+            breakdown: {
+              title: "दान विश्लेषण",
+              total: "कुल"
+            },
+            months: {
+              jan: "जनवरी",
+              feb: "फरवरी",
+              mar: "मार्च",
+              apr: "अप्रैल",
+              may: "मई"
+            }
           }
         }
       },
@@ -826,6 +912,49 @@ i18n
             address_mirik: "মিরিক, দার্জিলিং — 734214",
            /*  copy: "গ্রামীণ যুব দক্ষতা মঞ্চের কনসেপ্ট পিচ · রবিউল ইসলাম ও শুভেন্দু কুণ্ডু দ্বারা প্রস্তুত", */
             tagline: "প্রকৃত উন্নয়ন মানুষের সাথে শুরু হয়।"
+          },
+          dashboard: {
+            title: "দান ড্যাশবোর্ড",
+            meta: "মে ২০২৬ · সমস্ত ক্যাম্পেইন",
+            record: "দান রেকর্ড করুন",
+            metrics: {
+              raised: "মোট সংগৃহীত",
+              donors: "মোট দাতা",
+              avg_gift: "গড় দান",
+              retention: "রিটেনশন রেট",
+              vs_last_month: "গত মাসের তুলনায় {{val}}",
+              new_this_month: "এই মাসে {{val}} নতুন",
+              pts_vs_last_month: "গত মাসের তুলনায় {{val}} পয়েন্ট"
+            },
+            trend: {
+              title: "মাসিক দানের প্রবণতা",
+              one_time: "একবার",
+              recurring: "পুনরাবৃত্তি"
+            },
+            goal: {
+              title: "ক্যাম্পেইন লক্ষ্য",
+              status: "লক্ষ্যের {{percent}}% · লক্ষ্য: {{goal}}",
+              days_left: "{{days}} দিন বাকি",
+              to_go: "{{amount}} বাকি আছে",
+              education: "শিক্ষা তহবিল",
+              health: "স্বাস্থ্য ও সুস্থতা",
+              community: "কমিউনিটি আউটরিচ"
+            },
+            donors: {
+              title: "সাম্প্রতিক দাতা",
+              time_ago: "{{val}} আগে"
+            },
+            breakdown: {
+              title: "দানের বিশ্লেষণ",
+              total: "মোট"
+            },
+            months: {
+              jan: "জানু",
+              feb: "ফেব্রু",
+              mar: "মার্চ",
+              apr: "এপ্রিল",
+              may: "মে"
+            }
           }
         }
       },
@@ -1098,6 +1227,49 @@ i18n
             address_mirik: "मिरिक, दार्जीलिङ — ७३४२१४",
             /* copy: "ग्रामीण युवा कौशल मञ्चको अवधारणा पिच · रबिउल इस्लाम र शुभेन्दु कुण्डुद्वारा तयार", */
             tagline: "वास्तविक विकास मानिसहरूबाट सुरु हुन्छ।"
+          },
+          dashboard: {
+            title: "दान ड्यासबोर्ड",
+            meta: "मे २०२६ · सबै अभियानहरू",
+            record: "दान रेकर्ड गर्नुहोस्",
+            metrics: {
+              raised: "कुल संकलन",
+              donors: "कुल दाता",
+              avg_gift: "औसत दान",
+              retention: "धारण दर",
+              vs_last_month: "गत महिनाको तुलनामा {{val}}",
+              new_this_month: "यस महिना {{val}} नयाँ",
+              pts_vs_last_month: "गत महिनाको तुलनामा {{val}}pts"
+            },
+            trend: {
+              title: "मासिक दान प्रवृत्ति",
+              one_time: "एक पटक",
+              recurring: "आवर्ती"
+            },
+            goal: {
+              title: "अभियान लक्ष्य",
+              status: "लक्ष्यको {{percent}}% · लक्ष्य: {{goal}}",
+              days_left: "{{days}} दिन बाँकी",
+              to_go: "{{amount}} बाँकी छ",
+              education: "शिक्षा कोष",
+              health: "स्वास्थ्य र कल्याण",
+              community: "सामुदायिक पहुँच"
+            },
+            donors: {
+              title: "हालका दाताहरू",
+              time_ago: "{{val}} अघि"
+            },
+            breakdown: {
+              title: "दान विश्लेषण",
+              total: "कुल"
+            },
+            months: {
+              jan: "जन",
+              feb: "फेब",
+              mar: "मार्च",
+              apr: "अप्रि",
+              may: "मे"
+            }
           }
         }
       }
