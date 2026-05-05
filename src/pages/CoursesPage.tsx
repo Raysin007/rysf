@@ -11,43 +11,44 @@ interface CourseDetail {
   titleKey: string;
   descKey: string;
   image: string;
-  duration: string;
+  durationKey: string;
   level: string;
-  tags?: string[];
+  tagKeys?: string[];
 }
 
 function FoundationTimeline() {
+  const { t } = useTranslation();
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const steps = [
     {
-      week: "Week 0–4",
-      label: "Basic IT Awareness",
-      desc: "Foundational digital skills",
+      week: t("courses_page.week_range", { range: "0–4" }),
+      label: t("courses_page.basic_it"),
+      desc: t("courses_page.basic_it_desc"),
       type: "phase"
     },
     {
-      week: "Week 4",
-      label: "Mock Test",
-      desc: "Progress checkpoint",
+      week: t("courses_page.week_range", { range: "4" }),
+      label: t("courses_page.mock_test"),
+      desc: t("courses_page.mock_test_desc"),
       type: "test"
     },
     {
-      week: "Week 4–10",
-      label: "Subject Expertise",
-      desc: "Core course curriculum",
+      week: t("courses_page.week_range", { range: "4–10" }),
+      label: t("courses_page.subject_expertise"),
+      desc: t("courses_page.subject_expertise_desc"),
       type: "phase"
     },
     {
-      week: "Week 10",
-      label: "Final Test",
-      desc: "Assessment & evaluation",
+      week: t("courses_page.week_range", { range: "10" }),
+      label: t("courses_page.final_test"),
+      desc: t("courses_page.final_test_desc"),
       type: "test"
     },
     {
-      week: "Week 12+",
-      label: "Certificate Distribution",
-      desc: "Credential awarded",
+      week: t("courses_page.week_range", { range: "12+" }),
+      label: t("courses_page.cert_dist"),
+      desc: t("courses_page.cert_dist_desc"),
       type: "phase"
     }
   ];
@@ -134,47 +135,48 @@ function FoundationTimeline() {
 }
 
 function AdvancedTimeline() {
+  const { t } = useTranslation();
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const groupedSteps = [
     {
-      week: "Week 0–6",
-      items: [{ label: "Basic IT + AI + Office Tools", desc: "Foundational skills", type: "phase" }]
+      week: t("courses_page.week_range", { range: "0–6" }),
+      items: [{ label: t("courses_page.adv_it"), desc: t("courses_page.adv_it_desc"), type: "phase" }]
     },
     {
-      week: "Week 4",
-      items: [{ label: "Mock Test", desc: "Progress checkpoint", type: "test" }]
+      week: t("courses_page.week_range", { range: "4" }),
+      items: [{ label: t("courses_page.mock_test"), desc: t("courses_page.mock_test_desc"), type: "test" }]
     },
     {
-      week: "Week 6–18",
+      week: t("courses_page.week_range", { range: "6–18" }),
       items: [
-        { label: "Subject Expertise - Theory", desc: "Core theory", type: "phase" },
-        { label: "Practise with Realtime Projects", desc: "Hands-on experience", type: "phase" }
+        { label: t("courses_page.adv_theory"), desc: t("courses_page.adv_theory_desc"), type: "phase" },
+        { label: t("courses_page.adv_projects"), desc: t("courses_page.adv_projects_desc"), type: "phase" }
       ]
     },
     {
-      week: "Week 10",
-      items: [{ label: "Theory Test MCQ", desc: "MCQ assessment", type: "test" }]
+      week: t("courses_page.week_range", { range: "10" }),
+      items: [{ label: t("courses_page.theory_mcq"), desc: t("courses_page.theory_mcq_desc"), type: "test" }]
     },
     {
-      week: "Week 14–18",
-      items: [{ label: "Portfolio Building", desc: "Project showcase", type: "phase" }]
+      week: t("courses_page.week_range", { range: "14–18" }),
+      items: [{ label: t("courses_page.portfolio_build"), desc: t("courses_page.portfolio_build_desc"), type: "phase" }]
     },
     {
-      week: "Week 16–18",
-      items: [{ label: "Portfolio Review", desc: "Expert feedback", type: "phase" }]
+      week: t("courses_page.week_range", { range: "16–18" }),
+      items: [{ label: t("courses_page.portfolio_review"), desc: t("courses_page.portfolio_review_desc"), type: "phase" }]
     },
     {
-      week: "Week 20",
+      week: t("courses_page.week_range", { range: "20" }),
       items: [
-        { label: "Final Test", desc: "Final assessment", type: "test" },
-        { label: "Mock Interviews", desc: "Career prep", type: "test" },
-        { label: "Portfolio Presentation", desc: "Final showcase", type: "test" }
+        { label: t("courses_page.final_test"), desc: t("courses_page.final_test_desc"), type: "test" },
+        { label: t("courses_page.mock_interview"), desc: t("courses_page.mock_interview_desc"), type: "test" },
+        { label: t("courses_page.portfolio_pres"), desc: t("courses_page.portfolio_pres_desc"), type: "test" }
       ]
     },
     {
-      week: "Week 24+",
-      items: [{ label: "Certificate Distribution", desc: "Credential awarded", type: "phase" }]
+      week: t("courses_page.week_range", { range: "24+" }),
+      items: [{ label: t("courses_page.cert_dist"), desc: t("courses_page.cert_dist_desc"), type: "phase" }]
     }
   ];
 
@@ -320,45 +322,45 @@ function InstructorCTA({ className = "", activeTrack = "data-tech" }: { classNam
 
 const courseDetails: Record<string, CourseDetail[]> = {
   agriculture: [
-    { id: "ag-1", titleKey: "courses.tracks.agriculture.c1", descKey: "courses.tracks.agriculture.desc1", image: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&q=80&w=800", duration: "8 Weeks", level: "Foundation", tags: ["Sustainability", "Ecology"] },
-    { id: "ag-2", titleKey: "courses.tracks.agriculture.c2", descKey: "courses.tracks.agriculture.desc2", image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800", duration: "6 Weeks", level: "Foundation", tags: ["Commercial", "Horticulture"] },
-    { id: "ag-3", titleKey: "courses.tracks.agriculture.c3", descKey: "courses.tracks.agriculture.desc3", image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800", duration: "4 Weeks", level: "Foundation", tags: ["Soil Health", "Waste Mgmt"] },
-    { id: "ag-4", titleKey: "courses.tracks.agriculture.c4", descKey: "courses.tracks.agriculture.desc4", image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=800", duration: "8 Weeks", level: "Foundation", tags: ["Livestock", "Nutrition"] },
-    { id: "ag-5", titleKey: "courses.tracks.agriculture.c5", descKey: "courses.tracks.agriculture.desc5", image: "https://images.unsplash.com/photo-1497001891232-e215c30774d1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "10 Weeks", level: "Foundation", tags: ["Aquaculture", "Water Mgmt"] },
-    { id: "ag-a1", titleKey: "courses.tracks.agriculture.a1", descKey: "courses.tracks.agriculture.desca1", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800", duration: "12 Weeks", level: "Advance", tags: ["Agro-Processing", "Branding"] },
-    { id: "ag-a2", titleKey: "courses.tracks.agriculture.a2", descKey: "courses.tracks.agriculture.desca2", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800", duration: "14 Weeks", level: "Advance", tags: ["Exports", "Global Trade"] },
+    { id: "ag-1", titleKey: "courses.tracks.agriculture.c1", descKey: "courses.tracks.agriculture.desc1", image: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.sustainability", "courses_page.tags.ecology"] },
+    { id: "ag-2", titleKey: "courses.tracks.agriculture.c2", descKey: "courses.tracks.agriculture.desc2", image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.commercial", "courses_page.tags.horticulture"] },
+    { id: "ag-3", titleKey: "courses.tracks.agriculture.c3", descKey: "courses.tracks.agriculture.desc3", image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w4", level: "Foundation", tagKeys: ["courses_page.tags.soil_health", "courses_page.tags.waste_mgmt"] },
+    { id: "ag-4", titleKey: "courses.tracks.agriculture.c4", descKey: "courses.tracks.agriculture.desc4", image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.livestock", "courses_page.tags.nutrition"] },
+    { id: "ag-5", titleKey: "courses.tracks.agriculture.c5", descKey: "courses.tracks.agriculture.desc5", image: "https://images.unsplash.com/photo-1497001891232-e215c30774d1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w10", level: "Foundation", tagKeys: ["courses_page.tags.aquaculture", "courses_page.tags.water_mgmt"] },
+    { id: "ag-a1", titleKey: "courses.tracks.agriculture.a1", descKey: "courses.tracks.agriculture.desca1", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.agro_processing", "courses_page.tags.branding"] },
+    { id: "ag-a2", titleKey: "courses.tracks.agriculture.a2", descKey: "courses.tracks.agriculture.desca2", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.exports", "courses_page.tags.global_trade"] },
   ],
   wellness: [
-    { id: "wl-1", titleKey: "courses.tracks.wellness.c1", descKey: "courses.tracks.wellness.desc1", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800", duration: "6 Weeks", level: "Foundation", tags: ["Hygiene", "Public Health"] },
-    { id: "wl-2", titleKey: "courses.tracks.wellness.c2", descKey: "courses.tracks.wellness.desc2", image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800", duration: "10 Weeks", level: "Foundation", tags: ["Ayurveda", "Herbal Medicine"] },
-    { id: "wl-3", titleKey: "courses.tracks.wellness.c3", descKey: "courses.tracks.wellness.desc3", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800", duration: "8 Weeks", level: "Foundation", tags: ["Yoga", "Meditation"] },
-    { id: "wl-4", titleKey: "courses.tracks.wellness.c4", descKey: "courses.tracks.wellness.desc4", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800", duration: "6 Weeks", level: "Foundation", tags: ["Nutrition", "Local Diet"] },
-    { id: "wl-5", titleKey: "courses.tracks.wellness.c5", descKey: "courses.tracks.wellness.desc5", image: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=800", duration: "4 Weeks", level: "Foundation", tags: ["First Aid", "Emergency"] },
-    { id: "wl-a1", titleKey: "courses.tracks.wellness.a1", descKey: "courses.tracks.wellness.desca1", image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800", duration: "12 Weeks", level: "Advance", tags: ["Diagnostics", "Panchakarma"] },
+    { id: "wl-1", titleKey: "courses.tracks.wellness.c1", descKey: "courses.tracks.wellness.desc1", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.hygiene", "courses_page.tags.public_health"] },
+    { id: "wl-2", titleKey: "courses.tracks.wellness.c2", descKey: "courses.tracks.wellness.desc2", image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Foundation", tagKeys: ["courses_page.tags.ayurveda", "courses_page.tags.herbal_medicine"] },
+    { id: "wl-3", titleKey: "courses.tracks.wellness.c3", descKey: "courses.tracks.wellness.desc3", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.yoga", "courses_page.tags.meditation"] },
+    { id: "wl-4", titleKey: "courses.tracks.wellness.c4", descKey: "courses.tracks.wellness.desc4", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.nutrition", "courses_page.tags.local_diet"] },
+    { id: "wl-5", titleKey: "courses.tracks.wellness.c5", descKey: "courses.tracks.wellness.desc5", image: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w4", level: "Foundation", tagKeys: ["courses_page.tags.first_aid", "courses_page.tags.emergency"] },
+    { id: "wl-a1", titleKey: "courses.tracks.wellness.a1", descKey: "courses.tracks.wellness.desca1", image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.diagnostics", "courses_page.tags.panchakarma"] },
   ],
   "data-tech": [
-    { id: "dt-1", titleKey: "courses.tracks.data_tech.c1", descKey: "courses.tracks.data_tech.desc1", image: "https://images.unsplash.com/photo-1740908900846-4bbd4f22c975?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "6 Weeks", level: "Foundation", tags: ["Data", "Analysis"] },
-    { id: "dt-2", titleKey: "courses.tracks.data_tech.c2", descKey: "courses.tracks.data_tech.desc2", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800", duration: "6 Weeks", level: "Foundation", tags: ["Hardware", "Security"] },
-    { id: "dt-3", titleKey: "courses.tracks.data_tech.c3", descKey: "courses.tracks.data_tech.desc3", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800", duration: "8 Weeks", level: "Foundation", tags: ["GenAI", "Office Tools"] },
-    { id: "dt-4", titleKey: "courses.tracks.data_tech.c4", descKey: "courses.tracks.data_tech.desc4", image: "https://plus.unsplash.com/premium_photo-1664474559614-74d16c1c6f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "6 Weeks", level: "Foundation", tags: ["Enterprise", "Bookkeeping"] },
-    { id: "dt-a1", titleKey: "courses.tracks.data_tech.a1", descKey: "courses.tracks.data_tech.desca1", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800", duration: "12 Weeks", level: "Advance", tags: ["Python", "Automation"] },
-    { id: "dt-a2", titleKey: "courses.tracks.data_tech.a2", descKey: "courses.tracks.data_tech.desca2", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800", duration: "16 Weeks", level: "Advance", tags: ["Web Dev", "React"] },
-    { id: "dt-a3", titleKey: "courses.tracks.data_tech.a3", descKey: "courses.tracks.data_tech.desca3", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", duration: "14 Weeks", level: "Advance", tags: ["Cloud", "AWS/Azure"] },
-    { id: "dt-a4", titleKey: "courses.tracks.data_tech.a4", descKey: "courses.tracks.data_tech.desca4", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "12 Weeks", level: "Advance", tags: ["SQL", "BI Tools"] },
-    { id: "dt-a5", titleKey: "courses.tracks.data_tech.a5", descKey: "courses.tracks.data_tech.desca5", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800", duration: "14 Weeks", level: "Advance", tags: ["AI Agents", "Workflows"] },
-    { id: "dt-a6", titleKey: "courses.tracks.data_tech.a6", descKey: "courses.tracks.data_tech.desca6", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", duration: "16 Weeks", level: "Advance", tags: ["Strategy", "Scaling"] },
+    { id: "dt-1", titleKey: "courses.tracks.data_tech.c1", descKey: "courses.tracks.data_tech.desc1", image: "https://images.unsplash.com/photo-1740908900846-4bbd4f22c975?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.data", "courses_page.tags.analysis"] },
+    { id: "dt-2", titleKey: "courses.tracks.data_tech.c2", descKey: "courses.tracks.data_tech.desc2", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.hardware", "courses_page.tags.security"] },
+    { id: "dt-3", titleKey: "courses.tracks.data_tech.c3", descKey: "courses.tracks.data_tech.desc3", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.genai", "courses_page.tags.office_tools"] },
+    { id: "dt-4", titleKey: "courses.tracks.data_tech.c4", descKey: "courses.tracks.data_tech.desc4", image: "https://plus.unsplash.com/premium_photo-1664474559614-74d16c1c6f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.enterprise", "courses_page.tags.bookkeeping"] },
+    { id: "dt-a1", titleKey: "courses.tracks.data_tech.a1", descKey: "courses.tracks.data_tech.desca1", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.python", "courses_page.tags.automation"] },
+    { id: "dt-a2", titleKey: "courses.tracks.data_tech.a2", descKey: "courses.tracks.data_tech.desca2", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tagKeys: ["courses_page.tags.web_dev", "courses_page.tags.react"] },
+    { id: "dt-a3", titleKey: "courses.tracks.data_tech.a3", descKey: "courses.tracks.data_tech.desca3", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.cloud", "courses_page.tags.aws_azure"] },
+    { id: "dt-a4", titleKey: "courses.tracks.data_tech.a4", descKey: "courses.tracks.data_tech.desca4", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.sql", "courses_page.tags.bi_tools"] },
+    { id: "dt-a5", titleKey: "courses.tracks.data_tech.a5", descKey: "courses.tracks.data_tech.desca5", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.ai_agents", "courses_page.tags.workflows"] },
+    { id: "dt-a6", titleKey: "courses.tracks.data_tech.a6", descKey: "courses.tracks.data_tech.desca6", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tagKeys: ["courses_page.tags.strategy", "courses_page.tags.scaling"] },
   ],
   "design-media": [
-    { id: "dm-1", titleKey: "courses.tracks.design_media.c1", descKey: "courses.tracks.design_media.desc1", image: "https://plus.unsplash.com/premium_photo-1661326291059-eb076cc5bdd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "8 Weeks", level: "Foundation", tags: ["Typography", "Layout"] },
-    { id: "dm-2", titleKey: "courses.tracks.design_media.c2", descKey: "courses.tracks.design_media.desc2", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800", duration: "8 Weeks", level: "Foundation", tags: ["Photography", "Lighting"] },
-    { id: "dm-3", titleKey: "courses.tracks.design_media.c3", descKey: "courses.tracks.design_media.desc3", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800", duration: "10 Weeks", level: "Foundation", tags: ["Video Editing", "Education"] },
-    { id: "dm-4", titleKey: "courses.tracks.design_media.c4", descKey: "courses.tracks.design_media.desc4", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=800", duration: "6 Weeks", level: "Foundation", tags: ["Storytelling", "Narrative"] },
-    { id: "dm-a1", titleKey: "courses.tracks.design_media.a1", descKey: "courses.tracks.design_media.desca1", image: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "12 Weeks", level: "Advance", tags: ["UI/UX", "Figma"] },
-    { id: "dm-a2", titleKey: "courses.tracks.design_media.a2", descKey: "courses.tracks.design_media.desca2", image: "https://images.unsplash.com/photo-1600697395543-ef3ee6e9af7b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "14 Weeks", level: "Advance", tags: ["Product Design", "3D"] },
-    { id: "dm-a3", titleKey: "courses.tracks.design_media.a3", descKey: "courses.tracks.design_media.desca3", image: "https://images.unsplash.com/photo-1587120511358-98f9104cc096?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "12 Weeks", level: "Advance", tags: ["Illustration", "Art"] },
-    { id: "dm-a4", titleKey: "courses.tracks.design_media.a4", descKey: "courses.tracks.design_media.desca4", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800", duration: "16 Weeks", level: "Advance", tags: ["Animation", "Sound"] },
-    { id: "dm-a5", titleKey: "courses.tracks.design_media.a5", descKey: "courses.tracks.design_media.desca5", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", duration: "10 Weeks", level: "Advance", tags: ["Marketing", "SEO"] },
-    { id: "dm-a6", titleKey: "courses.tracks.design_media.a6", descKey: "courses.tracks.design_media.desca6", image: "https://images.unsplash.com/photo-1764745222815-1395674e894b?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", duration: "14 Weeks", level: "Advance", tags: ["Branding", "Strategy"] },
+    { id: "dm-1", titleKey: "courses.tracks.design_media.c1", descKey: "courses.tracks.design_media.desc1", image: "https://plus.unsplash.com/premium_photo-1661326291059-eb076cc5bdd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.typography", "courses_page.tags.layout"] },
+    { id: "dm-2", titleKey: "courses.tracks.design_media.c2", descKey: "courses.tracks.design_media.desc2", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.photography", "courses_page.tags.lighting"] },
+    { id: "dm-3", titleKey: "courses.tracks.design_media.c3", descKey: "courses.tracks.design_media.desc3", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Foundation", tagKeys: ["courses_page.tags.video_editing", "courses_page.tags.education"] },
+    { id: "dm-4", titleKey: "courses.tracks.design_media.c4", descKey: "courses.tracks.design_media.desc4", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.storytelling", "courses_page.tags.narrative"] },
+    { id: "dm-a1", titleKey: "courses.tracks.design_media.a1", descKey: "courses.tracks.design_media.desca1", image: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.ui_ux", "courses_page.tags.figma"] },
+    { id: "dm-a2", titleKey: "courses.tracks.design_media.a2", descKey: "courses.tracks.design_media.desca2", image: "https://images.unsplash.com/photo-1600697395543-ef3ee6e9af7b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.product_design", "courses_page.tags.three_d"] },
+    { id: "dm-a3", titleKey: "courses.tracks.design_media.a3", descKey: "courses.tracks.design_media.desca3", image: "https://images.unsplash.com/photo-1587120511358-98f9104cc096?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.illustration", "courses_page.tags.art"] },
+    { id: "dm-a4", titleKey: "courses.tracks.design_media.a4", descKey: "courses.tracks.design_media.desca4", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tagKeys: ["courses_page.tags.animation", "courses_page.tags.sound"] },
+    { id: "dm-a5", titleKey: "courses.tracks.design_media.a5", descKey: "courses.tracks.design_media.desca5", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Advance", tagKeys: ["courses_page.tags.marketing", "courses_page.tags.seo"] },
+    { id: "dm-a6", titleKey: "courses.tracks.design_media.a6", descKey: "courses.tracks.design_media.desca6", image: "https://images.unsplash.com/photo-1764745222815-1395674e894b?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.branding", "courses_page.tags.strategy"] },
   ]
 };
 
@@ -376,15 +378,15 @@ function CourseCard({ course, t }: { course: CourseDetail; t: any }) {
       <div className="p-7 flex-1 flex flex-col">
         <div className="flex items-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-          <span className="text-[0.65rem] font-bold text-lime uppercase tracking-widest">{course.duration}</span>
+          <span className="text-[0.65rem] font-bold text-lime uppercase tracking-widest">{t(course.durationKey)}</span>
         </div>
         <h3 className="font-display text-xl text-olive dark:text-lime-light font-bold mb-3 leading-tight">{t(course.titleKey)}</h3>
 
-        {course.tags && (
+        {course.tagKeys && (
           <div className="flex flex-wrap gap-2 mb-4">
-            {course.tags.map((tag, i) => (
+            {course.tagKeys.map((tagKey, i) => (
               <span key={i} className="px-2 py-0.5 bg-cream dark:bg-black text-[0.6rem] font-bold text-text-muted dark:text-white/40 rounded-md uppercase tracking-wider">
-                {tag}
+                {t(tagKey)}
               </span>
             ))}
           </div>
@@ -501,7 +503,7 @@ export default function CoursesPage() {
     return (
       title.includes(query) ||
       desc.includes(query) ||
-      course.tags?.some((tag) => tag.toLowerCase().includes(query))
+      course.tagKeys?.some((tagKey) => t(tagKey).toLowerCase().includes(query))
     );
   });
 
@@ -555,7 +557,7 @@ export default function CoursesPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-white font-bold leading-tight">
-                Foundation Course <span className="text-lime dark:text-white">Timeline</span>
+                {t("courses_page.foundation_timeline_title")} <span className="text-lime dark:text-white">{t("courses_page.foundation_timeline_title_em")}</span>
               </h2>
             </div>
             <p className="text-sm text-text-muted dark:text-white/60 max-w-sm leading-relaxed">
@@ -573,11 +575,11 @@ export default function CoursesPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <h2 className="font-display text-3xl md:text-5xl text-olive dark:text-white font-bold leading-tight">
-                Advanced Course <span className="text-lime dark:text-white">Timeline</span>
+                {t("courses_page.advanced_timeline_title")} <span className="text-lime dark:text-white">{t("courses_page.advanced_timeline_title_em")}</span>
               </h2>
             </div>
             <p className="text-sm text-text-muted dark:text-white/60 max-w-sm leading-relaxed">
-              Advanced curriculum focusing on industry-ready expertise and professional portfolio building.
+              {t("courses_page.advanced_timeline_sub")}
             </p>
           </div>
 

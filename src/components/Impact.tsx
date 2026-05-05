@@ -11,22 +11,22 @@ export default function Impact() {
 
   const stats = [
     {
-      num: "500+",
+      num: t("impact.stat1_num"),
       label: t("impact.stat1_label"),
       desc: t("impact.stat1_desc"),
     },
     {
-      num: "26+",
+      num: t("impact.stat2_num"),
       label: t("impact.stat2_label"),
       desc: t("impact.stat2_desc"),
     },
     {
-      num: "2",
+      num: t("impact.stat3_num"),
       label: t("impact.stat3_label"),
       desc: t("impact.stat3_desc"),
     },
     {
-      num: "3",
+      num: t("impact.stat4_num"),
       label: t("impact.stat4_label"),
       desc: t("impact.stat4_desc"),
     },

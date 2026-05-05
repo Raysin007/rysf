@@ -4,7 +4,7 @@ import Chart from "chart.js/auto";
 import gsap from "gsap";
 
 export default function DonationDashboard() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const pageRef = useRef<HTMLDivElement>(null);
   const trendChartRef = useRef<HTMLCanvasElement>(null);
   const breakdownChartRef = useRef<HTMLCanvasElement>(null);
@@ -216,10 +216,10 @@ export default function DonationDashboard() {
         {/* Metric Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { label: t("dashboard.metrics.raised"), value: "₹5,68,420", sub: t("dashboard.metrics.vs_last_month", { val: "+12.4%" }), subColor: "text-emerald-600 dark:text-emerald-400" },
-            { label: t("dashboard.metrics.donors"), value: "1,284", sub: t("dashboard.metrics.new_this_month", { val: "+87" }), subColor: "text-emerald-600 dark:text-emerald-400" },
-            { label: t("dashboard.metrics.avg_gift"), value: "₹4,350", sub: t("dashboard.metrics.vs_last_month", { val: "-3.1%" }), subColor: "text-rose-600 dark:text-rose-400" },
-            { label: t("dashboard.metrics.retention"), value: "71%", sub: t("dashboard.metrics.pts_vs_last_month", { val: "+2" }), subColor: "text-emerald-600 dark:text-emerald-400" },
+            { label: t("dashboard.metrics.raised"), value: t("dashboard.vals.raised"), sub: t("dashboard.metrics.vs_last_month", { val: "+12.4%" }), subColor: "text-emerald-600 dark:text-emerald-400" },
+            { label: t("dashboard.metrics.donors"), value: t("dashboard.vals.donors"), sub: t("dashboard.metrics.new_this_month", { val: "+87" }), subColor: "text-emerald-600 dark:text-emerald-400" },
+            { label: t("dashboard.metrics.avg_gift"), value: t("dashboard.vals.avg_gift"), sub: t("dashboard.metrics.vs_last_month", { val: "-3.1%" }), subColor: "text-rose-600 dark:text-rose-400" },
+            { label: t("dashboard.metrics.retention"), value: t("dashboard.vals.retention"), sub: t("dashboard.metrics.pts_vs_last_month", { val: "+2" }), subColor: "text-emerald-600 dark:text-emerald-400" },
           ].map((m, i) => (
             <div key={i} className="dash-metric-card bg-[#f5f5f3] dark:bg-zinc-900/50 p-4 md:p-5 rounded-lg border border-zinc-200/50 dark:border-zinc-800 transition-all">
               <p className="text-zinc-500 dark:text-zinc-400 text-[11px] md:text-xs font-bold uppercase tracking-wider mb-2">{m.label}</p>
@@ -255,17 +255,17 @@ export default function DonationDashboard() {
           <div className="dash-main-card bg-white dark:bg-zinc-900 p-5 md:p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col gap-6">
             <div>
               <h3 className="font-bold text-sm md:text-base mb-4">{t("dashboard.goal.title")}</h3>
-              <h2 className="text-3xl font-bold mb-1">₹5,68,420</h2>
-              <p className="text-zinc-500 dark:text-zinc-400 text-xs font-medium">{t("dashboard.goal.status", { percent: 68, goal: "₹8,50,000" })}</p>
+              <h2 className="text-3xl font-bold mb-1">{t("dashboard.vals.goal")}</h2>
+              <p className="text-zinc-500 dark:text-zinc-400 text-xs font-medium">{t("dashboard.goal.status", { percent: t("dashboard.vals.goal_percent"), goal: t("dashboard.vals.goal_target") })}</p>
             </div>
 
             <div className="flex flex-col gap-2">
               <div className="w-full h-3 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
-                <div className="h-full bg-emerald-600 rounded-full" style={{ width: '68%' }} />
+                <div className="h-full bg-emerald-600 rounded-full" style={{ width: `${t("dashboard.vals.goal_percent")}%` }} />
               </div>
               <div className="flex justify-between text-[11px] font-bold text-zinc-500">
-                <span>{t("dashboard.goal.days_left", { days: 18 })}</span>
-                <span>{t("dashboard.goal.to_go", { amount: "₹2,81,580" })}</span>
+                <span>{t("dashboard.goal.days_left", { days: t("dashboard.vals.days_left") })}</span>
+                <span>{t("dashboard.goal.to_go", { amount: t("dashboard.vals.goal_to_go") })}</span>
               </div>
             </div>
 
@@ -295,11 +295,11 @@ export default function DonationDashboard() {
             <h3 className="font-bold text-sm md:text-base">{t("dashboard.donors.title")}</h3>
             <div className="flex flex-col gap-5">
               {[
-                { initials: "AM", name: "Amara Mensah", time: t("dashboard.donors.time_ago", { val: "2 min" }), type: t("dashboard.trend.recurring"), amount: "₹4,100/mo", bg: "bg-emerald-100 text-emerald-900" },
-                { initials: "RK", name: "Raj Kapoor", time: t("dashboard.donors.time_ago", { val: "18 min" }), type: t("dashboard.trend.one_time"), amount: "₹16,500", bg: "bg-blue-100 text-blue-900" },
-                { initials: "SC", name: "Sofia Chen", time: t("dashboard.donors.time_ago", { val: "1 hr" }), type: t("dashboard.trend.recurring"), amount: "₹2,050/mo", bg: "bg-amber-100 text-amber-900" },
-                { initials: "LN", name: "Liam Nwosu", time: t("dashboard.donors.time_ago", { val: "3 hrs" }), type: t("dashboard.trend.one_time"), amount: "₹8,200", bg: "bg-rose-100 text-rose-900" },
-                { initials: "YP", name: "Yuki Park", time: t("dashboard.donors.time_ago", { val: "5 hrs" }), type: t("dashboard.trend.one_time"), amount: "₹6,150", bg: "bg-purple-100 text-purple-900" },
+                { initials: "AM", name: t("dashboard.donors_list.d1"), time: t("dashboard.donors.time_ago", { val: t("dashboard.vals.min_2") }), type: t("dashboard.trend.recurring"), amount: t("dashboard.donors_list.d1_amt"), bg: "bg-emerald-100 text-emerald-900" },
+                { initials: "RK", name: t("dashboard.donors_list.d2"), time: t("dashboard.donors.time_ago", { val: t("dashboard.vals.min_18") }), type: t("dashboard.trend.one_time"), amount: t("dashboard.donors_list.d2_amt"), bg: "bg-blue-100 text-blue-900" },
+                { initials: "SC", name: t("dashboard.donors_list.d3"), time: t("dashboard.donors.time_ago", { val: t("dashboard.vals.hr_1") }), type: t("dashboard.trend.recurring"), amount: t("dashboard.donors_list.d3_amt"), bg: "bg-amber-100 text-amber-900" },
+                { initials: "LN", name: t("dashboard.donors_list.d4"), time: t("dashboard.donors.time_ago", { val: t("dashboard.vals.hr_3") }), type: t("dashboard.trend.one_time"), amount: t("dashboard.donors_list.d4_amt"), bg: "bg-rose-100 text-rose-900" },
+                { initials: "YP", name: t("dashboard.donors_list.d5"), time: t("dashboard.donors.time_ago", { val: t("dashboard.vals.hr_5") }), type: t("dashboard.trend.one_time"), amount: t("dashboard.donors_list.d5_amt"), bg: "bg-purple-100 text-purple-900" },
               ].map((d, i) => (
                 <div key={i} className="dash-donor-row flex items-center gap-3">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 ${d.bg}`}>
