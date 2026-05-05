@@ -13,7 +13,7 @@ interface CourseDetail {
   image: string;
   durationKey: string;
   level: string;
-  tagKeys?: string[];
+  tags?: string[];
 }
 
 function FoundationTimeline() {
@@ -275,7 +275,7 @@ function InstructorCTA({ className = "", activeTrack = "data-tech" }: { classNam
     <div className={`bg-[#1a1a1a] border border-[#2a2a2a] rounded-[12px] p-6 flex flex-col gap-6 ${className}`}>
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#a3e635]">
-          <img src="/punpun.png" alt={t("courses_page.instructor_name")} className="w-full h-full object-cover" />
+          <img src="/punpun.jpg" alt={t("courses_page.instructor_name")} className="w-full h-full object-cover" />
         </div>
         <div className="flex flex-col">
           <h4 className="text-white font-extrabold text-sm uppercase tracking-wider">{t("courses_page.instructor_name")}</h4>
@@ -322,49 +322,157 @@ function InstructorCTA({ className = "", activeTrack = "data-tech" }: { classNam
 
 const courseDetails: Record<string, CourseDetail[]> = {
   agriculture: [
-    { id: "ag-1", titleKey: "courses.tracks.agriculture.c1", descKey: "courses.tracks.agriculture.desc1", image: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.sustainability", "courses_page.tags.ecology"] },
-    { id: "ag-2", titleKey: "courses.tracks.agriculture.c2", descKey: "courses.tracks.agriculture.desc2", image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.commercial", "courses_page.tags.horticulture"] },
-    { id: "ag-3", titleKey: "courses.tracks.agriculture.c3", descKey: "courses.tracks.agriculture.desc3", image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w4", level: "Foundation", tagKeys: ["courses_page.tags.soil_health", "courses_page.tags.waste_mgmt"] },
-    { id: "ag-4", titleKey: "courses.tracks.agriculture.c4", descKey: "courses.tracks.agriculture.desc4", image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.livestock", "courses_page.tags.nutrition"] },
-    { id: "ag-5", titleKey: "courses.tracks.agriculture.c5", descKey: "courses.tracks.agriculture.desc5", image: "https://images.unsplash.com/photo-1497001891232-e215c30774d1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w10", level: "Foundation", tagKeys: ["courses_page.tags.aquaculture", "courses_page.tags.water_mgmt"] },
-    { id: "ag-a1", titleKey: "courses.tracks.agriculture.a1", descKey: "courses.tracks.agriculture.desca1", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.agro_processing", "courses_page.tags.branding"] },
-    { id: "ag-a2", titleKey: "courses.tracks.agriculture.a2", descKey: "courses.tracks.agriculture.desca2", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.exports", "courses_page.tags.global_trade"] },
+    { id: "ag-1", titleKey: "courses.tracks.agriculture.c1", descKey: "courses.tracks.agriculture.desc1", image: "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tags: ["Sustainability", "Ecology"] },
+    { id: "ag-2", titleKey: "courses.tracks.agriculture.c2", descKey: "courses.tracks.agriculture.desc2", image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Commercial", "Horticulture"] },
+    { id: "ag-3", titleKey: "courses.tracks.agriculture.c3", descKey: "courses.tracks.agriculture.desc3", image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w4", level: "Foundation", tags: ["Soil Health", "Waste Mgmt"] },
+    { id: "ag-4", titleKey: "courses.tracks.agriculture.c4", descKey: "courses.tracks.agriculture.desc4", image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tags: ["Livestock", "Nutrition"] },
+    { id: "ag-5", titleKey: "courses.tracks.agriculture.c5", descKey: "courses.tracks.agriculture.desc5", image: "https://images.unsplash.com/photo-1497001891232-e215c30774d1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w10", level: "Foundation", tags: ["Aquaculture", "Water Mgmt"] },
+    { id: "ag-a1", titleKey: "courses.tracks.agriculture.a1", descKey: "courses.tracks.agriculture.desca1", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tags: ["Agro-Processing", "Branding"] },
+    { id: "ag-a2", titleKey: "courses.tracks.agriculture.a2", descKey: "courses.tracks.agriculture.desca2", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tags: ["Exports", "Global Trade"] },
   ],
   wellness: [
-    { id: "wl-1", titleKey: "courses.tracks.wellness.c1", descKey: "courses.tracks.wellness.desc1", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.hygiene", "courses_page.tags.public_health"] },
-    { id: "wl-2", titleKey: "courses.tracks.wellness.c2", descKey: "courses.tracks.wellness.desc2", image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Foundation", tagKeys: ["courses_page.tags.ayurveda", "courses_page.tags.herbal_medicine"] },
-    { id: "wl-3", titleKey: "courses.tracks.wellness.c3", descKey: "courses.tracks.wellness.desc3", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.yoga", "courses_page.tags.meditation"] },
-    { id: "wl-4", titleKey: "courses.tracks.wellness.c4", descKey: "courses.tracks.wellness.desc4", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.nutrition", "courses_page.tags.local_diet"] },
-    { id: "wl-5", titleKey: "courses.tracks.wellness.c5", descKey: "courses.tracks.wellness.desc5", image: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w4", level: "Foundation", tagKeys: ["courses_page.tags.first_aid", "courses_page.tags.emergency"] },
-    { id: "wl-a1", titleKey: "courses.tracks.wellness.a1", descKey: "courses.tracks.wellness.desca1", image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.diagnostics", "courses_page.tags.panchakarma"] },
+    { id: "wl-1", titleKey: "courses.tracks.wellness.c1", descKey: "courses.tracks.wellness.desc1", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Hygiene", "Public Health"] },
+    { id: "wl-2", titleKey: "courses.tracks.wellness.c2", descKey: "courses.tracks.wellness.desc2", image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Foundation", tags: ["Ayurveda", "Herbal Medicine"] },
+    { id: "wl-3", titleKey: "courses.tracks.wellness.c3", descKey: "courses.tracks.wellness.desc3", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tags: ["Yoga", "Meditation"] },
+    { id: "wl-4", titleKey: "courses.tracks.wellness.c4", descKey: "courses.tracks.wellness.desc4", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Nutrition", "Local Diet"] },
+    { id: "wl-5", titleKey: "courses.tracks.wellness.c5", descKey: "courses.tracks.wellness.desc5", image: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w4", level: "Foundation", tags: ["First Aid", "Emergency"] },
+    { id: "wl-a1", titleKey: "courses.tracks.wellness.a1", descKey: "courses.tracks.wellness.desca1", image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tags: ["Diagnostics", "Panchakarma"] },
   ],
   "data-tech": [
-    { id: "dt-1", titleKey: "courses.tracks.data_tech.c1", descKey: "courses.tracks.data_tech.desc1", image: "https://images.unsplash.com/photo-1740908900846-4bbd4f22c975?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.data", "courses_page.tags.analysis"] },
-    { id: "dt-2", titleKey: "courses.tracks.data_tech.c2", descKey: "courses.tracks.data_tech.desc2", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.hardware", "courses_page.tags.security"] },
-    { id: "dt-3", titleKey: "courses.tracks.data_tech.c3", descKey: "courses.tracks.data_tech.desc3", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.genai", "courses_page.tags.office_tools"] },
-    { id: "dt-4", titleKey: "courses.tracks.data_tech.c4", descKey: "courses.tracks.data_tech.desc4", image: "https://plus.unsplash.com/premium_photo-1664474559614-74d16c1c6f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.enterprise", "courses_page.tags.bookkeeping"] },
-    { id: "dt-a1", titleKey: "courses.tracks.data_tech.a1", descKey: "courses.tracks.data_tech.desca1", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.python", "courses_page.tags.automation"] },
-    { id: "dt-a2", titleKey: "courses.tracks.data_tech.a2", descKey: "courses.tracks.data_tech.desca2", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tagKeys: ["courses_page.tags.web_dev", "courses_page.tags.react"] },
-    { id: "dt-a3", titleKey: "courses.tracks.data_tech.a3", descKey: "courses.tracks.data_tech.desca3", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.cloud", "courses_page.tags.aws_azure"] },
-    { id: "dt-a4", titleKey: "courses.tracks.data_tech.a4", descKey: "courses.tracks.data_tech.desca4", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.sql", "courses_page.tags.bi_tools"] },
-    { id: "dt-a5", titleKey: "courses.tracks.data_tech.a5", descKey: "courses.tracks.data_tech.desca5", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.ai_agents", "courses_page.tags.workflows"] },
-    { id: "dt-a6", titleKey: "courses.tracks.data_tech.a6", descKey: "courses.tracks.data_tech.desca6", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tagKeys: ["courses_page.tags.strategy", "courses_page.tags.scaling"] },
+    { id: "dt-1", titleKey: "courses.tracks.data_tech.c1", descKey: "courses.tracks.data_tech.desc1", image: "https://images.unsplash.com/photo-1740908900846-4bbd4f22c975?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Data", "Analysis"] },
+    { id: "dt-2", titleKey: "courses.tracks.data_tech.c2", descKey: "courses.tracks.data_tech.desc2", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Hardware", "Security"] },
+    { id: "dt-3", titleKey: "courses.tracks.data_tech.c3", descKey: "courses.tracks.data_tech.desc3", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tags: ["GenAI", "Office Tools"] },
+    { id: "dt-4", titleKey: "courses.tracks.data_tech.c4", descKey: "courses.tracks.data_tech.desc4", image: "https://plus.unsplash.com/premium_photo-1664474559614-74d16c1c6f6f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Enterprise", "Bookkeeping"] },
+    { id: "dt-a1", titleKey: "courses.tracks.data_tech.a1", descKey: "courses.tracks.data_tech.desca1", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w12", level: "Advance", tags: ["Python", "Automation"] },
+    { id: "dt-a2", titleKey: "courses.tracks.data_tech.a2", descKey: "courses.tracks.data_tech.desca2", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tags: ["Web Dev", "React"] },
+    { id: "dt-a3", titleKey: "courses.tracks.data_tech.a3", descKey: "courses.tracks.data_tech.desca3", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tags: ["Cloud", "AWS/Azure"] },
+    { id: "dt-a4", titleKey: "courses.tracks.data_tech.a4", descKey: "courses.tracks.data_tech.desca4", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tags: ["SQL", "BI Tools"] },
+    { id: "dt-a5", titleKey: "courses.tracks.data_tech.a5", descKey: "courses.tracks.data_tech.desca5", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w14", level: "Advance", tags: ["AI Agents", "Workflows"] },
+    { id: "dt-a6", titleKey: "courses.tracks.data_tech.a6", descKey: "courses.tracks.data_tech.desca6", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tags: ["Strategy", "Scaling"] },
   ],
   "design-media": [
-    { id: "dm-1", titleKey: "courses.tracks.design_media.c1", descKey: "courses.tracks.design_media.desc1", image: "https://plus.unsplash.com/premium_photo-1661326291059-eb076cc5bdd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.typography", "courses_page.tags.layout"] },
-    { id: "dm-2", titleKey: "courses.tracks.design_media.c2", descKey: "courses.tracks.design_media.desc2", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tagKeys: ["courses_page.tags.photography", "courses_page.tags.lighting"] },
-    { id: "dm-3", titleKey: "courses.tracks.design_media.c3", descKey: "courses.tracks.design_media.desc3", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Foundation", tagKeys: ["courses_page.tags.video_editing", "courses_page.tags.education"] },
-    { id: "dm-4", titleKey: "courses.tracks.design_media.c4", descKey: "courses.tracks.design_media.desc4", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tagKeys: ["courses_page.tags.storytelling", "courses_page.tags.narrative"] },
-    { id: "dm-a1", titleKey: "courses.tracks.design_media.a1", descKey: "courses.tracks.design_media.desca1", image: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.ui_ux", "courses_page.tags.figma"] },
-    { id: "dm-a2", titleKey: "courses.tracks.design_media.a2", descKey: "courses.tracks.design_media.desca2", image: "https://images.unsplash.com/photo-1600697395543-ef3ee6e9af7b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.product_design", "courses_page.tags.three_d"] },
-    { id: "dm-a3", titleKey: "courses.tracks.design_media.a3", descKey: "courses.tracks.design_media.desca3", image: "https://images.unsplash.com/photo-1587120511358-98f9104cc096?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tagKeys: ["courses_page.tags.illustration", "courses_page.tags.art"] },
-    { id: "dm-a4", titleKey: "courses.tracks.design_media.a4", descKey: "courses.tracks.design_media.desca4", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tagKeys: ["courses_page.tags.animation", "courses_page.tags.sound"] },
-    { id: "dm-a5", titleKey: "courses.tracks.design_media.a5", descKey: "courses.tracks.design_media.desca5", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Advance", tagKeys: ["courses_page.tags.marketing", "courses_page.tags.seo"] },
-    { id: "dm-a6", titleKey: "courses.tracks.design_media.a6", descKey: "courses.tracks.design_media.desca6", image: "https://images.unsplash.com/photo-1764745222815-1395674e894b?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w14", level: "Advance", tagKeys: ["courses_page.tags.branding", "courses_page.tags.strategy"] },
+    { id: "dm-1", titleKey: "courses.tracks.design_media.c1", descKey: "courses.tracks.design_media.desc1", image: "https://plus.unsplash.com/premium_photo-1661326291059-eb076cc5bdd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w8", level: "Foundation", tags: ["Typography", "Layout"] },
+    { id: "dm-2", titleKey: "courses.tracks.design_media.c2", descKey: "courses.tracks.design_media.desc2", image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w8", level: "Foundation", tags: ["Photography", "Lighting"] },
+    { id: "dm-3", titleKey: "courses.tracks.design_media.c3", descKey: "courses.tracks.design_media.desc3", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Foundation", tags: ["Video Editing", "Education"] },
+    { id: "dm-4", titleKey: "courses.tracks.design_media.c4", descKey: "courses.tracks.design_media.desc4", image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w6", level: "Foundation", tags: ["Storytelling", "Narrative"] },
+    { id: "dm-a1", titleKey: "courses.tracks.design_media.a1", descKey: "courses.tracks.design_media.desca1", image: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tags: ["UI/UX", "Figma"] },
+    { id: "dm-a2", titleKey: "courses.tracks.design_media.a2", descKey: "courses.tracks.design_media.desca2", image: "https://images.unsplash.com/photo-1600697395543-ef3ee6e9af7b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w14", level: "Advance", tags: ["Product Design", "3D"] },
+    { id: "dm-a3", titleKey: "courses.tracks.design_media.a3", descKey: "courses.tracks.design_media.desca3", image: "https://images.unsplash.com/photo-1587120511358-98f9104cc096?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w12", level: "Advance", tags: ["Illustration", "Art"] },
+    { id: "dm-a4", titleKey: "courses.tracks.design_media.a4", descKey: "courses.tracks.design_media.desca4", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w16", level: "Advance", tags: ["Animation", "Sound"] },
+    { id: "dm-a5", titleKey: "courses.tracks.design_media.a5", descKey: "courses.tracks.design_media.desca5", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", durationKey: "courses_page.durations.w10", level: "Advance", tags: ["Marketing", "SEO"] },
+    { id: "dm-a6", titleKey: "courses.tracks.design_media.a6", descKey: "courses.tracks.design_media.desca6", image: "https://images.unsplash.com/photo-1764745222815-1395674e894b?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", durationKey: "courses_page.durations.w14", level: "Advance", tags: ["Branding", "Strategy"] },
   ]
 };
 
-function CourseCard({ course, t }: { course: CourseDetail; t: any }) {
+function CourseModal({ course, onClose }: { course: CourseDetail; onClose: () => void }) {
+  const { t } = useTranslation();
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isAdvance = course.level === "Advance";
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" });
+    gsap.fromTo(cardRef.current,
+      { opacity: 0, scale: 0.94, y: 28 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.35, ease: "power3.out" }
+    );
+    return () => { document.body.style.overflow = ""; };
+  }, []);
+
+  const handleClose = () => {
+    gsap.to(cardRef.current, { opacity: 0, scale: 0.96, y: 16, duration: 0.2, ease: "power2.in" });
+    gsap.to(overlayRef.current, { opacity: 0, duration: 0.25, delay: 0.05, ease: "power2.in", onComplete: onClose });
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  return (
+    <div
+      ref={overlayRef}
+      onClick={(e) => { if (e.target === overlayRef.current) handleClose(); }}
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8"
+      style={{ backgroundColor: "rgba(0,0,0,0.72)", backdropFilter: "blur(6px)" }}
+    >
+      <div
+        ref={cardRef}
+        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden border border-border-subtle shadow-lg-custom w-full max-w-3xl max-h-[92vh] overflow-y-auto"
+      >
+        {/* Close */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-zinc-800 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all backdrop-blur-sm"
+          aria-label="Close"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        {/* Hero image */}
+        <div className="h-56 overflow-hidden relative flex-shrink-0">
+          <img src={course.image} alt={t(course.titleKey)} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className={`absolute top-4 left-4 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold tracking-widest uppercase text-white border border-white/20 ${isAdvance ? "bg-olive/80" : "bg-lime/70"}`}>
+            {t("courses." + course.level.toLowerCase())}
+          </div>
+          <div className="absolute bottom-4 left-4 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
+            <span className="text-[0.65rem] font-bold text-white uppercase tracking-widest">{t(course.durationKey)}</span>
+          </div>
+        </div>
+
+        <div className="p-7 md:p-9 flex flex-col gap-6">
+          {/* Title + tags */}
+          <div>
+            <h2 className="font-display text-2xl md:text-3xl text-olive dark:text-lime-light font-bold mb-3 leading-tight">
+              {t(course.titleKey)}
+            </h2>
+            {course.tags && (
+              <div className="flex flex-wrap gap-2">
+                {course.tags.map((tag, i) => (
+                  <span key={i} className="px-2.5 py-0.5 bg-cream dark:bg-black text-[0.6rem] font-bold text-text-muted dark:text-white/40 rounded-md uppercase tracking-wider">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Description */}
+          <p className="text-sm text-text-muted dark:text-white/70 leading-relaxed">
+            {t(course.descKey)}
+          </p>
+
+          {/* Timeline */}
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-lime mb-5">
+              {t("courses_page.timeline_label")} — {isAdvance ? t("courses_page.advanced_track") : t("courses_page.foundation_track")}
+            </p>
+            <div className="bg-cream dark:bg-zinc-800/40 rounded-[20px] p-5 md:p-8 overflow-x-auto">
+              {isAdvance ? <AdvancedTimeline /> : <FoundationTimeline />}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <Link
+            to="/#contact"
+            onClick={handleClose}
+            className="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-lime text-white font-bold text-sm rounded-xl hover:bg-olive transition-all hover:-translate-y-0.5 hover:shadow-md-custom"
+          >
+            {t("courses_page.apply_now")} →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CourseCard({ course, t, onOpen }: { course: CourseDetail; t: any; onOpen: (c: CourseDetail) => void }) {
   return (
     <div className="course-card bg-white dark:bg-zinc-900 rounded-[20px] overflow-hidden border border-border-subtle shadow-sm-custom hover:shadow-md-custom transition-all group h-full flex flex-col">
       <div className="h-52 overflow-hidden relative">
@@ -382,11 +490,11 @@ function CourseCard({ course, t }: { course: CourseDetail; t: any }) {
         </div>
         <h3 className="font-display text-xl text-olive dark:text-lime-light font-bold mb-3 leading-tight">{t(course.titleKey)}</h3>
 
-        {course.tagKeys && (
+        {course.tags && (
           <div className="flex flex-wrap gap-2 mb-4">
-            {course.tagKeys.map((tagKey, i) => (
+            {course.tags.map((tag, i) => (
               <span key={i} className="px-2 py-0.5 bg-cream dark:bg-black text-[0.6rem] font-bold text-text-muted dark:text-white/40 rounded-md uppercase tracking-wider">
-                {t(tagKey)}
+                {tag}
               </span>
             ))}
           </div>
@@ -396,12 +504,15 @@ function CourseCard({ course, t }: { course: CourseDetail; t: any }) {
           {t(course.descKey)}
         </p>
         <div className="mt-auto">
-          <Link to="/#contact" className="group relative inline-flex items-center justify-center w-full py-3 border border-lime/30 rounded-xl text-lime font-bold text-sm hover:bg-lime hover:text-white transition-all text-center">
+          <button
+            onClick={() => onOpen(course)}
+            className="group/btn relative inline-flex items-center justify-center w-full py-3 border border-lime/30 rounded-xl text-lime font-bold text-sm hover:bg-lime hover:text-white transition-all text-center"
+          >
             {t("courses_page.course_details")}
-            <span className="ml-2 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 font-serif text-lg leading-none">
+            <span className="ml-2 opacity-0 -translate-x-2 transition-all group-hover/btn:opacity-100 group-hover/btn:translate-x-0 font-serif text-lg leading-none">
               →
             </span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>
@@ -414,6 +525,7 @@ export default function CoursesPage() {
   const trackParam = searchParams.get("track");
 
   const [activeTrack, setActiveTrack] = useState(trackParam || "data-tech");
+  const [selectedCourse, setSelectedCourse] = useState<CourseDetail | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const pageRef = useRef<HTMLDivElement>(null);
 
@@ -503,12 +615,13 @@ export default function CoursesPage() {
     return (
       title.includes(query) ||
       desc.includes(query) ||
-      course.tagKeys?.some((tagKey) => t(tagKey).toLowerCase().includes(query))
+      course.tags?.some((tag) => tag.toLowerCase().includes(query))
     );
   });
 
   return (
-    <div ref={pageRef} className="bg-cream dark:bg-black min-h-screen pt-32 pb-20 px-[5vw]">
+    <>
+      <div ref={pageRef} className="bg-cream dark:bg-black min-h-screen pt-32 pb-20 px-[5vw]">
       <div className="max-w-[1280px] mx-auto">
         <header className="mb-16">
           <div className="flex items-center gap-2 text-sm font-medium text-text-muted mb-4 page-header-item">
@@ -636,7 +749,7 @@ export default function CoursesPage() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {filteredCourses.filter(c => c.level === "Foundation").map((course) => (
-                        <CourseCard key={course.id} course={course} t={t} />
+                        <CourseCard key={course.id} course={course} t={t} onOpen={setSelectedCourse} />
                       ))}
                     </div>
                   </div>
@@ -651,7 +764,7 @@ export default function CoursesPage() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {filteredCourses.filter(c => c.level === "Advance").map((course) => (
-                        <CourseCard key={course.id} course={course} t={t} />
+                        <CourseCard key={course.id} course={course} t={t} onOpen={setSelectedCourse} />
                       ))}
                     </div>
 
@@ -723,5 +836,11 @@ export default function CoursesPage() {
 
       </div>
     </div>
+
+    {/* Course Detail Modal */}
+    {selectedCourse && (
+      <CourseModal course={selectedCourse} onClose={() => setSelectedCourse(null)} />
+    )}
+    </>
   );
 }

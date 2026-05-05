@@ -233,7 +233,7 @@ i18n
             foundation_track: "For any Foundation Course",
             advanced_track: "For any Advanced Course",
             instructor_name: "Dr. Subhendu Kundu",
-            instructor_title: "Lead Instructor & Founder",
+            instructor_title: "Co-founder & Lead Instructor",
             instructor_headline_agriculture: "Ready to scale your agri-business?",
             instructor_headline_wellness: "Ready to master traditional wellness?",
             instructor_headline_data_tech: "Ready to lead the tech revolution?",
