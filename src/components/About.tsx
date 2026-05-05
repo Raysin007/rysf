@@ -26,17 +26,17 @@ export default function About() {
 
   const pillars = [
     {
-      num: "01",
+      num: t("about.pillar1_num"),
       title: t("about.pillar1_title"),
       desc: t("about.pillar1_desc"),
     },
     {
-      num: "02",
+      num: t("about.pillar2_num"),
       title: t("about.pillar2_title"),
       desc: t("about.pillar2_desc"),
     },
     {
-      num: "03",
+      num: t("about.pillar3_num"),
       title: t("about.pillar3_title"),
       desc: t("about.pillar3_desc"),
     },

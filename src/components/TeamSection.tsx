@@ -13,9 +13,9 @@ interface TeamMember {
   bioKey: string;
   image: string;
   initials: string;
-  location: string;
-  joinYear: string;
-  skills: string[];
+  locationKey: string;
+  joinYearKey: string;
+  skillKeys: string[];
   linkedin?: string;
   twitter?: string;
 }
@@ -29,9 +29,9 @@ const members: TeamMember[] = [
     bioKey: "team.members.rabiul.bio",
     image: "/rabi.webp",
     initials: "RI",
-    location: "Plassey, Nadia",
-    joinYear: "2026",
-    skills: ["Community Outreach", "Program Design", "Rural Development"],
+    locationKey: "team.locations.plassey_nadia",
+    joinYearKey: "team.year_2026",
+    skillKeys: ["team.skills_list.comm_outreach", "team.skills_list.prog_design", "team.skills_list.rural_dev"],
     linkedin: "#",
     twitter: "#",
   },
@@ -43,9 +43,9 @@ const members: TeamMember[] = [
     bioKey: "team.members.subhendu.bio",
     image: "/punpun.jpg",
     initials: "SK",
-    location: "Mirik, Darjeeling",
-    joinYear: "2026",
-    skills: ["Curriculum Design", "Skill Training", "Education"],
+    locationKey: "team.locations.mirik_darjeeling",
+    joinYearKey: "team.year_2026",
+    skillKeys: ["team.skills_list.curr_design", "team.skills_list.skill_training", "team.skills_list.education"],
     linkedin: "#",
     twitter: "#",
   },
@@ -57,9 +57,9 @@ const members: TeamMember[] = [
     bioKey: "team.members.member3.bio",
     image: "/deepom.jpg",
     initials: "AM",
-    location: "Plassey, Nadia",
-    joinYear: "2026",
-    skills: ["Agriculture", "Organic Farming", "Livelihood"],
+    locationKey: "team.locations.plassey_nadia",
+    joinYearKey: "team.year_2026",
+    skillKeys: ["team.skills_list.agri", "team.skills_list.org_farming", "team.skills_list.livelihood"],
     linkedin: "#",
   },
   {
@@ -70,9 +70,9 @@ const members: TeamMember[] = [
     bioKey: "team.members.member4.bio",
     image: "/rahul.webp",
     initials: "PD",
-    location: "Darjeeling",
-    joinYear: "2026",
-    skills: ["Digital Literacy", "Tech Training", "AI Tools"],
+    locationKey: "team.locations.darjeeling",
+    joinYearKey: "team.year_2026",
+    skillKeys: ["team.skills_list.dig_literacy", "team.skills_list.tech_training", "team.skills_list.ai_tools"],
     linkedin: "#",
     twitter: "#",
   },
@@ -84,9 +84,9 @@ const members: TeamMember[] = [
     bioKey: "team.members.member5.bio",
     image: "/santam.webp",
     initials: "SR",
-    location: "Kalimpong",
-    joinYear: "2026",
-    skills: ["Wellness", "Ayurveda", "Health Education"],
+    locationKey: "team.locations.kalimpong",
+    joinYearKey: "team.year_2026",
+    skillKeys: ["team.skills_list.wellness", "team.skills_list.ayurveda", "team.skills_list.health_edu"],
     linkedin: "#",
   },
   {
@@ -97,9 +97,9 @@ const members: TeamMember[] = [
     bioKey: "team.members.member6.bio",
     image: "/soumajit.webp",
     initials: "KM",
-    location: "Behala, Kolkata",
-    joinYear: "2026",
-    skills: ["Design", "Media", "Visual Communication"],
+    locationKey: "team.locations.behala_kolkata",
+    joinYearKey: "team.year_2026",
+    skillKeys: ["team.skills_list.design", "team.skills_list.media", "team.skills_list.vis_comm"],
     linkedin: "#",
     twitter: "#",
   },
@@ -227,11 +227,11 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
               <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-[11px] text-text-muted dark:text-white/50 font-medium mb-4">
                 <span className="flex items-center gap-1.5">
                   <LocationIcon />
-                  {member.location}
+                  {t(member.locationKey)}
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CalendarIcon />
-                  {t("team.joined")} {member.joinYear}
+                  {t("team.joined")} {t(member.joinYearKey)}
                 </span>
               </div>
 
@@ -246,12 +246,12 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
                 {t("team.skills")}
               </p>
               <div className="flex flex-wrap gap-2">
-                {member.skills.map((skill) => (
+                {member.skillKeys.map((skillKey) => (
                   <span
-                    key={skill}
+                    key={skillKey}
                     className="px-3 py-1 rounded-full border border-lime/40 text-lime dark:text-lime-light text-[11px] font-bold tracking-wide bg-lime/5"
                   >
-                    {skill}
+                    {t(skillKey)}
                   </span>
                 ))}
               </div>
@@ -370,7 +370,7 @@ export default function TeamSection() {
                       <div className="flex gap-2 items-start">
                         <span className="text-base font-bold text-lime-light leading-none flex-shrink-0">+</span>
                         <p className="text-xs text-white/90 leading-snug font-normal">
-                          {member.skills.slice(0, 2).join(" · ")}
+                          {member.skillKeys.slice(0, 2).map(sk => t(sk)).join(" · ")}
                         </p>
                       </div>
                       <span className="text-white/80 text-[10px] font-bold uppercase tracking-widest mt-1">

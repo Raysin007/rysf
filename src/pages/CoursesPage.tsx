@@ -294,10 +294,10 @@ function InstructorCTA({ className = "", activeTrack = "data-tech" }: { classNam
 
       <div className="grid grid-cols-2 gap-3">
         {[
-          { label: t("courses_page.instructor_stats_students"), val: "500+" },
-          { label: t("courses_page.instructor_stats_rating"), val: "4.9/5" },
-          { label: t("courses_page.instructor_stats_courses"), val: "12" },
-          { label: t("courses_page.instructor_stats_online"), val: "24/7" }
+          { label: t("courses_page.instructor_stats_students"), val: t("courses_page.instructor_stats_val_students") },
+          { label: t("courses_page.instructor_stats_rating"), val: t("courses_page.instructor_stats_val_rating") },
+          { label: t("courses_page.instructor_stats_courses"), val: t("courses_page.instructor_stats_val_courses") },
+          { label: t("courses_page.instructor_stats_online"), val: t("courses_page.instructor_stats_val_online") }
         ].map((s) => (
           <div key={s.label} className="bg-[#111] p-3 rounded-lg flex flex-col items-center justify-center">
             <span className="text-white font-extrabold text-lg">{s.val}</span>

@@ -48,6 +48,9 @@ i18n
             label: "CORE CONCEPT",
             lead: "An initiative rooted in the belief that real development begins with people, their skills and connection with their own land and knowledge systems.",
             accent: "The Rural Youth Skill Forum is designed as a bridge between traditional wisdom and modern opportunities.",
+            pillar1_num: "01",
+            pillar2_num: "02",
+            pillar3_num: "03",
             pillar1_title: "Skill Development",
             pillar1_desc: "Courses grounded in the realities of rural life, building expertise that translates to income.",
             pillar2_title: "Career Placement",
@@ -243,6 +246,10 @@ i18n
             instructor_stats_rating: "Rating",
             instructor_stats_courses: "Courses",
             instructor_stats_online: "Online",
+            instructor_stats_val_students: "500+",
+            instructor_stats_val_rating: "4.9/5",
+            instructor_stats_val_courses: "12",
+            instructor_stats_val_online: "24/7",
             instructor_enroll: "Enroll Now",
             instructor_cert: "Certificate of completion included"
           },
@@ -254,6 +261,34 @@ i18n
             joined: "Joined",
             skills: "Areas of Work",
             view_profile: "View Profile",
+            year_2026: "2026",
+            locations: {
+              plassey_nadia: "Plassey, Nadia",
+              mirik_darjeeling: "Mirik, Darjeeling",
+              kalimpong: "Kalimpong",
+              darjeeling: "Darjeeling",
+              behala_kolkata: "Behala, Kolkata"
+            },
+            skills_list: {
+              comm_outreach: "Community Outreach",
+              prog_design: "Program Design",
+              rural_dev: "Rural Development",
+              curr_design: "Curriculum Design",
+              skill_training: "Skill Training",
+              education: "Education",
+              agri: "Agriculture",
+              org_farming: "Organic Farming",
+              livelihood: "Livelihood",
+              dig_literacy: "Digital Literacy",
+              tech_training: "Tech Training",
+              ai_tools: "AI Tools",
+              wellness: "Wellness",
+              ayurveda: "Ayurveda",
+              health_edu: "Health Education",
+              design: "Design",
+              media: "Media",
+              vis_comm: "Visual Communication"
+            },
             members: {
               rabiul: {
                 name: "Rabiul Islam",
@@ -296,6 +331,10 @@ i18n
           centers: {
             mirik: "Mirik",
             plassey: "Plassey",
+            nadia: "Nadia",
+            darjeeling: "Darjeeling",
+            pin_plassey: "741181",
+            pin_mirik: "734214",
             label: "AREA OF WORK",
             subtitle: "Two pilot regions. One shared vision.",
             why_title: "Why these regions?",
@@ -358,7 +397,7 @@ i18n
               role_other: "Other",
               message: "Message (optional)",
               message_ph: "Tell us how you'd like to get involved…",
-              submit: "Join the Rural Youth Skill Forum →"
+            submit: "Join the Rural Youth Skill Forum →"
             }
           },
           footer: {
@@ -481,6 +520,9 @@ i18n
             label: "मूल अवधारणा",
             lead: "एक ऐसी पहल जो इस विश्वास में निहित है कि वास्तविक विकास लोगों, उनके कौशल और उनकी अपनी भूमि और ज्ञान प्रणालियों के साथ जुड़ाव से शुरू होता है।",
             accent: "ग्रामीण युवा कौशल मंच पारंपरिक ज्ञान और आधुनिक अवसरों के बीच एक सेतु के रूप में डिज़ाइन किया गया है।",
+            pillar1_num: "०१",
+            pillar2_num: "०२",
+            pillar3_num: "०३",
             pillar1_title: "कौशल विकास",
             pillar1_desc: "ग्रामीण जीवन की वास्तविकताओं पर आधारित पाठ्यक्रम, जो आय में बदलने वाली विशेषज्ञता का निर्माण करते हैं।",
             pillar2_title: "कैरियर प्लेसमेंट",
@@ -595,8 +637,8 @@ i18n
             seats_left: "सीटें शेष",
             apply_now: "अभी आवेदन करें",
             course_details: "पाठ्यक्रम विवरण",
-            mirik_seats: "12",
-            plassey_seats: "8",
+            mirik_seats: "१२",
+            plassey_seats: "८",
             duration: "अवधि",
             level: "स्तर",
             outcomes_title: "कैरियर परिणाम",
@@ -676,6 +718,10 @@ i18n
             instructor_stats_rating: "रेटिंग",
             instructor_stats_courses: "पाठ्यक्रम",
             instructor_stats_online: "ऑनलाइन",
+            instructor_stats_val_students: "५००+",
+            instructor_stats_val_rating: "४.९/५",
+            instructor_stats_val_courses: "१२",
+            instructor_stats_val_online: "२४/७",
             instructor_enroll: "अभी नामांकन करें",
             instructor_cert: "पूर्णता का प्रमाण पत्र शामिल है"
           },
@@ -687,6 +733,34 @@ i18n
             joined: "जुड़े",
             skills: "कार्य क्षेत्र",
             view_profile: "प्रोफ़ाइल देखें",
+            year_2026: "२०२६",
+            locations: {
+              plassey_nadia: "पलाशी, नदिया",
+              mirik_darjeeling: "मिरिक, दार्जिलिंग",
+              kalimpong: "कालिम्पोंग",
+              darjeeling: "दार्जिलिंग",
+              behala_kolkata: "बेहाला, कोलकाता"
+            },
+            skills_list: {
+              comm_outreach: "सामुदायिक आउटरीच",
+              prog_design: "कार्यक्रम डिजाइन",
+              rural_dev: "ग्रामीण विकास",
+              curr_design: "पाठ्यक्रम डिजाइन",
+              skill_training: "कौशल प्रशिक्षण",
+              education: "शिक्षा",
+              agri: "कृषि",
+              org_farming: "जैविक खेती",
+              livelihood: "आजीविका",
+              dig_literacy: "डिजिटल साक्षरता",
+              tech_training: "तकनीकी प्रशिक्षण",
+              ai_tools: "एआई उपकरण",
+              wellness: "कल्याण",
+              ayurveda: "आयुर्वेद",
+              health_edu: "स्वास्थ्य शिक्षा",
+              design: "डिजाइन",
+              media: "मीडिया",
+              vis_comm: "विजुअल कम्युनिकेशन"
+            },
             members: {
               rabiul: {
                 name: "रबीउल इस्लाम",
@@ -729,6 +803,10 @@ i18n
           centers: {
             mirik: "मिरिक",
             plassey: "पलाशी",
+            nadia: "नदिया",
+            darjeeling: "दार्जिलिंग",
+            pin_plassey: "७४११८१",
+            pin_mirik: "७३४२१४",
             label: "कार्य क्षेत्र",
             subtitle: "दो पायलट क्षेत्र। एक साझा दृष्टिकोण।",
             why_title: "ये क्षेत्र क्यों?",
@@ -794,30 +872,18 @@ i18n
               submit: "ग्रामीण युवा कौशल मंच से जुड़ें →"
             }
           },
-          footer: {
-            brand_name: "ग्रामीण युवा कौशल मंच",
-            brand_sub: " मिरिक पलाशी",
-            brand_desc: "पश्चिम बंगाल और उससे आगे के ग्रामीण युवाओं के लिए पारंपरिक ज्ञान और आधुनिक अवसरों को जोड़ना।",
-            nav_title: "नेविगेट",
-            disc_title: "विषय",
-            regions_title: "क्षेत्र",
-            address_plassey: "पलाशी, नदिया — 741181",
-            address_mirik: "मिरिक, दार्जिलिंग — 734214",
-            /* copy: "ग्रामीण युवा कौशल मंच का कॉन्सेप्ट पिच · रबीउल इस्लाम और सुभेंदु कुंडू द्वारा तैयार", */
-            tagline: "वास्तविक विकास लोगों से शुरू होता है।"
-          },
           dashboard: {
             title: "दान डैशबोर्ड",
-            meta: "मई 2026 · सभी अभियान",
-            record: "दान रिकॉर्ड करें",
+            meta: "मई २०२६ · सभी अभियान",
+            record: "दान दर्ज करें",
             metrics: {
-              raised: "कुल राशि",
-              donors: "कुल दाता",
-              avg_gift: "औसत दान",
+              raised: "कुल प्राप्त",
+              donors: "कुल दानदाता",
+              avg_gift: "औसत उपहार आकार",
               retention: "रिटेंशन दर",
               vs_last_month: "पिछले महीने की तुलना में {{val}}",
               new_this_month: "इस महीने {{val}} नए",
-              pts_vs_last_month: "पिछले महीने की तुलना में {{val}}pts"
+              pts_vs_last_month: "पिछले महीने की तुलना में {{val}} अंक"
             },
             vals: {
               raised: "₹५,६८,४२०",
@@ -829,14 +895,14 @@ i18n
               goal_to_go: "₹२,८१,५८०",
               goal_percent: "६८",
               days_left: "१८",
-              min_2: "२ मिनेट",
-              min_18: "१८ मिनेट",
-              hr_1: "१ घण्टा",
-              hr_3: "३ घण्टा",
-              hr_5: "५ घण्टा"
+              min_2: "२ मिनट",
+              min_18: "१८ मिनट",
+              hr_1: "१ घंटा",
+              hr_3: "३ घंटे",
+              hr_5: "५ घंटे"
             },
             donors_list: {
-              d1: "अमारा मेंसा",
+              d1: "अमरा मेंसा",
               d1_amt: "₹४,१००/माह",
               d2: "राज कपूर",
               d2_amt: "₹१६,५००",
@@ -848,7 +914,7 @@ i18n
               d5_amt: "₹६,१५०"
             },
             trend: {
-              title: "मासिक दान रुझान",
+              title: "मासिक दान प्रवृत्ति",
               one_time: "एक बार",
               recurring: "आवर्ती"
             },
@@ -856,17 +922,17 @@ i18n
               title: "अभियान लक्ष्य",
               status: "लक्ष्य का {{percent}}% · लक्ष्य: {{goal}}",
               days_left: "{{days}} दिन शेष",
-              to_go: "{{amount}} शेष है",
+              to_go: "{{amount}} शेष",
               education: "शिक्षा कोष",
-              health: "स्वास्थ्य और कल्याण",
-              community: "सामुदायिक पहुंच"
+              health: "स्वास्थ्य एवं कल्याण",
+              community: "सामुदायिक आउटरीच"
             },
             donors: {
-              title: "हाल के दाता",
+              title: "हाल के दानदाता",
               time_ago: "{{val}} पहले"
             },
             breakdown: {
-              title: "दान विश्लेषण",
+              title: "दान विवरण",
               total: "कुल"
             },
             months: {
@@ -876,6 +942,18 @@ i18n
               apr: "अप्रैल",
               may: "मई"
             }
+          },
+          footer: {
+            brand_name: "ग्रामीण युवा कौशल मंच",
+            brand_sub: " मिरिक पलाशी",
+            brand_desc: "पश्चिम बंगाल और उससे आगे के ग्रामीण युवाओं के लिए पारंपरिक ज्ञान और आधुनिक अवसरों को जोड़ना।",
+            nav_title: "नेविगेट",
+            disc_title: "विषय",
+            regions_title: "क्षेत्र",
+            address_plassey: "पलाशी, नदिया — 741181",
+            address_mirik: "मिरिक, दार्जिलिंग — 734214",
+            /* copy: "ग्रामीण युवा कौशल मंच का कॉन्सेप्ट पिच · रबीउल इस्लाम और सुभेंदु कुंडू द्वारा तैयार", */
+            tagline: "वास्तविक विकास लोगों से शुरू होता है।"
           }
         }
       },
@@ -914,6 +992,9 @@ i18n
             label: "মূল ধারণা",
             lead: "একটি উদ্যোগ যা এই বিশ্বাসে নিহিত যে প্রকৃত উন্নয়ন মানুষের সাথে শুরু হয়, তাদের দক্ষতা এবং তাদের নিজস্ব ভূমি ও জ্ঞান ব্যবস্থার সাথে সংযোগের মাধ্যমে।",
             accent: "গ্রামীণ যুব দক্ষতা মঞ্চ ঐতিহ্যগত জ্ঞান এবং আধুনিক সুযোগের মধ্যে একটি সেতু হিসেবে ডিজাইন করা হয়েছে।",
+            pillar1_num: "০১",
+            pillar2_num: "০২",
+            pillar3_num: "০৩",
             pillar1_title: "দক্ষতা উন্নয়ন",
             pillar1_desc: "গ্রামীণ জীবনের বাস্তবতার ওপর ভিত্তি করে কোর্স, যা আয়ের সুযোগ তৈরি করে এমন দক্ষতা তৈরি করে।",
             pillar2_title: "ক্যারিয়ার প্লেসমেন্ট",
@@ -1109,6 +1190,10 @@ i18n
             instructor_stats_rating: "রেটিং",
             instructor_stats_courses: "কোর্স",
             instructor_stats_online: "অনলাইন",
+            instructor_stats_val_students: "৫০০+",
+            instructor_stats_val_rating: "৪.৯/৫",
+            instructor_stats_val_courses: "১২",
+            instructor_stats_val_online: "২৪/৭",
             instructor_enroll: "এখনই নথিভুক্ত করুন",
             instructor_cert: "সমাপ্তির শংসাপত্র অন্তর্ভুক্ত"
           },
@@ -1120,6 +1205,34 @@ i18n
             joined: "যোগ দিয়েছেন",
             skills: "কাজের ক্ষেত্র",
             view_profile: "প্রোফাইল দেখুন",
+            year_2026: "২০২৬",
+            locations: {
+              plassey_nadia: "পলাশী, নদীয়া",
+              mirik_darjeeling: "মিরিক, দার্জিলিং",
+              kalimpong: "কালিম্পং",
+              darjeeling: "দার্জিলিং",
+              behala_kolkata: "বেহালা, কলকাতা"
+            },
+            skills_list: {
+              comm_outreach: "সামুদায়িক আউটরিচ",
+              prog_design: "প্রোগ্রাম ডিজাইন",
+              rural_dev: "গ্রামীণ উন্নয়ন",
+              curr_design: "কারিকুলাম ডিজাইন",
+              skill_training: "দক্ষতা প্রশিক্ষণ",
+              education: "শিক্ষা",
+              agri: "কৃষি",
+              org_farming: "জৈব চাষ",
+              livelihood: "জীবিকা",
+              dig_literacy: "ডিজিটাল সাক্ষরতা",
+              tech_training: "প্রযুক্তি প্রশিক্ষণ",
+              ai_tools: "এআই সরঞ্জাম",
+              wellness: "সুস্থতা",
+              ayurveda: "আয়ুর্বেদ",
+              health_edu: "স্বাস্থ্য শিক্ষা",
+              design: "ডিজাইন",
+              media: "মিডিয়া",
+              vis_comm: "ভিজ্যুয়াল কমিউনিকেশন"
+            },
             members: {
               rabiul: {
                 name: "রবিউল ইসলাম",
@@ -1162,6 +1275,10 @@ i18n
           centers: {
             mirik: "মিরিক",
             plassey: "পলাশী",
+            nadia: "নদীয়া",
+            darjeeling: "দার্জিলিং",
+            pin_plassey: "৭৪১১৮১",
+            pin_mirik: "৭৩৪২১৪",
             label: "কাজের ক্ষেত্র",
             subtitle: "দুটি পাইলট অঞ্চল। একটিShared লক্ষ্য।",
             why_title: "কেন এই অঞ্চলগুলো?",
@@ -1347,6 +1464,9 @@ i18n
             label: "मूल अवधारणा",
             lead: "एक पहल जसको जरा यो विश्वासमा छ कि वास्तविक विकास मानिसहरू, उनीहरूको सीप र उनीहरूको आफ्नै भूमि र ज्ञान प्रणालीसँगको जडानबाट सुरु हुन्छ।",
             accent: "ग्रामीण युवा कौशल मञ्च परम्परागत ज्ञान र आधुनिक अवसरहरू बीचको पुलको रूपमा डिजाइन गरिएको हो।",
+            pillar1_num: "०१",
+            pillar2_num: "०२",
+            pillar3_num: "०३",
             pillar1_title: "कौशल विकास",
             pillar1_desc: "ग्रामीण जीवनका यथार्थहरूमा आधारित पाठ्यक्रमहरू, जसले आयमा परिणत हुने विशेषज्ञता निर्माण गर्दछ।",
             pillar2_title: "करियर प्लेसमेन्ट",
@@ -1542,6 +1662,10 @@ i18n
             instructor_stats_rating: "रेटिङ",
             instructor_stats_courses: "पाठ्यक्रम",
             instructor_stats_online: "अनलाइन",
+            instructor_stats_val_students: "५००+",
+            instructor_stats_val_rating: "४.९/५",
+            instructor_stats_val_courses: "१२",
+            instructor_stats_val_online: "२४/७",
             instructor_enroll: "अहिले भर्ना हुनुहोस्",
             instructor_cert: "समाप्तिको प्रमाणपत्र समावेश छ"
           },
@@ -1553,6 +1677,34 @@ i18n
             joined: "सामेल",
             skills: "कार्यक्षेत्रहरू",
             view_profile: "प्रोफाइल हेर्नुहोस्",
+            year_2026: "२०२६",
+            locations: {
+              plassey_nadia: "पलाशी, नदिया",
+              mirik_darjeeling: "मिरिक, दार्जीलिङ",
+              kalimpong: "कालिम्पोंग",
+              darjeeling: "दार्जीलिङ",
+              behala_kolkata: "बेहाला, कोलकाता"
+            },
+            skills_list: {
+              comm_outreach: "सामुदायिक आउटरिच",
+              prog_design: "कार्यक्रम डिजाइन",
+              rural_dev: "ग्रामीण विकास",
+              curr_design: "पाठ्यक्रम डिजाइन",
+              skill_training: "सीप तालिम",
+              education: "शिक्षा",
+              agri: "कृषि",
+              org_farming: "जैविक खेती",
+              livelihood: "जीविकोपार्जन",
+              dig_literacy: "डिजिटल साक्षरता",
+              tech_training: "प्राविधिक तालिम",
+              ai_tools: "एआई उपकरणहरू",
+              wellness: "कल्याण",
+              ayurveda: "आयुर्वेद",
+              health_edu: "स्वास्थ्य शिक्षा",
+              design: "डिजाइन",
+              media: "मिडिया",
+              vis_comm: "भिजुअल कम्युनिकेशन"
+            },
             members: {
               rabiul: {
                 name: "रबिउल इस्लाम",
@@ -1595,6 +1747,10 @@ i18n
           centers: {
             mirik: "मिरिक",
             plassey: "पलाशी",
+            nadia: "नदिया",
+            darjeeling: "दार्जीलिङ",
+            pin_plassey: "७४११८१",
+            pin_mirik: "७३४२१४",
             label: "कार्य क्षेत्र",
             subtitle: "दुई पाइलट क्षेत्रहरू। एक साझा दृष्टिकोण।",
             why_title: "यी क्षेत्रहरू किन?",

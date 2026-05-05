@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center lg:gap-[30px] gap-8 list-none bg-olive dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] border-b border-border-subtle lg:border-none overflow-hidden ${
+          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center lg:gap-[30px] gap-8 list-none bg-olive dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] lg:border-none overflow-hidden ${
             menuOpen ? "max-h-[600px] py-8 px-6 gap-6" : "max-h-0 py-0 lg:max-h-none lg:p-0"
           }`}
         >

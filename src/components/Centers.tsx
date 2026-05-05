@@ -13,8 +13,8 @@ export default function Centers() {
     {
       id: "plassey",
       name: t("centers.plassey"),
-      region: "Nadia",
-      pin: "741181",
+      region: t("centers.nadia"),
+      pin: t("centers.pin_plassey"),
       image: "/plassey.jpeg",
       points: [
         t("centers.points.plassey1"),
@@ -24,8 +24,8 @@ export default function Centers() {
     {
       id: "mirik",
       name: t("centers.mirik"),
-      region: "Darjeeling",
-      pin: "734214",
+      region: t("centers.darjeeling"),
+      pin: t("centers.pin_mirik"),
       image: "/mirik.jpeg",
       points: [
         t("centers.points.mirik1"),
