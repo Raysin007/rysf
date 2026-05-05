@@ -246,6 +246,53 @@ i18n
             instructor_enroll: "Enroll Now",
             instructor_cert: "Certificate of completion included"
           },
+          team: {
+            label: "OUR PEOPLE",
+            title: "The people behind",
+            title_em: "the mission.",
+            sub: "A passionate team of educators, practitioners and community builders working to make rural skill development a reality.",
+            joined: "Joined",
+            skills: "Areas of Work",
+            view_profile: "View Profile",
+            members: {
+              rabiul: {
+                name: "Rabiul Islam",
+                role: "Founder & Community Lead",
+                desc: "Driving grassroots outreach and community partnerships across Plassey.",
+                bio: "Rabiul Islam is the co-founder of the Rural Youth Skill Forum and leads all community engagement efforts in the Plassey region. With deep roots in the local community, he bridges the gap between institutional programs and ground-level implementation, ensuring every initiative is shaped by real community needs."
+              },
+              subhendu: {
+                name: "Dr. Subhendu Kundu",
+                role: "Co-Founder & Lead Instructor",
+                desc: "Designing curriculum and leading skill training programs across both campuses.",
+                bio: "Dr. Subhendu Kundu is the academic backbone of RYSF. He has spent over a decade in rural education and skill development, designing courses that blend modern expertise with traditional knowledge systems. He oversees all educational programs from both the Mirik and Plassey campuses."
+              },
+              member3: {
+                name: "Deepom Chakraborty",
+                role: "Advisor",
+                desc: "Leading organic farming and agri-livelihood programs in the Plassey region.",
+                bio: "Deepom Chakraborty coordinates all agriculture-focused programs at the Plassey campus. A trained agronomist with hands-on experience in organic farming and composting, he brings science and soil together to help rural youth build sustainable livelihoods from the land."
+              },
+              member4: {
+                name: "Rahul Chettri",
+                role: "Volunteer",
+                desc: "Building digital confidence among rural youth through practical technology training.",
+                bio: "Rahul Chettri leads the Data & Technology track at RYSF, helping rural youth navigate the digital world with confidence. From basic IT literacy to AI tools and web development, he designs learning experiences that are practical, jargon-free and deeply relevant to rural contexts."
+              },
+              member5: {
+                name: "Santam Kumai",
+                role: "Volunteer",
+                desc: "Facilitating wellness and Ayurveda-based programs rooted in traditional knowledge.",
+                bio: "Santam Kumai is a trained wellness practitioner who brings together modern health science and traditional Ayurvedic wisdom. He runs the wellness track across both campuses, training local youth to become health educators and wellness instructors for their own communities."
+              },
+              member6: {
+                name: "Soumajit Das",
+                role: "Volunteer",
+                desc: "Equipping students with creative tools to tell rural stories and build careers in media.",
+                bio: "Soumajit Das teaches photography, video editing and design literacy at RYSF. He believes that every rural community has stories worth telling and the youth who tell them deserve professional tools. He guides students from basic visual literacy to building full creative portfolios."
+              }
+            }
+          },
           centers: {
             mirik: "Mirik",
             plassey: "Plassey",
@@ -631,6 +678,53 @@ i18n
             instructor_stats_online: "ऑनलाइन",
             instructor_enroll: "अभी नामांकन करें",
             instructor_cert: "पूर्णता का प्रमाण पत्र शामिल है"
+          },
+          team: {
+            label: "हमारी टीम",
+            title: "मिशन के पीछे",
+            title_em: "के लोग।",
+            sub: "शिक्षकों, विशेषज्ञों और सामुदायिक निर्माताओं की एक उत्साही टीम जो ग्रामीण कौशल विकास को वास्तविकता बनाने के लिए काम कर रही है।",
+            joined: "जुड़े",
+            skills: "कार्य क्षेत्र",
+            view_profile: "प्रोफ़ाइल देखें",
+            members: {
+              rabiul: {
+                name: "रबीउल इस्लाम",
+                role: "संस्थापक और सामुदायिक प्रमुख",
+                desc: "पलाशी में सामुदायिक आउटरीच और साझेदारी का नेतृत्व करना।",
+                bio: "रबीउल इस्लाम ग्रामीण युवा कौशल मंच के सह-संस्थापक हैं और पलाशी क्षेत्र में सभी सामुदायिक संवाद प्रयासों का नेतृत्व करते हैं। समुदाय में गहरी जड़ों के साथ, वे संस्थागत कार्यक्रमों और जमीनी स्तर पर कार्यान्वयन के बीच की खाई को पाटते हैं।"
+              },
+              subhendu: {
+                name: "डॉ. सुभेंदु कुंडू",
+                role: "सह-संस्थापक और प्रमुख प्रशिक्षक",
+                desc: "दोनों परिसरों में पाठ्यक्रम डिजाइन और कौशल प्रशिक्षण कार्यक्रमों का नेतृत्व करना।",
+                bio: "डॉ. सुभेंदु कुंडू RYSF की शैक्षणिक रीढ़ हैं। उन्होंने ग्रामीण शिक्षा और कौशल विकास में एक दशक से अधिक समय बिताया है, ऐसे पाठ्यक्रम डिजाइन करते हुए जो आधुनिक विशेषज्ञता को पारंपरिक ज्ञान प्रणालियों के साथ जोड़ते हैं।"
+              },
+              member3: {
+                name: "दीपोम चक्रवर्ती",
+                role: "सलाहकार",
+                desc: "पलाशी क्षेत्र में जैविक खेती और कृषि-आजीविका कार्यक्रमों का नेतृत्व करना।",
+                bio: "दीपोम चक्रवर्ती पलाशी परिसर में सभी कृषि-केंद्रित कार्यक्रमों का समन्वय करते हैं। जैविक खेती और कम्पोस्टिंग में व्यावहारिक अनुभव के साथ, वे ग्रामीण युवाओं को भूमि से टिकाऊ आजीविका बनाने में मदद करते हैं।"
+              },
+              member4: {
+                name: "राहुल छेत्री",
+                role: "स्वयंसेवक",
+                desc: "व्यावहारिक प्रौद्योगिकी प्रशिक्षण के माध्यम से ग्रामीण युवाओं में डिजिटल आत्मविश्वास का निर्माण।",
+                bio: "राहुल छेत्री RYSF में डेटा और प्रौद्योगिकी ट्रैक का नेतृत्व करते हैं। बुनियादी IT साक्षरता से लेकर AI टूल और वेब डेवलपमेंट तक, वे ऐसे सीखने के अनुभव डिजाइन करते हैं जो ग्रामीण संदर्भों के लिए व्यावहारिक और प्रासंगिक हैं।"
+              },
+              member5: {
+                name: "संतम कुमाई",
+                role: "स्वयंसेवक",
+                desc: "पारंपरिक ज्ञान पर आधारित कल्याण और आयुर्वेद कार्यक्रमों का संचालन।",
+                bio: "संतम कुमाई एक प्रशिक्षित कल्याण चिकित्सक हैं जो आधुनिक स्वास्थ्य विज्ञान और पारंपरिक आयुर्वेदिक ज्ञान को एक साथ लाते हैं। वे दोनों परिसरों में कल्याण ट्रैक चलाते हैं।"
+              },
+              member6: {
+                name: "सौमाजित दास",
+                role: "स्वयंसेवक",
+                desc: "छात्रों को ग्रामीण कहानियां सुनाने और मीडिया में करियर बनाने के लिए रचनात्मक टूल से लैस करना।",
+                bio: "सौमाजित दास RYSF में फोटोग्राफी, वीडियो एडिटिंग और डिजाइन साक्षरता पढ़ाते हैं। वे मानते हैं कि हर ग्रामीण समुदाय में सुनाने योग्य कहानियां हैं और जो युवा उन्हें सुनाते हैं उन्हें पेशेवर उपकरणों का अधिकार है।"
+              }
+            }
           },
           centers: {
             mirik: "मिरिक",
@@ -1018,6 +1112,53 @@ i18n
             instructor_enroll: "এখনই নথিভুক্ত করুন",
             instructor_cert: "সমাপ্তির শংসাপত্র অন্তর্ভুক্ত"
           },
+          team: {
+            label: "আমাদের দল",
+            title: "মিশনের পেছনে",
+            title_em: "যারা আছেন।",
+            sub: "শিক্ষাবিদ, অনুশীলনকারী এবং সামুদায়িক নির্মাতাদের একটি উৎসাহী দল যারা গ্রামীণ দক্ষতা উন্নয়নকে বাস্তবে রূপ দিতে কাজ করছে।",
+            joined: "যোগ দিয়েছেন",
+            skills: "কাজের ক্ষেত্র",
+            view_profile: "প্রোফাইল দেখুন",
+            members: {
+              rabiul: {
+                name: "রবিউল ইসলাম",
+                role: "সহ-প্রতিষ্ঠাতা ও কমিউনিটি লিড",
+                desc: "পলাশীতে সামুদায়িক আউটরিচ ও অংশীদারিত্ব পরিচালনা করছেন।",
+                bio: "রবিউল ইসলাম গ্রামীণ যুব দক্ষতা মঞ্চের সহ-প্রতিষ্ঠাতা এবং পলাশী অঞ্চলে সমস্ত সামুদায়িক সম্পৃক্ততার প্রচেষ্টার নেতৃত্ব দেন। সম্প্রদায়ে গভীর শিকড় থাকায়, তিনি প্রাতিষ্ঠানিক কর্মসূচি এবং তৃণমূল বাস্তবায়নের মধ্যে সেতুবন্ধন করেন।"
+              },
+              subhendu: {
+                name: "ডঃ শুভেন্দু কুণ্ডু",
+                role: "সহ-প্রতিষ্ঠাতা ও প্রধান প্রশিক্ষক",
+                desc: "উভয় ক্যাম্পাসে পাঠ্যক্রম ডিজাইন ও দক্ষতা প্রশিক্ষণ কার্যক্রম পরিচালনা করছেন।",
+                bio: "ডঃ শুভেন্দু কুণ্ডু RYSF-এর একাডেমিক মেরুদণ্ড। তিনি এক দশকেরও বেশি সময় ধরে গ্রামীণ শিক্ষা ও দক্ষতা উন্নয়নে নিয়োজিত, এমন কোর্স ডিজাইন করছেন যা আধুনিক দক্ষতার সাথে ঐতিহ্যগত জ্ঞান ব্যবস্থাকে মিলিয়ে দেয়।"
+              },
+              member3: {
+                name: "দীপম চক্রবর্তী",
+                role: "উপদেষ্টা",
+                desc: "পলাশী অঞ্চলে জৈব চাষ ও কৃষি-জীবিকা কার্যক্রমের নেতৃত্ব দিচ্ছেন।",
+                bio: "দীপম চক্রবর্তী পলাশী ক্যাম্পাসে সমস্ত কৃষি-কেন্দ্রিক কার্যক্রম সমন্বয় করেন। জৈব চাষ ও কম্পোস্টিংয়ে ব্যবহারিক অভিজ্ঞতা নিয়ে, তিনি গ্রামীণ যুবকদের ভূমি থেকে টেকসই জীবিকা গড়তে সাহায্য করেন।"
+              },
+              member4: {
+                name: "রাহুল ছেত্রী",
+                role: "স্বেচ্ছাসেবী",
+                desc: "ব্যবহারিক প্রযুক্তি প্রশিক্ষণের মাধ্যমে গ্রামীণ যুবকদের মধ্যে ডিজিটাল আত্মবিশ্বাস গড়ে তুলছেন।",
+                bio: "রাহুল ছেত্রী RYSF-এ ডেটা ও প্রযুক্তি ট্র্যাকের নেতৃত্ব দেন। প্রাথমিক আইটি সাক্ষরতা থেকে শুরু করে AI টুল এবং ওয়েব ডেভেলপমেন্ট পর্যন্ত, তিনি গ্রামীণ প্রেক্ষাপটের জন্য উপযুক্ত শিক্ষার অভিজ্ঞতা ডিজাইন করেন।"
+              },
+              member5: {
+                name: "সন্তম কুমাই",
+                role: "স্বেচ্ছাসেবী",
+                desc: "ঐতিহ্যগত জ্ঞানে প্রোথিত সুস্থতা ও আয়ুর্বেদ-ভিত্তিক কার্যক্রম পরিচালনা করছেন।",
+                bio: "সন্তম কুমাই একজন প্রশিক্ষিত সুস্থতা অনুশীলনকারী যিনি আধুনিক স্বাস্থ্য বিজ্ঞান ও ঐতিহ্যগত আয়ুর্বেদিক জ্ঞানকে একত্রিত করেন। তিনি উভয় ক্যাম্পাসে ওয়েলনেস ট্র্যাক পরিচালনা করেন।"
+              },
+              member6: {
+                name: "সৌমাজিৎ দাস",
+                role: "স্বেচ্ছাসেবী",
+                desc: "শিক্ষার্থীদের গ্রামীণ গল্প বলতে এবং মিডিয়ায় ক্যারিয়ার গড়তে সৃজনশীল সরঞ্জাম দিচ্ছেন।",
+                bio: "সৌমাজিৎ দাস RYSF-এ ফটোগ্রাফি, ভিডিও এডিটিং এবং ডিজাইন সাক্ষরতা শেখান। তিনি বিশ্বাস করেন প্রতিটি গ্রামীণ সম্প্রদায়ে বলার মতো গল্প আছে এবং যে যুবকরা সেগুলো বলেন তাদের পেশাদার সরঞ্জামের প্রাপ্য।"
+              }
+            }
+          },
           centers: {
             mirik: "মিরিক",
             plassey: "পলাশী",
@@ -1403,6 +1544,53 @@ i18n
             instructor_stats_online: "अनलाइन",
             instructor_enroll: "अहिले भर्ना हुनुहोस्",
             instructor_cert: "समाप्तिको प्रमाणपत्र समावेश छ"
+          },
+          team: {
+            label: "हाम्रो टीम",
+            title: "मिशनको पछाडि",
+            title_em: "का मानिसहरू।",
+            sub: "शिक्षक, व्यवसायी र सामुदायिक निर्माताहरूको एक उत्साही टीम जसले ग्रामीण कौशल विकासलाई वास्तविकता बनाउन काम गरिरहेको छ।",
+            joined: "सामेल",
+            skills: "कार्यक्षेत्रहरू",
+            view_profile: "प्रोफाइल हेर्नुहोस्",
+            members: {
+              rabiul: {
+                name: "रबिउल इस्लाम",
+                role: "सह-संस्थापक र सामुदायिक प्रमुख",
+                desc: "पलाशीमा सामुदायिक आउटरिच र साझेदारीको नेतृत्व गर्दै।",
+                bio: "रबिउल इस्लाम ग्रामीण युवा कौशल मञ्चका सह-संस्थापक हुन् र पलाशी क्षेत्रमा सबै सामुदायिक संलग्नता प्रयासहरूको नेतृत्व गर्छन्। समुदायमा गहिरो जरा भएकाले, उनी संस्थागत कार्यक्रमहरू र जमिनी स्तरको कार्यान्वयनबीचको खाडल पाट्छन्।"
+              },
+              subhendu: {
+                name: "डा. शुभेन्दु कुण्डु",
+                role: "सह-संस्थापक र प्रमुख प्रशिक्षक",
+                desc: "दुवै क्याम्पसमा पाठ्यक्रम डिजाइन र कौशल तालिम कार्यक्रमहरूको नेतृत्व गर्दै।",
+                bio: "डा. शुभेन्दु कुण्डु RYSF को शैक्षणिक मेरुदण्ड हुन्। उनले एक दशकभन्दा बढी ग्रामीण शिक्षा र कौशल विकासमा बिताएका छन्, आधुनिक विशेषज्ञतालाई परम्परागत ज्ञान प्रणालीहरूसँग जोड्ने पाठ्यक्रमहरू डिजाइन गर्दै।"
+              },
+              member3: {
+                name: "दीपम चक्रवर्ती",
+                role: "सल्लाहकार",
+                desc: "पलाशी क्षेत्रमा जैविक खेती र कृषि-जीविका कार्यक्रमहरूको नेतृत्व गर्दै।",
+                bio: "दीपम चक्रवर्तीले पलाशी क्याम्पसमा सबै कृषि-केन्द्रित कार्यक्रमहरू समन्वय गर्छन्। जैविक खेती र कम्पोस्टिङमा व्यावहारिक अनुभव भएका उनले ग्रामीण युवाहरूलाई भूमिबाट दिगो जीविका बनाउन सहयोग गर्छन्।"
+              },
+              member4: {
+                name: "राहुल छेत्री",
+                role: "स्वयंसेवक",
+                desc: "व्यावहारिक प्रविधि तालिमद्वारा ग्रामीण युवाहरूमा डिजिटाल आत्मविश्वास निर्माण गर्दै।",
+                bio: "राहुल छेत्रीले RYSF मा डाटा र प्रविधि ट्र्याकको नेतृत्व गर्छन्। आधारभूत आईटी साक्षरतादेखि एआई उपकरण र वेब विकाससम्म, उनले ग्रामीण सन्दर्भका लागि व्यावहारिक र सान्दर्भिक सिकाइ अनुभवहरू डिजाइन गर्छन्।"
+              },
+              member5: {
+                name: "सन्तम कुमाई",
+                role: "स्वयंसेवक",
+                desc: "परम्परागत ज्ञानमा जरा गाडिएका कल्याण र आयुर्वेद-आधारित कार्यक्रमहरू सञ्चालन गर्दै।",
+                bio: "सन्तम कुमाई एक प्रशिक्षित कल्याण व्यवसायी हुन् जसले आधुनिक स्वास्थ्य विज्ञान र परम्परागत आयुर्वेदिक ज्ञानलाई एकसाथ ल्याउँछन्। उनले दुवै क्याम्पसमा कल्याण ट्र्याक सञ्चालन गर्छन्।"
+              },
+              member6: {
+                name: "सौमाजित दास",
+                role: "स्वयंसेवक",
+                desc: "विद्यार्थीहरूलाई ग्रामीण कथाहरू भन्न र मिडियामा करियर बनाउन रचनात्मक उपकरणहरू दिँदै।",
+                bio: "सौमाजित दासले RYSF मा फोटोग्राफी, भिडियो सम्पादन र डिजाइन साक्षरता पढाउँछन्। उनी विश्वास गर्छन् कि हरेक ग्रामीण समुदायमा भन्न लायक कथाहरू छन् र ती युवाहरू जसले ती भन्छन् उनीहरूलाई व्यावसायिक उपकरणहरूको अधिकार छ।"
+              }
+            }
           },
           centers: {
             mirik: "मिरिक",
