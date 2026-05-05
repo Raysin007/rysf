@@ -400,7 +400,7 @@ function CourseModal({ course, onClose }: { course: CourseDetail; onClose: () =>
     >
       <div
         ref={cardRef}
-        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden border border-border-subtle shadow-lg-custom w-full max-w-3xl max-h-[92vh] overflow-y-auto"
+        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden border border-border-subtle shadow-lg-custom w-full max-w-5xl max-h-[92vh] overflow-y-auto scrollbar-hide"
       >
         {/* Close */}
         <button
@@ -453,7 +453,7 @@ function CourseModal({ course, onClose }: { course: CourseDetail; onClose: () =>
             <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-lime mb-5">
               {t("courses_page.timeline_label")} — {isAdvance ? t("courses_page.advanced_track") : t("courses_page.foundation_track")}
             </p>
-            <div className="bg-cream dark:bg-zinc-800/40 rounded-[20px] p-5 md:p-8 overflow-x-auto">
+            <div className="bg-cream dark:bg-zinc-800/40 rounded-[20px] p-5 md:p-8">
               {isAdvance ? <AdvancedTimeline /> : <FoundationTimeline />}
             </div>
           </div>
