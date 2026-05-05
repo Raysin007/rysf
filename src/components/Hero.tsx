@@ -82,10 +82,11 @@ export default function Hero() {
         <div className="relative z-10">
           <div className="hero-eyebrow mb-6">
             <div className="flex gap-4 mb-6">
-              <span className="inline-flex items-center justify-center min-w-[110px] h-10 text-[0.8rem] font-bold tracking-widest uppercase text-white border-[1.5px] border-white/60 rounded-lg px-5 transition-all hover:bg-lime hover:text-white hover:border-lime hover:-translate-y-0.5 hover:shadow-lime cursor-default">
+              <span className="text-[0.8rem] font-bold tracking-widest uppercase text-white cursor-default">
                 {t("hero.mirik")}
               </span>
-              <span className="inline-flex items-center justify-center min-w-[110px] h-10 text-[0.8rem] font-bold tracking-widest uppercase text-white border-[1.5px] border-white/60 rounded-lg px-5 transition-all hover:bg-lime hover:text-white hover:border-lime hover:-translate-y-0.5 hover:shadow-lime cursor-default">
+              <span className="text-white/40 font-light">•</span>
+              <span className="text-[0.8rem] font-bold tracking-widest uppercase text-white cursor-default">
                 {t("hero.plassey")}
               </span>
             </div>
