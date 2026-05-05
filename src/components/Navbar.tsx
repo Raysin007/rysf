@@ -64,7 +64,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1280px] mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between lg:gap-12 relative">
         {/* Brand */}
-        <Link to="/" className="navbar-brand flex items-center gap-3 relative z-[110] justify-self-start">
+        <Link to="/" className={`navbar-brand flex items-center gap-3 relative z-[110] justify-self-start transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto" : "opacity-100"}`}>
           <img
             src="/single.png"
             alt={t("nav.logo_alt")}
@@ -186,7 +186,9 @@ export default function Navbar() {
 
         {/* Mobile Controls (Toggle + Burger) */}
         <div className="flex lg:hidden items-center gap-5 relative z-[110]">
-          <ThemeToggle />
+          <div className={`transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+            <ThemeToggle />
+          </div>
           <button
             className="flex flex-col gap-[5px] p-1 group"
             onClick={() => setMenuOpen((m) => !m)}
