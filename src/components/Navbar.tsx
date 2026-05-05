@@ -37,6 +37,15 @@ export default function Navbar() {
     document.documentElement.lang = i18n.language;
   }, [i18n.language]);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setMenuOpen(false);
@@ -55,7 +64,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1280px] mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between lg:gap-12 relative">
         {/* Brand */}
-        <Link to="/" className="navbar-brand flex items-center gap-3 relative z-10 justify-self-start">
+        <Link to="/" className="navbar-brand flex items-center gap-3 relative z-[110] justify-self-start">
           <img
             src="/single.png"
             alt={t("nav.logo_alt")}
@@ -69,18 +78,20 @@ export default function Navbar() {
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`absolute lg:static top-full left-0 right-0 flex flex-col lg:flex-row items-center lg:gap-[30px] gap-8 list-none bg-olive dark:bg-zinc-900 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-lg lg:backdrop-blur-0 transition-all duration-350 ease-in-out z-[99] lg:border-none overflow-hidden ${
-            menuOpen ? "max-h-[600px] py-8 px-6 gap-6" : "max-h-0 py-0 lg:max-h-none lg:p-0"
+          className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-center justify-center lg:gap-[30px] gap-8 list-none bg-olive/95 dark:bg-zinc-950/98 lg:bg-transparent lg:dark:bg-transparent backdrop-blur-xl lg:backdrop-blur-0 transition-all duration-500 ease-in-out z-[100] lg:border-none overflow-y-auto ${
+            menuOpen
+              ? "opacity-100 pointer-events-auto translate-y-0"
+              : "opacity-0 pointer-events-none -translate-y-full lg:opacity-100 lg:pointer-events-auto lg:translate-y-0"
           }`}
         >
           {links.map((l) => (
-            <li key={l.id} className="navbar-link-item w-full lg:w-auto">
+            <li key={l.id} className="navbar-link-item w-full lg:w-auto text-center lg:text-left px-10 lg:px-0">
               {l.path.startsWith("/#") ? (
                 <a
                   href={l.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-text-dark lg:text-white dark:text-white"
+                  className={`relative block w-full lg:w-auto py-4 lg:py-0 text-2xl lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
                   {l.label}
@@ -89,8 +100,8 @@ export default function Navbar() {
                 <Link
                   to={l.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-base lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-text-dark lg:text-white dark:text-white"
+                  className={`relative block w-full lg:w-auto py-4 lg:py-0 text-2xl lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
                   {l.label}
@@ -100,10 +111,10 @@ export default function Navbar() {
           ))}
 
           {/* Mobile Actions */}
-          <li className="flex lg:hidden flex-col gap-6 w-full pt-6 border-t border-white/10">
+          <li className="flex lg:hidden flex-col gap-6 w-full pt-8 px-10 border-t border-white/10">
             <div className="w-full relative">
               <select
-                className="w-full h-12 flex items-center justify-center px-5 pr-10 rounded-xl font-bold text-sm tracking-wide bg-transparent border-[1.5px] border-white/20 text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.25rem_center] transition-all hover:border-lime"
+                className="w-full h-14 flex items-center justify-center px-6 pr-12 rounded-xl font-bold text-base tracking-wide bg-white/5 border-[1.5px] border-white/20 text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.5rem_center] transition-all hover:border-lime"
                 onChange={(e) => changeLanguage(e.target.value)}
                 value={i18n.language}
               >
@@ -113,16 +124,18 @@ export default function Navbar() {
                 <option value="ne" className="text-black bg-white">नेपाली</option>
               </select>
             </div>
-            <a href="/#contact" className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive">
-              {t("nav.login")}
-            </a>
-            <Link
-              to="/donate"
-              onClick={() => setMenuOpen(false)}
-              className="w-full h-12 flex items-center justify-center px-5 rounded-xl font-bold text-sm tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive"
-            >
-              {t("nav.donate")}
-            </Link>
+            <div className="flex flex-col gap-4">
+              <a href="/#contact" onClick={() => setMenuOpen(false)} className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-transparent border-2 border-lime text-lime transition-all hover:bg-lime hover:text-white">
+                {t("nav.login")}
+              </a>
+              <Link
+                to="/donate"
+                onClick={() => setMenuOpen(false)}
+                className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-lime border-2 border-lime text-white transition-all hover:bg-olive hover:border-olive shadow-lg shadow-lime/20"
+              >
+                {t("nav.donate")}
+              </Link>
+            </div>
           </li>
         </ul>
 
@@ -172,16 +185,16 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Controls (Toggle + Burger) */}
-        <div className="flex lg:hidden items-center gap-5">
+        <div className="flex lg:hidden items-center gap-5 relative z-[110]">
           <ThemeToggle />
           <button
             className="flex flex-col gap-[5px] p-1 group"
             onClick={() => setMenuOpen((m) => !m)}
             aria-label="Menu"
           >
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-olive"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}></span>
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-olive"} dark:bg-white rounded-sm transition-opacity duration-250 ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome ? "bg-olive" : "bg-olive"} dark:bg-white rounded-sm transition-transform duration-250 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "translate-y-[7px] rotate-45 bg-white" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}></span>
+            <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "-translate-y-[7px] -rotate-45 bg-white" : ""}`}></span>
           </button>
         </div>
       </div>
