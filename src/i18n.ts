@@ -348,18 +348,18 @@ i18n
               curr_design: "Curriculum Design",
               skill_training: "Skill Training",
               education: "Education",
-              agri: "Agriculture",
-              org_farming: "Organic Farming",
-              livelihood: "Livelihood",
-              dig_literacy: "Digital Literacy",
+              strategic_oversight: "Strategic Oversight",
+              org_growth: "Organizational Growth",
+              capacity_building: "Capacity Building",
+              frontend_develop: "Front-End Development",
               tech_training: "Tech Training",
               ai_tools: "AI Tools",
-              wellness: "Wellness",
-              ayurveda: "Ayurveda",
-              health_edu: "Health Education",
-              design: "Design",
+              operations: "Operations Management",
+              tech_support: "Technical Support",
+              full_stack_dev: "Full Stack Development",
+              design: "UI/UX Design",
               media: "Media",
-              vis_comm: "Visual Communication"
+              clickup: "Clickup God"
             },
             members: {
               rabiul: {
@@ -378,7 +378,7 @@ i18n
                 name: "Dipam Chakraborty",
                 role: "Advisor",
                 desc: "Leading organic farming and agri-livelihood programs in the Plassey region.",
-                bio: "Dipam Chakraborty coordinates all agriculture-focused programs at the Plassey campus. A trained agronomist with hands-on experience in organic farming and composting, he brings science and soil together to help rural youth build sustainable livelihoods from the land."
+                bio:  "Dipam Chakraborty serves as a Strategic Advisor for the Rural Skill Youth Forum (RYSF). Since joining in 2026, he has provided high-level guidance to ensure the organization meets its mission of empowering rural youth. Dipam focuses on scaling the forum's impact, streamlining operational frameworks, and mentoring leadership teams to create sustainable professional pathways for local communities."
               },
               member4: {
                 name: "Rahul Chettri",
