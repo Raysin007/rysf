@@ -40,6 +40,19 @@ export default function Navbar() {
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline();
+        tl.fromTo(".navbar-link-item",
+          { x: -30, opacity: 0 },
+          { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power3.out", delay: 0.2 }
+        )
+        .fromTo(".mobile-action-item",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: "power2.out" },
+          "-=0.2"
+        );
+      }, navRef);
+      return () => ctx.revert();
     } else {
       document.body.style.overflow = "";
     }
@@ -78,19 +91,19 @@ export default function Navbar() {
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-center justify-center lg:gap-[30px] gap-8 list-none bg-olive dark:bg-black lg:bg-transparent lg:dark:bg-transparent transition-all duration-500 ease-in-out z-[1010] lg:border-none overflow-y-auto ${
+          className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:gap-[30px] gap-6 list-none bg-olive dark:bg-black lg:bg-transparent lg:dark:bg-transparent transition-all duration-500 ease-in-out z-[1010] lg:border-none overflow-y-auto ${
             menuOpen
               ? "opacity-100 pointer-events-auto translate-y-0"
               : "opacity-0 pointer-events-none -translate-y-full lg:opacity-100 lg:pointer-events-auto lg:translate-y-0"
           }`}
         >
           {links.map((l) => (
-            <li key={l.id} className="navbar-link-item w-full lg:w-auto text-center lg:text-left px-10 lg:px-0">
+            <li key={l.id} className="navbar-link-item w-full lg:w-auto text-left px-10 lg:px-0">
               {l.path.startsWith("/#") ? (
                 <a
                   href={l.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`relative block w-full lg:w-auto py-4 lg:py-0 text-3xl lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-3xl lg:text-sm font-display lg:font-body lg:font-medium font-bold tracking-tight lg:tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
                     scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
@@ -100,7 +113,7 @@ export default function Navbar() {
                 <Link
                   to={l.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`relative block w-full lg:w-auto py-4 lg:py-0 text-3xl lg:text-sm font-medium tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-3xl lg:text-sm font-display lg:font-body lg:font-medium font-bold tracking-tight lg:tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
                     scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
                   } hover:text-lime dark:hover:text-lime`}
                 >
@@ -111,7 +124,7 @@ export default function Navbar() {
           ))}
 
           {/* Mobile Actions */}
-          <li className="flex lg:hidden flex-col gap-6 w-full pt-8 px-10 border-t border-white/10">
+          <li className="flex lg:hidden flex-col gap-6 w-full pt-8 px-10 border-t border-white/10 mobile-action-item">
             <div className="w-full relative">
               <select
                 className="w-full h-14 flex items-center justify-center px-6 pr-12 rounded-xl font-bold text-base tracking-wide bg-white/5 border-[1.5px] border-white/20 text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.5rem_center] transition-all hover:border-lime"
