@@ -91,7 +91,7 @@ export default function Navbar() {
 
         {/* Links & Actions (Desktop and Mobile Menu) */}
         <ul
-          className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:gap-[30px] gap-6 list-none bg-olive dark:bg-black lg:bg-transparent lg:dark:bg-transparent transition-all duration-500 ease-in-out z-[1010] lg:border-none overflow-y-auto ${
+          className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:gap-[30px] gap-6 list-none bg-olive dark:bg-black lg:bg-transparent lg:dark:bg-transparent transition-all duration-500 ease-in-out z-[1010] lg:border-none overflow-y-auto scrollbar-hide ${
             menuOpen
               ? "opacity-100 pointer-events-auto translate-y-0"
               : "opacity-0 pointer-events-none -translate-y-full lg:opacity-100 lg:pointer-events-auto lg:translate-y-0"
