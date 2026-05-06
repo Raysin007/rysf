@@ -97,7 +97,7 @@ const members: TeamMember[] = [
     roleKey: "team.members.member6.role",
     descKey: "team.members.member6.desc",
     bioKey: "team.members.member6.bio",
-    image: "/soumajit.webp",
+    image: "/soumajit.jpg",
     initials: "KM",
     locationKey: "team.locations.behala_kolkata",
     joinYearKey: "team.year_2026",
