@@ -400,12 +400,12 @@ function CourseModal({ course, onClose }: { course: CourseDetail; onClose: () =>
     >
       <div
         ref={cardRef}
-        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden shadow-lg-custom w-full max-w-5xl max-h-[92vh] overflow-y-auto scrollbar-hide"
+        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden shadow-lg-custom w-full max-w-5xl max-h-[92vh] flex flex-col"
       >
         {/* Close */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-zinc-800 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all backdrop-blur-sm"
+          className="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-zinc-800 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all backdrop-blur-sm"
           aria-label="Close"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -413,59 +413,61 @@ function CourseModal({ course, onClose }: { course: CourseDetail; onClose: () =>
           </svg>
         </button>
 
-        {/* Hero image */}
-        <div className="h-56 overflow-hidden relative flex-shrink-0">
-          <img src={course.image} alt={t(course.titleKey)} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          <div className={`absolute top-4 left-4 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold tracking-widest uppercase text-white border border-white/20 ${isAdvance ? "bg-olive/80" : "bg-lime/70"}`}>
-            {t("courses." + course.level.toLowerCase())}
-          </div>
-          <div className="absolute bottom-4 left-4 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-            <span className="text-[0.65rem] font-bold text-white uppercase tracking-widest">{t(course.durationKey)}</span>
-          </div>
-        </div>
-
-        <div className="p-7 md:p-9 flex flex-col gap-6">
-          {/* Title + tags */}
-          <div>
-            <h2 className="font-display text-2xl md:text-3xl text-olive dark:text-lime-light font-bold mb-3 leading-tight">
-              {t(course.titleKey)}
-            </h2>
-            {course.tags && (
-              <div className="flex flex-wrap gap-2">
-                {course.tags.map((tag, i) => (
-                  <span key={i} className="px-2.5 py-0.5 bg-cream dark:bg-black text-[0.6rem] font-bold text-text-muted dark:text-white/40 rounded-md uppercase tracking-wider">
-                    {t("courses_page.tags." + tag)}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Description */}
-          <p className="text-sm text-text-muted dark:text-white/70 leading-relaxed">
-            {t(course.descKey)}
-          </p>
-
-          {/* Timeline */}
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-lime mb-5">
-              {t("courses_page.timeline_label")} — {isAdvance ? t("courses_page.advanced_track") : t("courses_page.foundation_track")}
-            </p>
-            <div className="bg-cream dark:bg-zinc-800/40 rounded-[20px] p-5 md:p-8">
-              {isAdvance ? <AdvancedTimeline /> : <FoundationTimeline />}
+        <div className="overflow-y-auto scrollbar-hide">
+          {/* Hero image */}
+          <div className="h-56 overflow-hidden relative flex-shrink-0">
+            <img src={course.image} alt={t(course.titleKey)} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className={`absolute top-4 left-4 backdrop-blur-md px-3 py-1 rounded-full text-[0.65rem] font-bold tracking-widest uppercase text-white border border-white/20 ${isAdvance ? "bg-olive/80" : "bg-lime/70"}`}>
+              {t("courses." + course.level.toLowerCase())}
+            </div>
+            <div className="absolute bottom-4 left-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
+              <span className="text-[0.65rem] font-bold text-white uppercase tracking-widest">{t(course.durationKey)}</span>
             </div>
           </div>
 
-          {/* CTA */}
-          <Link
-            to="/#contact"
-            onClick={handleClose}
-            className="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-lime text-white font-bold text-sm rounded-xl hover:bg-olive transition-all hover:-translate-y-0.5 hover:shadow-md-custom"
-          >
-            {t("courses_page.apply_now")} →
-          </Link>
+          <div className="p-7 md:p-9 flex flex-col gap-6">
+            {/* Title + tags */}
+            <div>
+              <h2 className="font-display text-2xl md:text-3xl text-olive dark:text-lime-light font-bold mb-3 leading-tight">
+                {t(course.titleKey)}
+              </h2>
+              {course.tags && (
+                <div className="flex flex-wrap gap-2">
+                  {course.tags.map((tag, i) => (
+                    <span key={i} className="px-2.5 py-0.5 bg-cream dark:bg-black text-[0.6rem] font-bold text-text-muted dark:text-white/40 rounded-md uppercase tracking-wider">
+                      {t("courses_page.tags." + tag)}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Description */}
+            <p className="text-sm text-text-muted dark:text-white/70 leading-relaxed">
+              {t(course.descKey)}
+            </p>
+
+            {/* Timeline */}
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-lime mb-5">
+                {t("courses_page.timeline_label")} — {isAdvance ? t("courses_page.advanced_track") : t("courses_page.foundation_track")}
+              </p>
+              <div className="bg-cream dark:bg-zinc-800/40 rounded-[20px] p-5 md:p-8">
+                {isAdvance ? <AdvancedTimeline /> : <FoundationTimeline />}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <Link
+              to="/#contact"
+              onClick={handleClose}
+              className="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-lime text-white font-bold text-sm rounded-xl hover:bg-olive transition-all hover:-translate-y-0.5 hover:shadow-md-custom"
+            >
+              {t("courses_page.apply_now")} →
+            </Link>
+          </div>
         </div>
       </div>
     </div>

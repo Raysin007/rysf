@@ -192,21 +192,21 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
     >
       <div
         ref={cardRef}
-        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden shadow-lg-custom w-full max-w-3xl max-h-[90vh] overflow-y-auto"
+        className="relative bg-white dark:bg-zinc-900 rounded-[24px] md:rounded-[24px] rounded-b-none md:rounded-b-[24px] overflow-hidden shadow-lg-custom w-full max-w-3xl max-h-[92vh] md:max-h-[90vh] flex flex-col"
       >
         {/* Close */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all"
+          className="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-white/80 dark:bg-zinc-800/80 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all backdrop-blur-sm"
           aria-label="Close"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
         </button>
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row overflow-y-auto scrollbar-hide">
           {/* Photo column */}
           <div className="md:w-72 md:flex-shrink-0 bg-olive/5 dark:bg-zinc-800/50 relative">
-            <div className="aspect-[3/4] md:h-full md:aspect-auto overflow-hidden">
+            <div className="aspect-[4/3] md:h-full md:aspect-auto overflow-hidden">
               <img
                 src={member.image}
                 alt={t(member.nameKey)}
@@ -217,13 +217,13 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
               />
             </div>
             {/* Initials fallback overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-olive/10 dark:bg-zinc-700/30 md:hidden">
+            <div className="absolute inset-0 flex items-center justify-center bg-olive/10 dark:bg-zinc-700/30 md:hidden -z-10">
               <span className="font-display text-7xl font-bold text-lime opacity-20">{member.initials}</span>
             </div>
           </div>
 
           {/* Content column */}
-          <div className="flex-1 p-7 md:p-9 flex flex-col gap-5">
+          <div className="flex-1 p-6 md:p-9 flex flex-col gap-5">
             <div>
               <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-lime mb-2">
                 {t(member.roleKey)}
@@ -233,7 +233,7 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
               </h3>
 
               {/* Meta */}
-              <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-[11px] text-text-muted dark:text-white/50 font-medium mb-4">
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-text-muted dark:text-white/50 font-medium mb-4">
                 <span className="flex items-center gap-1.5">
                   <LocationIcon />
                   {t(member.locationKey)}
@@ -343,7 +343,7 @@ export default function TeamSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-end mb-14">
             <h2 className="team-heading font-display text-3xl sm:text-4xl lg:text-[3rem] font-semibold text-olive dark:text-lime-light leading-[1.35]">
               {t("team.title")}
-              <span className="block text-lime mt-4">{t("team.title_em")}</span>
+              <span className="block text-lime mt-6">{t("team.title_em")}</span>
             </h2>
             <p className="team-sub text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed">
               {t("team.sub")}
