@@ -375,10 +375,10 @@ i18n
                 bio: "Dr. Subhendu Kundu is the academic backbone of RYSF. He has spent over a decade in rural education and skill development, designing courses that blend modern expertise with traditional knowledge systems. He oversees all educational programs from both the Mirik and Plassey campuses."
               },
               member3: {
-                name: "Deepom Chakraborty",
+                name: "Dipam Chakraborty",
                 role: "Advisor",
                 desc: "Leading organic farming and agri-livelihood programs in the Plassey region.",
-                bio: "Deepom Chakraborty coordinates all agriculture-focused programs at the Plassey campus. A trained agronomist with hands-on experience in organic farming and composting, he brings science and soil together to help rural youth build sustainable livelihoods from the land."
+                bio: "Dipam Chakraborty coordinates all agriculture-focused programs at the Plassey campus. A trained agronomist with hands-on experience in organic farming and composting, he brings science and soil together to help rural youth build sustainable livelihoods from the land."
               },
               member4: {
                 name: "Rahul Chettri",

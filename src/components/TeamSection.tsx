@@ -17,7 +17,8 @@ interface TeamMember {
   joinYearKey: string;
   skillKeys: string[];
   linkedin?: string;
-  twitter?: string;
+  instagram?: string;
+  facebook?: string;
 }
 
 const members: TeamMember[] = [
@@ -32,8 +33,8 @@ const members: TeamMember[] = [
     locationKey: "team.locations.plassey_nadia",
     joinYearKey: "team.year_2026",
     skillKeys: ["team.skills_list.comm_outreach", "team.skills_list.prog_design", "team.skills_list.rural_dev"],
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/ruralrabi/",
+    instagram: "https://www.instagram.com/robichobi/",
   },
   {
     id: "subhendu",
@@ -46,8 +47,7 @@ const members: TeamMember[] = [
     locationKey: "team.locations.mirik_darjeeling",
     joinYearKey: "team.year_2026",
     skillKeys: ["team.skills_list.curr_design", "team.skills_list.skill_training", "team.skills_list.education"],
-    linkedin: "#",
-    twitter: "#",
+    instagram: "https://www.instagram.com/subhendukundu/",
   },
   {
     id: "member3",
@@ -60,7 +60,8 @@ const members: TeamMember[] = [
     locationKey: "team.locations.plassey_nadia",
     joinYearKey: "team.year_2026",
     skillKeys: ["team.skills_list.agri", "team.skills_list.org_farming", "team.skills_list.livelihood"],
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/dipamc/",
+    instagram: "https://www.instagram.com/_dipam.chakraborty_/",
   },
   {
     id: "member4",
@@ -73,8 +74,8 @@ const members: TeamMember[] = [
     locationKey: "team.locations.darjeeling",
     joinYearKey: "team.year_2026",
     skillKeys: ["team.skills_list.dig_literacy", "team.skills_list.tech_training", "team.skills_list.ai_tools"],
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/rahul-chettri-a354182b9/",
+    instagram: "https://www.instagram.com/_.rahul.c_/",
   },
   {
     id: "member5",
@@ -87,7 +88,8 @@ const members: TeamMember[] = [
     locationKey: "team.locations.kalimpong",
     joinYearKey: "team.year_2026",
     skillKeys: ["team.skills_list.wellness", "team.skills_list.ayurveda", "team.skills_list.health_edu"],
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/santamk/",
+    facebook: "https://www.facebook.com/santamk",
   },
   {
     id: "member6",
@@ -100,26 +102,33 @@ const members: TeamMember[] = [
     locationKey: "team.locations.behala_kolkata",
     joinYearKey: "team.year_2026",
     skillKeys: ["team.skills_list.design", "team.skills_list.media", "team.skills_list.vis_comm"],
-    linkedin: "#",
-    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/cykeek/",
+    instagram: "https://www.instagram.com/cykeek_sensei/",
   },
 ];
 
 function LinkedInIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect x="2" y="9" width="4" height="12" />
-      <circle cx="4" cy="4" r="2" />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
     </svg>
   );
 }
 
-function XIcon() {
+function InstagramIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4 4l11.733 16H20L8.267 4z" />
-      <path d="M4 20l6.768-6.768M12.456 12.456L20 4" />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
   );
 }
@@ -258,7 +267,7 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
             </div>
 
             {/* Social links */}
-            {(member.linkedin || member.twitter) && (
+            {(member.linkedin || member.instagram || member.facebook) && (
               <div className="flex gap-2 pt-1 mt-auto">
                 {member.linkedin && (
                   <a
@@ -271,15 +280,26 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
                     <LinkedInIcon />
                   </a>
                 )}
-                {member.twitter && (
+                {member.instagram && (
                   <a
-                    href={member.twitter}
+                    href={member.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all"
-                    aria-label="X (Twitter)"
+                    aria-label="Instagram"
                   >
-                    <XIcon />
+                    <InstagramIcon />
+                  </a>
+                )}
+                {member.facebook && (
+                  <a
+                    href={member.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-text-muted dark:text-white/60 hover:bg-lime hover:text-white transition-all"
+                    aria-label="Facebook"
+                  >
+                    <FacebookIcon />
                   </a>
                 )}
               </div>
@@ -323,7 +343,7 @@ export default function TeamSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-end mb-14">
             <h2 className="team-heading font-display text-3xl sm:text-4xl lg:text-[3rem] font-semibold text-olive dark:text-lime-light leading-[1.35]">
               {t("team.title")}
-              <span className="block text-lime">{t("team.title_em")}</span>
+              <span className="block text-lime mt-2">{t("team.title_em")}</span>
             </h2>
             <p className="team-sub text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed">
               {t("team.sub")}
