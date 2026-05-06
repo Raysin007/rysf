@@ -187,7 +187,7 @@ function MemberModal({ member, onClose }: { member: TeamMember; onClose: () => v
     <div
       ref={overlayRef}
       onClick={handleOverlayClick}
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8"
+      className="fixed inset-0 z-[2000] flex items-center justify-center p-4 md:p-8"
       style={{ backgroundColor: "rgba(0,0,0,0.75)", backdropFilter: "blur(6px)" }}
     >
       <div
@@ -343,7 +343,7 @@ export default function TeamSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-end mb-14">
             <h2 className="team-heading font-display text-3xl sm:text-4xl lg:text-[3rem] font-semibold text-olive dark:text-lime-light leading-[1.35]">
               {t("team.title")}
-              <span className="block text-lime mt-2">{t("team.title_em")}</span>
+              <span className="block text-lime mt-4">{t("team.title_em")}</span>
             </h2>
             <p className="team-sub text-base lg:text-lg font-light text-text-muted dark:text-white/70 leading-relaxed">
               {t("team.sub")}

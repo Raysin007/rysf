@@ -71,7 +71,7 @@ export default function Centers() {
         <div className="centers-label text-[0.72rem] font-bold tracking-widest text-lime-light uppercase mb-6">{t("centers.label")}</div>
 
         <h2 className="centers-title font-display text-4xl sm:text-5xl lg:text-7xl font-normal text-white leading-[1.1] mb-3">
-          {t("centers.plassey")} <em className="not-italic italic text-lime-light">&amp;</em> {t("centers.mirik")}
+          {t("centers.plassey")} <em className="italic text-lime-light">&amp;</em> {t("centers.mirik")}
         </h2>
         <p className="centers-subtitle text-base lg:text-lg text-white/60 font-light mb-14">{t("centers.subtitle")}</p>
 

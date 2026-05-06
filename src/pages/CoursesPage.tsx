@@ -395,12 +395,12 @@ function CourseModal({ course, onClose }: { course: CourseDetail; onClose: () =>
     <div
       ref={overlayRef}
       onClick={(e) => { if (e.target === overlayRef.current) handleClose(); }}
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8"
+      className="fixed inset-0 z-[2000] flex items-center justify-center p-4 md:p-8"
       style={{ backgroundColor: "rgba(0,0,0,0.72)", backdropFilter: "blur(6px)" }}
     >
       <div
         ref={cardRef}
-        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden border border-border-subtle shadow-lg-custom w-full max-w-5xl max-h-[92vh] overflow-y-auto scrollbar-hide"
+        className="relative bg-white dark:bg-zinc-900 rounded-[24px] overflow-hidden shadow-lg-custom w-full max-w-5xl max-h-[92vh] overflow-y-auto scrollbar-hide"
       >
         {/* Close */}
         <button
