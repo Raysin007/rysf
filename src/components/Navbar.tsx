@@ -3,13 +3,17 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import ThemeToggle from "./ThemeToggle";
+import AuthModal from "./AuthModal";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);   // ← NEW: controls the login modal
   const navRef = useRef<HTMLElement>(null);
   const location = useLocation();
+  const { user, logout } = useAuth();               // ← NEW: current logged-in user
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -66,153 +70,178 @@ export default function Navbar() {
 
   const isHome = location.pathname === "/";
 
+  // Shared link classes
+  const linkClass = `relative block w-full lg:w-auto py-3 lg:py-0 text-3xl lg:text-sm font-display lg:font-body lg:font-medium font-bold tracking-tight lg:tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
+    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
+  } hover:text-lime dark:hover:text-lime`;
+
   return (
-    <nav
-      ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 px-6 lg:px-10 py-6 lg:py-7 ${
-        (scrolled || !isHome) && !menuOpen
-          ? "bg-cream dark:bg-zinc-950/95 dark:backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-[1280px] mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between lg:gap-12 relative">
-        {/* Brand */}
-        <Link to="/" className={`navbar-brand flex items-center gap-3 relative z-[1020] justify-self-start transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto" : "opacity-100"}`}>
-          <img
-            src="/single.png"
-            alt={t("nav.logo_alt")}
-            className="block h-10 lg:h-12 w-auto object-contain"
-          />
-          <div className="flex flex-col leading-[1.1]">
-            <span className="font-['Roboto_Slab'] font-bold text-lg lg:text-2xl tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part1")}</span>
-            <span className="font-['Roboto_Slab'] font-bold text-lg lg:text-2xl tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part2")}</span>
-          </div>
-        </Link>
+    <>
+      <nav
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 px-6 lg:px-10 py-6 lg:py-7 ${
+          (scrolled || !isHome) && !menuOpen
+            ? "bg-cream dark:bg-zinc-950/95 dark:backdrop-blur-md"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-[1280px] mx-auto flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between lg:gap-12 relative">
+          {/* Brand */}
+          <Link to="/" className={`navbar-brand flex items-center gap-3 relative z-[1020] justify-self-start transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto" : "opacity-100"}`}>
+            <img
+              src="/single.png"
+              alt={t("nav.logo_alt")}
+              className="block h-10 lg:h-12 w-auto object-contain"
+            />
+            <div className="flex flex-col leading-[1.1]">
+              <span className="font-['Roboto_Slab'] font-bold text-lg lg:text-2xl tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part1")}</span>
+              <span className="font-['Roboto_Slab'] font-bold text-lg lg:text-2xl tracking-wide text-lime dark:text-lime-light uppercase">{t("nav.name_part2")}</span>
+            </div>
+          </Link>
 
-        {/* Links & Actions (Desktop and Mobile Menu) */}
-        <ul
-          className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:gap-[30px] gap-6 list-none bg-olive dark:bg-black lg:bg-transparent lg:dark:bg-transparent transition-all duration-500 ease-in-out z-[1010] lg:border-none overflow-y-auto scrollbar-hide ${
-            menuOpen
-              ? "opacity-100 pointer-events-auto translate-y-0"
-              : "opacity-0 pointer-events-none -translate-y-full lg:opacity-100 lg:pointer-events-auto lg:translate-y-0"
-          }`}
-        >
-          {links.map((l) => (
-            <li key={l.id} className="navbar-link-item w-full lg:w-auto text-left px-10 lg:px-0">
-              {l.path.startsWith("/#") ? (
-                <a
-                  href={l.path}
-                  onClick={() => setMenuOpen(false)}
-                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-3xl lg:text-sm font-display lg:font-body lg:font-medium font-bold tracking-tight lg:tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
-                  } hover:text-lime dark:hover:text-lime`}
+          {/* Links */}
+          <ul
+            className={`fixed lg:static inset-0 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:gap-[30px] gap-6 list-none bg-olive dark:bg-black lg:bg-transparent lg:dark:bg-transparent transition-all duration-500 ease-in-out z-[1010] lg:border-none overflow-y-auto scrollbar-hide ${
+              menuOpen
+                ? "opacity-100 pointer-events-auto translate-y-0"
+                : "opacity-0 pointer-events-none -translate-y-full lg:opacity-100 lg:pointer-events-auto lg:translate-y-0"
+            }`}
+          >
+            {links.map((l) => (
+              <li key={l.id} className="navbar-link-item w-full lg:w-auto text-left px-10 lg:px-0">
+                {l.path.startsWith("/#") ? (
+                  <a href={l.path} onClick={() => setMenuOpen(false)} className={linkClass}>
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link to={l.path} onClick={() => setMenuOpen(false)} className={linkClass}>
+                    {l.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+
+            {/* Mobile Actions */}
+            <li className="flex lg:hidden flex-col gap-6 w-full pt-8 px-10 border-t border-white/10 mobile-action-item">
+              <div className="w-full relative">
+                <select
+                  className="w-full h-14 flex items-center justify-center px-6 pr-12 rounded-xl font-bold text-base tracking-wide bg-white/5 border-[1.5px] border-white/20 text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.5rem_center] transition-all hover:border-lime"
+                  onChange={(e) => changeLanguage(e.target.value)}
+                  value={i18n.language}
                 >
-                  {l.label}
-                </a>
-              ) : (
+                  <option value="en" className="text-black bg-white">English</option>
+                  <option value="hi" className="text-black bg-white">हिन्दी</option>
+                  <option value="bn" className="text-black bg-white">বাংলা</option>
+                  <option value="ne" className="text-black bg-white">नेपाली</option>
+                </select>
+              </div>
+              <div className="flex flex-col gap-4">
+                {/* ↓ CHANGED: Login button now opens modal or shows user info */}
+                {user ? (
+                  <button
+                    onClick={() => { logout(); setMenuOpen(false); }}
+                    className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-transparent border-2 border-lime text-lime transition-all hover:bg-lime hover:text-white"
+                  >
+                    Log out ({user.email?.split("@")[0]})
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => { setAuthOpen(true); setMenuOpen(false); }}
+                    className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-transparent border-2 border-lime text-lime transition-all hover:bg-lime hover:text-white"
+                  >
+                    {t("nav.login")}
+                  </button>
+                )}
                 <Link
-                  to={l.path}
+                  to="/donate"
                   onClick={() => setMenuOpen(false)}
-                  className={`relative block w-full lg:w-auto py-3 lg:py-0 text-3xl lg:text-sm font-display lg:font-body lg:font-medium font-bold tracking-tight lg:tracking-wider transition-colors after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-[1.5px] after:bg-lime after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100 ${
-                    scrolled || !isHome ? "text-white lg:text-text-dark dark:text-white" : "text-white lg:text-white dark:text-white"
-                  } hover:text-lime dark:hover:text-lime`}
+                  className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-lime border-2 border-lime text-white transition-all hover:bg-olive hover:border-olive shadow-lg shadow-lime/20"
                 >
-                  {l.label}
+                  {t("nav.donate")}
                 </Link>
-              )}
+              </div>
             </li>
-          ))}
+          </ul>
 
-          {/* Mobile Actions */}
-          <li className="flex lg:hidden flex-col gap-6 w-full pt-8 px-10 border-t border-white/10 mobile-action-item">
-            <div className="w-full relative">
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex items-center gap-1.5 relative z-[1020] justify-self-end">
+            <div className="relative group flex items-center">
               <select
-                className="w-full h-14 flex items-center justify-center px-6 pr-12 rounded-xl font-bold text-base tracking-wide bg-white/5 border-[1.5px] border-white/20 text-white cursor-pointer outline-none appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1.5rem_center] transition-all hover:border-lime"
+                className={`h-9 min-w-[3.2rem] inline-flex items-center justify-center pr-4 bg-transparent border-none font-bold text-[0.75rem] tracking-[0.15em] uppercase cursor-pointer outline-none appearance-none transition-all hover:text-lime ${
+                  scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
+                }`}
                 onChange={(e) => changeLanguage(e.target.value)}
                 value={i18n.language}
               >
-                <option value="en" className="text-black bg-white">English</option>
-                <option value="hi" className="text-black bg-white">हिन्दी</option>
-                <option value="bn" className="text-black bg-white">বাংলা</option>
-                <option value="ne" className="text-black bg-white">नेपाली</option>
+                <option value="en" className="text-black bg-white">EN</option>
+                <option value="hi" className="text-black bg-white">HI</option>
+                <option value="bn" className="text-black bg-white">BN</option>
+                <option value="ne" className="text-black bg-white">NE</option>
               </select>
-            </div>
-            <div className="flex flex-col gap-4">
-              <a href="/#contact" onClick={() => setMenuOpen(false)} className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-transparent border-2 border-lime text-lime transition-all hover:bg-lime hover:text-white">
-                {t("nav.login")}
-              </a>
-              <Link
-                to="/donate"
-                onClick={() => setMenuOpen(false)}
-                className="w-full h-14 flex items-center justify-center px-6 rounded-xl font-bold text-base tracking-wide bg-lime border-2 border-lime text-white transition-all hover:bg-olive hover:border-olive shadow-lg shadow-lime/20"
+              <svg
+                className={`absolute right-0 w-2.5 h-2.5 pointer-events-none transition-colors group-hover:text-lime ${
+                  scrolled || !isHome ? "text-text-muted dark:text-white/60" : "text-white/60"
+                }`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                {t("nav.donate")}
-              </Link>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </div>
-          </li>
-        </ul>
 
-        {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-1.5 relative z-[1020] justify-self-end">
-          <div className="relative group flex items-center">
-            <select
-              className={`h-9 min-w-[3.2rem] inline-flex items-center justify-center pr-4 bg-transparent border-none font-bold text-[0.75rem] tracking-[0.15em] uppercase cursor-pointer outline-none appearance-none transition-all hover:text-lime ${
-                scrolled || !isHome ? "text-text-dark dark:text-white" : "text-white dark:text-white"
-              }`}
-              onChange={(e) => changeLanguage(e.target.value)}
-              value={i18n.language}
+            <div className="h-5 w-px bg-text-dark/20 dark:bg-white/20 mx-1" />
+
+            {/* ↓ CHANGED: Login / Logout button */}
+            {user ? (
+              <button
+                onClick={logout}
+                className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-transparent border-[1.5px] border-lime text-lime transition-all hover:bg-lime hover:text-white hover:-translate-y-px whitespace-nowrap"
+              >
+                Log out
+              </button>
+            ) : (
+              <button
+                onClick={() => setAuthOpen(true)}
+                className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-transparent border-[1.5px] border-lime text-lime transition-all hover:bg-lime hover:text-white hover:-translate-y-px whitespace-nowrap"
+              >
+                {t("nav.login")}
+              </button>
+            )}
+
+            <Link
+              to="/donate"
+              className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive hover:-translate-y-px whitespace-nowrap"
             >
-              <option value="en" className="text-black bg-white">EN</option>
-              <option value="hi" className="text-black bg-white">HI</option>
-              <option value="bn" className="text-black bg-white">BN</option>
-              <option value="ne" className="text-black bg-white">NE</option>
-            </select>
-            <svg
-              className={`absolute right-0 w-2.5 h-2.5 pointer-events-none transition-colors group-hover:text-lime ${
-                scrolled || !isHome ? "text-text-muted dark:text-white/60" : "text-white/60"
-              }`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-
-          <div className="h-5 w-px bg-text-dark/20 dark:bg-white/20 mx-1" />
-
-          <a href="/#contact" className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-transparent border-[1.5px] border-lime text-lime transition-all hover:bg-lime hover:text-white hover:-translate-y-px whitespace-nowrap">
-            {t("nav.login")}
-          </a>
-          <Link
-            to="/donate"
-            className="h-9 min-w-[7.5rem] inline-flex items-center justify-center px-4 rounded-lg font-semibold text-[0.82rem] tracking-wide bg-lime border-[1.5px] border-lime text-white transition-all hover:bg-olive hover:border-olive hover:-translate-y-px whitespace-nowrap"
-          >
-            {t("nav.donate")}
-          </Link>
-          <ThemeToggle />
-        </div>
-
-        {/* Mobile Controls (Toggle + Burger) */}
-        <div className="flex lg:hidden items-center gap-5 relative z-[1020]">
-          <div className={`transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+              {t("nav.donate")}
+            </Link>
             <ThemeToggle />
           </div>
-          <button
-            className="flex flex-col gap-[5px] p-1 group"
-            onClick={() => setMenuOpen((m) => !m)}
-            aria-label="Menu"
-          >
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "translate-y-[7px] rotate-45 bg-white" : ""}`}></span>
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "-translate-y-[7px] -rotate-45 bg-white" : ""}`}></span>
-          </button>
+
+          {/* Mobile Controls */}
+          <div className="flex lg:hidden items-center gap-5 relative z-[1020]">
+            <div className={`transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+              <ThemeToggle />
+            </div>
+            <button
+              className="flex flex-col gap-[5px] p-1 group"
+              onClick={() => setMenuOpen((m) => !m)}
+              aria-label="Menu"
+            >
+              <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "translate-y-[7px] rotate-45 bg-white" : ""}`}></span>
+              <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}></span>
+              <span className={`block w-6 h-0.5 ${scrolled || !isHome || menuOpen ? "bg-white" : "bg-olive"} dark:bg-white rounded-sm transition-all duration-300 ${menuOpen ? "-translate-y-[7px] -rotate-45 bg-white" : ""}`}></span>
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Auth Modal — rendered outside the nav so it overlays everything */}
+      {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
+    </>
   );
 }
