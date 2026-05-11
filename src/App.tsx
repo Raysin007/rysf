@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import CoursesPage from "./pages/CoursesPage";
+import CourseDetailPage from "./pages/CourseDetailPage";
 import DonationDashboard from "./pages/DonationDashboard";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -15,6 +16,8 @@ function TitleHandler() {
   useEffect(() => {
     const brand = t("footer.brand_name");
     if (location.pathname === "/courses") {
+      document.title = `${t("nav.courses")} | ${brand}`;
+    } else if (location.pathname.startsWith("/courses/")) {
       document.title = `${t("nav.courses")} | ${brand}`;
     } else if (location.pathname === "/donate") {
       document.title = `${t("nav.donate")} | ${brand}`;
@@ -37,6 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/courses/:courseId" element={<CourseDetailPage />} />
             <Route path="/donate" element={<DonationDashboard />} />
           </Routes>
         </main>
