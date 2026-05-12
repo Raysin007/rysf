@@ -96,7 +96,7 @@ export default function CourseDetailPage() {
 
             {/* Description */}
             <div className="prose dark:prose-invert max-w-none">
-              <h3 className="text-xl font-bold text-olive dark:text-white mb-4">Course Overview</h3>
+              <h3 className="text-xl font-bold text-olive dark:text-white mb-4">{t("courses_page.course_overview")}</h3>
               <p className="text-base md:text-lg text-text-muted dark:text-white/70 leading-relaxed">
                 {t(course.descKey)}
               </p>
@@ -109,7 +109,7 @@ export default function CourseDetailPage() {
                 {/* Objective */}
                 <div className="bg-lime/5 dark:bg-lime/10 p-8 rounded-3xl border border-lime/20">
                   <h3 className="text-xl font-bold text-olive dark:text-lime-light mb-4 flex items-center gap-2">
-                    <span className="text-2xl">🎯</span> Course Objective
+                    <span className="text-2xl">🎯</span> {t("courses_page.course_objective")}
                   </h3>
                   <p className="text-base text-text-muted dark:text-white/80 leading-relaxed italic">
                     "{course.curriculum.objective}"
@@ -118,7 +118,7 @@ export default function CourseDetailPage() {
 
                 {/* Learning Outcomes */}
                 <div>
-                  <h3 className="text-2xl font-bold text-olive dark:text-white mb-8">Learning Outcomes</h3>
+                  <h3 className="text-2xl font-bold text-olive dark:text-white mb-8">{t("courses_page.learning_outcomes")}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {course.curriculum.outcomes.map((outcome, i) => (
                       <div key={i} className="flex items-start gap-3 p-4 bg-white dark:bg-zinc-800/50 rounded-2xl border border-border-subtle shadow-sm">
@@ -132,8 +132,8 @@ export default function CourseDetailPage() {
                 {/* Syllabus */}
                 <div>
                   <div className="flex items-center justify-between mb-8">
-                    <h3 className="text-2xl font-bold text-olive dark:text-white">Week-by-Week Syllabus</h3>
-                    <span className="px-4 py-1 bg-olive text-white text-[10px] font-bold rounded-full uppercase tracking-widest">8 Weeks Program</span>
+                    <h3 className="text-2xl font-bold text-olive dark:text-white">{t("courses_page.syllabus_title")}</h3>
+                    <span className="px-4 py-1 bg-olive text-white text-[10px] font-bold rounded-full uppercase tracking-widest">{t(course.durationKey)}</span>
                   </div>
                   <div className="space-y-6">
                     {course.curriculum.syllabus.map((item, i) => (
@@ -146,7 +146,7 @@ export default function CourseDetailPage() {
                           <div className="flex-1 p-6 md:p-8">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                               <div>
-                                <h5 className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-4">Topics Covered</h5>
+                                <h5 className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-4">{t("courses_page.topics_covered")}</h5>
                                 <ul className="space-y-2">
                                   {item.topics.map((topic, j) => (
                                     <li key={j} className="text-sm text-text-muted dark:text-white/60 flex items-center gap-2">
@@ -158,7 +158,7 @@ export default function CourseDetailPage() {
                               <div className="space-y-6">
                                 {item.practical && item.practical.length > 0 && (
                                   <div>
-                                    <h5 className="text-[10px] font-bold uppercase tracking-widest text-lime mb-3">Practical Labs</h5>
+                                    <h5 className="text-[10px] font-bold uppercase tracking-widest text-lime mb-3">{t("courses_page.practical_labs")}</h5>
                                     <div className="flex flex-wrap gap-2">
                                       {item.practical.map((p, j) => (
                                         <span key={j} className="px-3 py-1 bg-lime/10 text-lime text-[10px] font-bold rounded-lg border border-lime/20">{p}</span>
@@ -168,7 +168,7 @@ export default function CourseDetailPage() {
                                 )}
                                 {item.assignment && (
                                   <div className="p-4 bg-cream/50 dark:bg-black/40 rounded-xl border border-dashed border-border-subtle">
-                                    <h5 className="text-[10px] font-bold uppercase tracking-widest text-olive dark:text-lime-light mb-1">Weekly Assignment</h5>
+                                    <h5 className="text-[10px] font-bold uppercase tracking-widest text-olive dark:text-lime-light mb-1">{t("courses_page.weekly_assignment")}</h5>
                                     <p className="text-xs text-text-muted dark:text-white/60 italic">{item.assignment}</p>
                                   </div>
                                 )}
@@ -185,7 +185,7 @@ export default function CourseDetailPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-border-subtle shadow-sm">
                     <h4 className="font-bold text-olive dark:text-white mb-6 flex items-center gap-2">
-                      <span className="text-lime">⚒</span> Practical Labs
+                      <span className="text-lime">⚒</span> {t("courses_page.practical_labs")}
                     </h4>
                     <ul className="space-y-3">
                       {course.curriculum.labs.map((lab, i) => (
@@ -198,11 +198,11 @@ export default function CourseDetailPage() {
 
                   <div className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-border-subtle shadow-sm">
                     <h4 className="font-bold text-olive dark:text-white mb-6 flex items-center gap-2">
-                      <span className="text-lime">💻</span> Software & Tools
+                      <span className="text-lime">💻</span> {t("courses_page.software_tools")}
                     </h4>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-2">Core Tools</p>
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-2">{t("courses_page.core_tools")}</p>
                         <div className="flex flex-wrap gap-2">
                           {course.curriculum.tools.beginner.map((tool, i) => (
                             <span key={i} className="px-2 py-1 bg-cream dark:bg-black rounded-md text-[11px] font-medium text-olive dark:text-white">{tool}</span>
@@ -211,7 +211,7 @@ export default function CourseDetailPage() {
                       </div>
                       {course.curriculum.tools.optional && (
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-2">Introduced</p>
+                          <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-2">{t("courses_page.introduced")}</p>
                           <div className="flex flex-wrap gap-2">
                             {course.curriculum.tools.optional.map((tool, i) => (
                               <span key={i} className="px-2 py-1 bg-cream dark:bg-black rounded-md text-[11px] font-medium text-olive dark:text-white opacity-60">{tool}</span>
@@ -224,7 +224,7 @@ export default function CourseDetailPage() {
 
                   <div className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-border-subtle shadow-sm">
                     <h4 className="font-bold text-olive dark:text-white mb-6 flex items-center gap-2">
-                      <span className="text-lime">🚀</span> Career Pathways
+                      <span className="text-lime">🚀</span> {t("courses_page.career_pathways")}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {course.curriculum.careers.map((career, i) => (
@@ -239,14 +239,14 @@ export default function CourseDetailPage() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-lime/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                   <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
                     <div className="lg:w-1/2">
-                      <h3 className="text-2xl font-bold mb-4">Assessment & Certification</h3>
+                      <h3 className="text-2xl font-bold mb-4">{t("courses_page.assessment_cert")}</h3>
                       <p className="text-white/70 mb-8 leading-relaxed">
                         To earn your certificate, you'll need to demonstrate consistent progress through weekly assignments and a final community-focused project.
                       </p>
 
                       {course.curriculum.methodology && (
                         <div className="mb-8 p-4 bg-white/10 rounded-xl border border-white/10 inline-block">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime mb-1">Learning Methodology</p>
+                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-lime mb-1">{t("courses_page.learning_methodology")}</p>
                           <p className="text-sm font-medium">{course.curriculum.methodology}</p>
                         </div>
                       )}
@@ -262,7 +262,7 @@ export default function CourseDetailPage() {
                     </div>
                     <div className="lg:w-1/2 w-full">
                       <div className="bg-black/20 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-lime mb-6">Weightage Breakdown</h4>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-lime mb-6">{t("courses_page.weightage_breakdown")}</h4>
                         <div className="space-y-4">
                           {course.curriculum.assessment.map((item, i) => (
                             <div key={i} className="flex items-center justify-between group">
