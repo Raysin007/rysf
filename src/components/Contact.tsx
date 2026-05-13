@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { supabase } from "../lib/supabase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,9 +16,14 @@ export default function Contact() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    if (form.name && form.email) setSubmitted(true);
+    if (!form.name || !form.email) return;
+    setSubmitted(false);
+    const { error } = await supabase.from("forum_registrations").insert([
+      { name: form.name, email: form.email, role: form.role, message: form.message },
+    ]);
+    if (!error) setSubmitted(true);
   };
 
   useEffect(() => {
