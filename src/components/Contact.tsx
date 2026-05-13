@@ -10,6 +10,7 @@ export default function Contact() {
   const { t } = useTranslation();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", role: "", message: "" });
+  const [submitError, setSubmitError] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -19,11 +20,16 @@ export default function Contact() {
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (!form.name || !form.email) return;
-    setSubmitted(false);
+    setSubmitError("");
     const { error } = await supabase.from("forum_registrations").insert([
       { name: form.name, email: form.email, role: form.role, message: form.message },
     ]);
-    if (!error) setSubmitted(true);
+    if (error) {
+      console.error("Supabase insert error:", error);
+      setSubmitError(error.message);
+    } else {
+      setSubmitted(true);
+    }
   };
 
   useEffect(() => {
@@ -142,6 +148,9 @@ export default function Contact() {
                   className="w-full bg-cream dark:bg-zinc-900 border-[1.5px] border-border-subtle rounded-xl px-4 py-3.5 text-[0.95rem] text-text-dark dark:text-white outline-none focus:border-lime focus:ring-4 focus:ring-lime/10 transition-all resize-none placeholder:text-text-muted"
                 />
               </div>
+              {submitError && (
+                <p className="text-sm text-red-500 bg-red-50 dark:bg-red-900/20 px-4 py-2 rounded-lg">{submitError}</p>
+              )}
               <button
                 className="w-full bg-lime text-white font-body font-semibold text-[0.95rem] tracking-wide px-8 py-4 rounded-xl mt-2 transition-all hover:bg-olive hover:-translate-y-0.5 hover:shadow-md-custom"
                 onClick={handleSubmit}
