@@ -64,7 +64,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
           className="absolute top-4 right-4 text-text-muted hover:text-olive dark:hover:text-white transition-colors text-2xl leading-none"
           aria-label="Close"
         >
-          ×
+          
         </button>
 
         {/* Header */}
