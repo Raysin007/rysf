@@ -1,4 +1,4 @@
-/**
+﻿/**
  * DonationDashboard.tsx  — Razorpay integration
  *
  * How it works:
@@ -87,8 +87,8 @@ export default function DonationDashboard() {
       key: import.meta.env.VITE_RAZORPAY_KEY_ID,
       amount: finalAmount * 100,   // Razorpay takes paise (₹1 = 100 paise)
       currency: "INR",
-      name: "Rural Youth Skill Forum",
-      description: "Support RYSF's mission",
+      name: "Pally Karigori Foundation",
+      description: "Support PKF's mission",
       image: "/single.png",
       prefill: {
         email: user?.email ?? "",
@@ -154,7 +154,7 @@ export default function DonationDashboard() {
 
         {/* Header */}
         <p className="text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-4">
-          Support RYSF
+          Support PKF
         </p>
         <h1 className="font-display text-4xl font-semibold text-olive dark:text-lime-light leading-tight mb-3">
           Empower a rural youth<br />

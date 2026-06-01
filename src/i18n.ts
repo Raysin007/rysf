@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+﻿import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
@@ -21,9 +21,9 @@ i18n
             centers: "Centers",
             impact: "Impact",
             contact: "Contact",
-            logo_alt: "Rural Youth Skill Forum logo",
-            name_part1: "Rural Youth",
-            name_part2: "Skill Forum",
+            logo_alt: "Pally Karigori Foundation logo",
+            name_part1: "Pally Karigori",
+            name_part2: "Foundation",
             login: "Login",
             donate: "Donate",
             toggle_theme: "Toggle dark mode"
@@ -32,8 +32,8 @@ i18n
             mirik: "Mirik",
             plassey: "Plassey",
             tag: "Mirik, Darjeeling · April 2026",
-            title: "Rural Youth",
-            skill_forum: "Skill Forum",
+            title: "Pally Karigori",
+            skill_forum: "Foundation",
             tagline: "Where traditional wisdom meets modern opportunity — bridging communities with skills that last.",
             explore: "Explore the Initiative",
             view_courses: "View Courses",
@@ -41,7 +41,7 @@ i18n
             disciplines: "Disciplines",
             pilot_regions: "Pilot Regions",
             scroll: "Scroll to explore",
-            label_top: "Rural Youth Skill Development",
+            label_top: "Pally Karigori Foundation",
             label_left: "Career Placement",
             label_right: "Rural Skills Archive",
             stats_courses: "30+",
@@ -54,7 +54,7 @@ i18n
           about: {
             label: "CORE CONCEPT",
             lead: "An initiative rooted in the belief that real development begins with people, their skills and connection with their own land and knowledge systems.",
-            accent: "The Rural Youth Skill Forum is designed as a bridge between traditional wisdom and modern opportunities.",
+            accent: "The Pally Karigori Foundation is designed as a bridge between traditional wisdom and modern opportunities.",
             pillar1_num: "01",
             pillar2_num: "02",
             pillar3_num: "03",
@@ -380,25 +380,25 @@ i18n
                 name: "Rabiul Islam",
                 role: "Founder & Community Lead",
                 desc: "Driving grassroots outreach and community partnerships across Plassey.",
-                bio: "Rabiul Islam is the co-founder of the Rural Youth Skill Forum and leads all community engagement efforts in the Plassey region. With deep roots in the local community, he bridges the gap between institutional programs and ground-level implementation, ensuring every initiative is shaped by real community needs."
+                bio: "Rabiul Islam is the co-founder of the Pally Karigori Foundation and leads all community engagement efforts in the Plassey region. With deep roots in the local community, he bridges the gap between institutional programs and ground-level implementation, ensuring every initiative is shaped by real community needs."
               },
               subhendu: {
                 name: "Dr. Subhendu Kundu",
                 role: "Co-Founder & Lead Instructor",
                 desc: "Designing curriculum and leading skill training programs across both campuses.",
-                bio: "Dr. Subhendu Kundu is the academic backbone of RYSF. He has spent over a decade in rural education and skill development, designing courses that blend modern expertise with traditional knowledge systems. He oversees all educational programs from both the Mirik and Plassey campuses."
+                bio: "Dr. Subhendu Kundu is the academic backbone of PKF. He has spent over a decade in rural education and skill development, designing courses that blend modern expertise with traditional knowledge systems. He oversees all educational programs from both the Mirik and Plassey campuses."
               },
               member3: {
                 name: "Dipam Chakraborty",
                 role: "Advisor",
                 desc: "Leading organic farming and agri-livelihood programs in the Plassey region.",
-                bio:  "Dipam Chakraborty serves as a Strategic Advisor for the Rural Skill Youth Forum (RYSF). Since joining in 2026, he has provided high-level guidance to ensure the organization meets its mission of empowering rural youth. Dipam focuses on scaling the forum's impact, streamlining operational frameworks, and mentoring leadership teams to create sustainable professional pathways for local communities."
+                bio:  "Dipam Chakraborty serves as a Strategic Advisor for the Pally Karigori Foundation (PKF). Since joining in 2026, he has provided high-level guidance to ensure the organization meets its mission of empowering rural youth. Dipam focuses on scaling the forum's impact, streamlining operational frameworks, and mentoring leadership teams to create sustainable professional pathways for local communities."
               },
               member4: {
                 name: "Rahul Chettri",
                 role: "Volunteer",
                 desc: "Building digital confidence among rural youth through practical technology training.",
-                bio: "Rahul Chettri leads the Data & Technology track at RYSF, helping rural youth navigate the digital world with confidence. From basic IT literacy to AI tools and web development, he designs learning experiences that are practical, jargon-free and deeply relevant to rural contexts."
+                bio: "Rahul Chettri leads the Data & Technology track at PKF, helping rural youth navigate the digital world with confidence. From basic IT literacy to AI tools and web development, he designs learning experiences that are practical, jargon-free and deeply relevant to rural contexts."
               },
               member5: {
                 name: "Santam Kumai",
@@ -410,7 +410,7 @@ i18n
                 name: "Soumajit Das",
                 role: "Volunteer",
                 desc: "Equipping students with creative tools to tell rural stories and build careers in media.",
-                bio: "Soumajit Das teaches photography, video editing and design literacy at RYSF. He believes that every rural community has stories worth telling and the youth who tell them deserve professional tools. He guides students from basic visual literacy to building full creative portfolios."
+                bio: "Soumajit Das teaches photography, video editing and design literacy at PKF. He believes that every rural community has stories worth telling and the youth who tell them deserve professional tools. He guides students from basic visual literacy to building full creative portfolios."
               }
             }
           },
@@ -433,13 +433,17 @@ i18n
               plassey2: "Strong community trust, leading to higher participation and impact",
               mirik1: "High need, low access — where intervention creates real change",
               mirik2: "Built to scale; models tested here can grow across regions"
-            }
+            },
+            upcoming_badge: "COMING SOON",
+            upcoming_title: "Next Areas of Work",
+            upcoming_desc: "Evaluating new underserved rural regions to expand our skills training and archive initiatives.",
+            upcoming_cta: "Suggest a location"
           },
           impact: {
             label: "OUR IMPACT",
             title: "Building futures,",
             title_em: "one skill at a time.",
-            desc: "The Rural Youth Skill Forum is built for measurable, lasting change — starting with the communities that need it most, and scaling to reach thousands across the region.",
+            desc: "The Pally Karigori Foundation is built for measurable, lasting change — starting with the communities that need it most, and scaling to reach thousands across the region.",
             stat1_label: "Youth Targeted in 1st Year",
             stat1_desc: "Across both pilot regions",
             stat2_label: "Skill Courses",
@@ -453,7 +457,7 @@ i18n
             stat3_num: "2",
             stat4_num: "3",
             quote: "Real development begins with people — their skills and connection with their own land and knowledge systems.",
-            cite: "— Rural Youth Skill Forum, Core Concept"
+            cite: "— Pally Karigori Foundation, Core Concept"
           },
           contact: {
             label: "JOIN THE FORUM",
@@ -467,7 +471,7 @@ i18n
             info3_label: "Prepared by",
             info3_value: "Rabiul Islam & Dr. Subhendu Kundu",
             success_title: "You're in!",
-            success_desc: "Thank you for your interest. We'll reach out soon with next steps for joining the Rural Youth Skill Forum.",
+            success_desc: "Thank you for your interest. We'll reach out soon with next steps for joining the Pally Karigori Foundation.",
             form: {
               name: "Full Name",
               name_ph: "Your name",
@@ -483,11 +487,11 @@ i18n
               role_other: "Other",
               message: "Message (optional)",
               message_ph: "Tell us how you'd like to get involved…",
-            submit: "Join the Rural Youth Skill Forum →"
+            submit: "Join the Pally Karigori Foundation →"
             }
           },
           footer: {
-            brand_name: "RURAL YOUTH  SKILL FORUM",
+            brand_name: "PALLY KARIGORI FOUNDATION",
             brand_sub: " Mirik Plassey",
             brand_desc: "Bridging traditional wisdom and modern opportunities for rural youth across West Bengal and beyond.",
             nav_title: "Navigate",
@@ -495,7 +499,7 @@ i18n
             regions_title: "Regions",
             address_plassey: "Plassey, Nadia — 741181",
             address_mirik: "Mirik, Darjeeling — 734214",
-           /*  copy: "Concept Pitch of Rural Youth Skill Forum · Prepared by Rabiul Islam & Subhendu Kundu", */
+           /*  copy: "Concept Pitch of Pally Karigori Foundation · Prepared by Rabiul Islam & Subhendu Kundu", */
             tagline: "Real development begins with people."
           },
           dashboard: {
@@ -938,7 +942,7 @@ i18n
                 name: "डॉ. सुभेंदु कुंडू",
                 role: "सह-संस्थापक और प्रमुख प्रशिक्षक",
                 desc: "दोनों परिसरों में पाठ्यक्रम डिजाइन और कौशल प्रशिक्षण कार्यक्रमों का नेतृत्व करना।",
-                bio: "डॉ. सुभेंदु कुंडू RYSF की शैक्षणिक रीढ़ हैं। उन्होंने ग्रामीण शिक्षा और कौशल विकास में एक दशक से अधिक समय बिताया है, ऐसे पाठ्यक्रम डिजाइन करते हुए जो आधुनिक विशेषज्ञता को पारंपरिक ज्ञान प्रणालियों के साथ जोड़ते हैं।"
+                bio: "डॉ. सुभेंदु कुंडू PKF की शैक्षणिक रीढ़ हैं। उन्होंने ग्रामीण शिक्षा और कौशल विकास में एक दशक से अधिक समय बिताया है, ऐसे पाठ्यक्रम डिजाइन करते हुए जो आधुनिक विशेषज्ञता को पारंपरिक ज्ञान प्रणालियों के साथ जोड़ते हैं।"
               },
               member3: {
                 name: "दीपोम चक्रवर्ती",
@@ -950,7 +954,7 @@ i18n
                 name: "राहुल छेत्री",
                 role: "स्वयंसेवक",
                 desc: "व्यावहारिक प्रौद्योगिकी प्रशिक्षण के माध्यम से ग्रामीण युवाओं में डिजिटल आत्मविश्वास का निर्माण।",
-                bio: "राहुल छेत्री RYSF में डेटा और प्रौद्योगिकी ट्रैक का नेतृत्व करते हैं। बुनियादी IT साक्षरता से लेकर AI टूल और वेब डेवलपमेंट तक, वे ऐसे सीखने के अनुभव डिजाइन करते हैं जो ग्रामीण संदर्भों के लिए व्यावहारिक और प्रासंगिक हैं।"
+                bio: "राहुल छेत्री PKF में डेटा और प्रौद्योगिकी ट्रैक का नेतृत्व करते हैं। बुनियादी IT साक्षरता से लेकर AI टूल और वेब डेवलपमेंट तक, वे ऐसे सीखने के अनुभव डिजाइन करते हैं जो ग्रामीण संदर्भों के लिए व्यावहारिक और प्रासंगिक हैं।"
               },
               member5: {
                 name: "संतम कुमाई",
@@ -962,7 +966,7 @@ i18n
                 name: "सौमाजित दास",
                 role: "स्वयंसेवक",
                 desc: "छात्रों को ग्रामीण कहानियां सुनाने और मीडिया में करियर बनाने के लिए रचनात्मक टूल से लैस करना।",
-                bio: "सौमाजित दास RYSF में फोटोग्राफी, वीडियो एडिटिंग और डिजाइन साक्षरता पढ़ाते हैं। वे मानते हैं कि हर ग्रामीण समुदाय में सुनाने योग्य कहानियां हैं और जो युवा उन्हें सुनाते हैं उन्हें पेशेवर उपकरणों का अधिकार है।"
+                bio: "सौमाजित दास PKF में फोटोग्राफी, वीडियो एडिटिंग और डिजाइन साक्षरता पढ़ाते हैं। वे मानते हैं कि हर ग्रामीण समुदाय में सुनाने योग्य कहानियां हैं और जो युवा उन्हें सुनाते हैं उन्हें पेशेवर उपकरणों का अधिकार है।"
               }
             }
           },
@@ -985,7 +989,11 @@ i18n
               plassey2: "मजबूत सामुदायिक विश्वास, जिससे उच्च भागीदारी और प्रभाव होता है",
               mirik1: "उच्च आवश्यकता, कम पहुंच — जहाँ हस्तक्षेप वास्तविक परिवर्तन लाता है",
               mirik2: "विस्तार के लिए निर्मित; यहाँ परीक्षण किए गए मॉडल पूरे क्षेत्रों में बढ़ सकते हैं"
-            }
+            },
+            upcoming_badge: "शीघ्र आ रहा है",
+            upcoming_title: "अगले कौशल केंद्र",
+            upcoming_desc: "हम अपने कौशल विकास और पुरालेख पहल का विस्तार करने के लिए अधिक वंचित ग्रामीण क्षेत्रों का मूल्यांकन कर रहे हैं।",
+            upcoming_cta: "स्थान सुझाएं"
           },
           impact: {
             label: "हमारा प्रभाव",
@@ -1490,7 +1498,7 @@ i18n
                 name: "ডঃ শুভেন্দু কুণ্ডু",
                 role: "সহ-প্রতিষ্ঠাতা ও প্রধান প্রশিক্ষক",
                 desc: "উভয় ক্যাম্পাসে পাঠ্যক্রম ডিজাইন ও দক্ষতা প্রশিক্ষণ কার্যক্রম পরিচালনা করছেন।",
-                bio: "ডঃ শুভেন্দু কুণ্ডু RYSF-এর একাডেমিক মেরুদণ্ড। তিনি এক দশকেরও বেশি সময় ধরে গ্রামীণ শিক্ষা ও দক্ষতা উন্নয়নে নিয়োজিত, এমন কোর্স ডিজাইন করছেন যা আধুনিক দক্ষতার সাথে ঐতিহ্যগত জ্ঞান ব্যবস্থাকে মিলিয়ে দেয়।"
+                bio: "ডঃ শুভেন্দু কুণ্ডু PKF-এর একাডেমিক মেরুদণ্ড। তিনি এক দশকেরও বেশি সময় ধরে গ্রামীণ শিক্ষা ও দক্ষতা উন্নয়নে নিয়োজিত, এমন কোর্স ডিজাইন করছেন যা আধুনিক দক্ষতার সাথে ঐতিহ্যগত জ্ঞান ব্যবস্থাকে মিলিয়ে দেয়।"
               },
               member3: {
                 name: "দীপম চক্রবর্তী",
@@ -1502,7 +1510,7 @@ i18n
                 name: "রাহুল ছেত্রী",
                 role: "স্বেচ্ছাসেবী",
                 desc: "ব্যবহারিক প্রযুক্তি প্রশিক্ষণের মাধ্যমে গ্রামীণ যুবকদের মধ্যে ডিজিটাল আত্মবিশ্বাস গড়ে তুলছেন।",
-                bio: "রাহুল ছেত্রী RYSF-এ ডেটা ও প্রযুক্তি ট্র্যাকের নেতৃত্ব দেন। প্রাথমিক আইটি সাক্ষরতা থেকে শুরু করে AI টুল এবং ওয়েব ডেভেলপমেন্ট পর্যন্ত, তিনি গ্রামীণ প্রেক্ষাপটের জন্য উপযুক্ত শিক্ষার অভিজ্ঞতা ডিজাইন করেন।"
+                bio: "রাহুল ছেত্রী PKF-এ ডেটা ও প্রযুক্তি ট্র্যাকের নেতৃত্ব দেন। প্রাথমিক আইটি সাক্ষরতা থেকে শুরু করে AI টুল এবং ওয়েব ডেভেলপমেন্ট পর্যন্ত, তিনি গ্রামীণ প্রেক্ষাপটের জন্য উপযুক্ত শিক্ষার অভিজ্ঞতা ডিজাইন করেন।"
               },
               member5: {
                 name: "সন্তম কুমাই",
@@ -1514,7 +1522,7 @@ i18n
                 name: "সৌমাজিৎ দাস",
                 role: "স্বেচ্ছাসেবী",
                 desc: "শিক্ষার্থীদের গ্রামীণ গল্প বলতে এবং মিডিয়ায় ক্যারিয়ার গড়তে সৃজনশীল সরঞ্জাম দিচ্ছেন।",
-                bio: "সৌমাজিৎ দাস RYSF-এ ফটোগ্রাফি, ভিডিও এডিটিং এবং ডিজাইন সাক্ষরতা শেখান। তিনি বিশ্বাস করেন প্রতিটি গ্রামীণ সম্প্রদায়ে বলার মতো গল্প আছে এবং যে যুবকরা সেগুলো বলেন তাদের পেশাদার সরঞ্জামের প্রাপ্য।"
+                bio: "সৌমাজিৎ দাস PKF-এ ফটোগ্রাফি, ভিডিও এডিটিং এবং ডিজাইন সাক্ষরতা শেখান। তিনি বিশ্বাস করেন প্রতিটি গ্রামীণ সম্প্রদায়ে বলার মতো গল্প আছে এবং যে যুবকরা সেগুলো বলেন তাদের পেশাদার সরঞ্জামের প্রাপ্য।"
               }
             }
           },
@@ -1534,10 +1542,14 @@ i18n
             why4: "বিশ্বাস এবং প্রসারের জন্য বিদ্যমান সম্প্রদায় নেটওয়ার্ক",
             points: {
               plassey1: "গভীর স্থানীয় বোঝাপড়া — আমরা বাস্তব জগতের অন্তর্দৃষ্টি দিয়ে ডিজাইন করি, অনুমান দিয়ে নয়",
-              plassey2: "দৃঢ় সম্প্রদায়ের বিশ্বাস, যা উচ্চ অংশগ্রহণ এবং প্রভাবের দিকে পরিচালিত করে",
+              plassey2: "দৃঢ় সম্প্রদায়ের বিশ্বাস, যা উচ্চ অংশগ্রহণและ প্রভাবের দিকে পরিচালিত করে",
               mirik1: "উচ্চ প্রয়োজন, কম অ্যাক্সেস — যেখানে হস্তক্ষেপ প্রকৃত পরিবর্তন আনে",
               mirik2: "প্রসারিত করার জন্য তৈরি; এখানে পরীক্ষিত মডেলগুলি অঞ্চল জুড়ে বৃদ্ধি পেতে পারে"
-            }
+            },
+            upcoming_badge: "শীঘ্রই আসছে",
+            upcoming_title: "পরবর্তী কর্মক্ষেত্র",
+            upcoming_desc: "আমাদের দক্ষতা উন্নয়ন এবং ঐতিহ্য সংরক্ষণ উদ্যোগ সম্প্রসারণের জন্য আমরা আরও সুবিধাবঞ্চিত গ্রামীণ অঞ্চল মূল্যায়ন করছি।",
+            upcoming_cta: "স্থান প্রস্তাব করুন"
           },
           impact: {
             label: "আমাদের প্রভাব",
@@ -2042,7 +2054,7 @@ i18n
                 name: "डा. शुभेन्दु कुण्डु",
                 role: "सह-संस्थापक र प्रमुख प्रशिक्षक",
                 desc: "दुवै क्याम्पसमा पाठ्यक्रम डिजाइन र कौशल तालिम कार्यक्रमहरूको नेतृत्व गर्दै।",
-                bio: "डा. शुभेन्दु कुण्डु RYSF को शैक्षणिक मेरुदण्ड हुन्। उनले एक दशकभन्दा बढी ग्रामीण शिक्षा र कौशल विकासमा बिताएका छन्, आधुनिक विशेषज्ञतालाई परम्परागत ज्ञान प्रणालीहरूसँग जोड्ने पाठ्यक्रमहरू डिजाइन गर्दै।"
+                bio: "डा. शुभेन्दु कुण्डु PKF को शैक्षणिक मेरुदण्ड हुन्। उनले एक दशकभन्दा बढी ग्रामीण शिक्षा र कौशल विकासमा बिताएका छन्, आधुनिक विशेषज्ञतालाई परम्परागत ज्ञान प्रणालीहरूसँग जोड्ने पाठ्यक्रमहरू डिजाइन गर्दै।"
               },
               member3: {
                 name: "दीपम चक्रवर्ती",
@@ -2054,7 +2066,7 @@ i18n
                 name: "राहुल छेत्री",
                 role: "स्वयंसेवक",
                 desc: "व्यावहारिक प्रविधि तालिमद्वारा ग्रामीण युवाहरूमा डिजिटाल आत्मविश्वास निर्माण गर्दै।",
-                bio: "राहुल छेत्रीले RYSF मा डाटा र प्रविधि ट्र्याकको नेतृत्व गर्छन्। आधारभूत आईटी साक्षरतादेखि एआई उपकरण र वेब विकाससम्म, उनले ग्रामीण सन्दर्भका लागि व्यावहारिक र सान्दर्भिक सिकाइ अनुभवहरू डिजाइन गर्छन्।"
+                bio: "राहुल छेत्रीले PKF मा डाटा र प्रविधि ट्र्याकको नेतृत्व गर्छन्। आधारभूत आईटी साक्षरतादेखि एआई उपकरण र वेब विकाससम्म, उनले ग्रामीण सन्दर्भका लागि व्यावहारिक र सान्दर्भिक सिकाइ अनुभवहरू डिजाइन गर्छन्।"
               },
               member5: {
                 name: "सन्तम कुमाई",
@@ -2066,7 +2078,7 @@ i18n
                 name: "सौमाजित दास",
                 role: "स्वयंसेवक",
                 desc: "विद्यार्थीहरूलाई ग्रामीण कथाहरू भन्न र मिडियामा करियर बनाउन रचनात्मक उपकरणहरू दिँदै।",
-                bio: "सौमाजित दासले RYSF मा फोटोग्राफी, भिडियो सम्पादन र डिजाइन साक्षरता पढाउँछन्। उनी विश्वास गर्छन् कि हरेक ग्रामीण समुदायमा भन्न लायक कथाहरू छन् र ती युवाहरू जसले ती भन्छन् उनीहरूलाई व्यावसायिक उपकरणहरूको अधिकार छ।"
+                bio: "सौमाजित दासले PKF मा फोटोग्राफी, भिडियो सम्पादन र डिजाइन साक्षरता पढाउँछन्। उनी विश्वास गर्छन् कि हरेक ग्रामीण समुदायमा भन्न लायक कथाहरू छन् र ती युवाहरू जसले ती भन्छन् उनीहरूलाई व्यावसायिक उपकरणहरूको अधिकार छ।"
               }
             }
           },
@@ -2239,3 +2251,4 @@ i18n
   });
 
 export default i18n;
+

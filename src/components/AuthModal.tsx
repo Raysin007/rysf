@@ -70,7 +70,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
         {/* Header */}
         <div>
           <p className="text-[0.72rem] font-bold tracking-widest text-lime uppercase mb-2">
-            Rural Youth Skill Forum
+            Pally Karigori Foundation
           </p>
           <h2 className="font-display text-2xl font-semibold text-olive dark:text-lime-light">
             {mode === "login" ? "Welcome back" : "Create an account"}
