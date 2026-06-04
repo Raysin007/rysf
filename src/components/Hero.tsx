@@ -92,7 +92,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <h1 className="hero-title font-display font-bold text-4xl sm:text-5xl lg:text-[70px] text-white leading-[1.2] lg:leading-[1.3] mb-6">
+          <h1 className="hero-title font-display font-bold text-4xl sm:text-5xl lg:text-[60px] text-white leading-[1.2] lg:leading-[1.3] mb-6">
             {t("hero.title")}
             <br />
             <em className="font-display not-italic text-lime-light">
