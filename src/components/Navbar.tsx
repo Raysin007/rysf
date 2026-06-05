@@ -148,7 +148,7 @@ export default function Navbar() {
 
             <div className={`h-4 w-px ${isLight ? "bg-white/20" : "bg-black/15 dark:bg-white/15"}`} />
 
-            <ThemeToggle />
+            <ThemeToggle isLight={isLight} />
 
             <div className={`h-4 w-px ${isLight ? "bg-white/20" : "bg-black/15 dark:bg-white/15"}`} />
 
@@ -189,7 +189,7 @@ export default function Navbar() {
           {/* ── MOBILE CONTROLS ── */}
           <div className="flex lg:hidden items-center gap-3 relative z-[1020]">
             <div className={`transition-opacity duration-300 ${menuOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-              <ThemeToggle />
+              <ThemeToggle isLight={isLight} />
             </div>
             {/* Hamburger */}
             <button

@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ isLight = false }: { isLight?: boolean }) {
   const { t } = useTranslation();
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
@@ -49,7 +49,11 @@ export default function ThemeToggle() {
   return (
     <button
       ref={toggleRef}
-      className="relative flex items-center justify-center w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-lime/10 dark:bg-lime/5 border-[1.5px] border-lime text-lime cursor-pointer overflow-hidden transition-all hover:bg-lime hover:text-white hover:shadow-lime hover:-translate-y-0.5"
+      className={`relative flex items-center justify-center w-10 h-10 lg:w-11 lg:h-11 rounded-full border-[1.5px] cursor-pointer overflow-hidden transition-all hover:-translate-y-0.5
+        ${isLight
+          ? "bg-white/10 border-white text-white hover:bg-white hover:text-olive"
+          : "bg-lime/10 dark:bg-lime/5 border-lime text-lime hover:bg-lime hover:text-white hover:shadow-lime"
+        }`}
       onClick={() => setIsDark(!isDark)}
       aria-label={t("nav.toggle_theme")}
     >

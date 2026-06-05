@@ -11,15 +11,42 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: sectionRef.current, start: "top 80%", once: true },
-        defaults: { ease: "power3.out" },
+      const defaults = { ease: "power3.out", clearProps: "all" };
+      const trigger = { start: "top 75%", once: true };
+
+      // Label — left to right
+      gsap.from(".about-label", {
+        x: -40, opacity: 0, duration: 0.7, delay: 0.2, ...defaults,
+        scrollTrigger: { trigger: ".about-label", ...trigger },
       });
-      tl.from(".about-label", { y: 20, opacity: 0, duration: 0.5, clearProps: "all" })
-        .from(".about-lead", { y: 30, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.2")
-        .from(".about-accent", { y: 20, opacity: 0, duration: 0.6, clearProps: "all" }, "-=0.3")
-        .from(".about-pillar", { y: 30, opacity: 0, duration: 0.5, stagger: 0.15, clearProps: "all" }, "-=0.3")
-        .from(".about-photo", { scale: 0.95, opacity: 0, duration: 0.7, stagger: 0.2, clearProps: "all" }, "-=0.3");
+
+      // Lead text — left to right
+      gsap.from(".about-lead", {
+        x: -50, opacity: 0, duration: 0.8, delay: 0.25, ...defaults,
+        scrollTrigger: { trigger: ".about-lead", ...trigger },
+      });
+
+      // Accent quote — left to right
+      gsap.from(".about-accent", {
+        x: -40, opacity: 0, duration: 0.7, delay: 0.35, ...defaults,
+        scrollTrigger: { trigger: ".about-accent", ...trigger },
+      });
+
+      // Pillar cards — right to left, each fires when it enters view + delay
+      document.querySelectorAll(".about-pillar").forEach((el, i) => {
+        gsap.from(el, {
+          x: 60, opacity: 0, duration: 0.7, delay: 0.2 + i * 0.18, ...defaults,
+          scrollTrigger: { trigger: el, ...trigger },
+        });
+      });
+
+      // Photos — right to left
+      document.querySelectorAll(".about-photo").forEach((el, i) => {
+        gsap.from(el, {
+          x: 50, opacity: 0, duration: 0.8, delay: 0.25 + i * 0.2, ...defaults,
+          scrollTrigger: { trigger: el, ...trigger },
+        });
+      });
     }, sectionRef);
     return () => ctx.revert();
   }, []);
