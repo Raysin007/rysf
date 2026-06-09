@@ -11,28 +11,26 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const defaults = { ease: "power3.out", clearProps: "all" };
-      const trigger = { start: "top 75%", once: true };
+      const defaults = { ease: "power3.out" };
+      // "onEnter onLeave onEnterBack onLeaveBack"
+      // play  | reverse | play       | reverse  → repeatable in both directions
+      const trigger = { start: "top 75%", end: "bottom 10%", toggleActions: "play reverse play reverse" };
 
-      // Label — left to right
       gsap.from(".about-label", {
         x: -40, opacity: 0, duration: 0.7, delay: 0.2, ...defaults,
         scrollTrigger: { trigger: ".about-label", ...trigger },
       });
 
-      // Lead text — left to right
       gsap.from(".about-lead", {
         x: -50, opacity: 0, duration: 0.8, delay: 0.25, ...defaults,
         scrollTrigger: { trigger: ".about-lead", ...trigger },
       });
 
-      // Accent quote — left to right
       gsap.from(".about-accent", {
         x: -40, opacity: 0, duration: 0.7, delay: 0.35, ...defaults,
         scrollTrigger: { trigger: ".about-accent", ...trigger },
       });
 
-      // Pillar cards — right to left, each fires when it enters view + delay
       document.querySelectorAll(".about-pillar").forEach((el, i) => {
         gsap.from(el, {
           x: 60, opacity: 0, duration: 0.7, delay: 0.2 + i * 0.18, ...defaults,
@@ -40,7 +38,6 @@ export default function About() {
         });
       });
 
-      // Photos — right to left
       document.querySelectorAll(".about-photo").forEach((el, i) => {
         gsap.from(el, {
           x: 50, opacity: 0, duration: 0.8, delay: 0.25 + i * 0.2, ...defaults,
